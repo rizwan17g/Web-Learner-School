@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms & Input Elements - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html" class="active">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Forms & Input Elements</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Forms & Input Elements</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to HTML Forms</h2>
+                <p>HTML forms are the primary way to collect user input on web pages. They enable users to submit information like contact details, feedback, search queries, login credentials, and much more. Forms are essential for creating interactive websites that can process user data.</p>
+                
+                <p>A form acts as a container for various input controls such as text fields, checkboxes, radio buttons, dropdown menus, and buttons. When users submit a form, the data is typically sent to a server for processing, though it can also be handled with client-side JavaScript.</p>
+
+                <p>Understanding forms is crucial for web development because they bridge the gap between static content and dynamic, interactive web applications. Well-designed forms improve user experience and make data collection efficient and accessible.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> Forms collect user input and send it somewhere for processing. The form element defines where and how to send the data.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Form Element</h2>
+                <p>The <code>&lt;form&gt;</code> element wraps all form controls and defines how the form data should be processed. It has several important attributes:</p>
+
+                <ul>
+                    <li><code>action</code> - Specifies where to send the form data</li>
+                    <li><code>method</code> - Defines how to send the data (GET or POST)</li>
+                    <li><code>enctype</code> - Specifies how the form data should be encoded</li>
+                    <li><code>name</code> - Provides a name for the form</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Form Structure</div>
+                    <div class="code-content">
+                        <pre>&lt;form action="/submit-form" method="post"&gt;
+    &lt;!-- Form controls go here --&gt;
+    
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;input type="submit" value="Submit Form"&gt;
+&lt;/form&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Basic Contact Form</div>
+                    <div class="live-example-content">
+                        <form style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="margin-bottom: 15px;">
+                                <label for="demo-name" style="display: block; margin-bottom: 5px; font-weight: bold;">Full Name:</label>
+                                <input type="text" id="demo-name" name="name" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" placeholder="Enter your name">
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label for="demo-email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+                                <input type="email" id="demo-email" name="email" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" placeholder="Enter your email">
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label for="demo-message" style="display: block; margin-bottom: 5px; font-weight: bold;">Message:</label>
+                                <textarea id="demo-message" name="message" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; height: 80px;" placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" style="background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Input Types</h2>
+                <p>HTML5 provides many input types that offer built-in validation and better user experience. Each type is optimized for different kinds of data:</p>
+
+                <h3>Text Input Types</h3>
+                <ul>
+                    <li><code>text</code> - Single-line text input</li>
+                    <li><code>email</code> - Email address with validation</li>
+                    <li><code>password</code> - Hidden text for passwords</li>
+                    <li><code>search</code> - Search queries</li>
+                    <li><code>url</code> - Web addresses with validation</li>
+                    <li><code>tel</code> - Telephone numbers</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Text Input Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Basic text input --&gt;
+&lt;label for="fullname"&gt;Full Name:&lt;/label&gt;
+&lt;input type="text" id="fullname" name="fullname" placeholder="Enter your name"&gt;
+
+&lt;!-- Email with validation --&gt;
+&lt;label for="user-email"&gt;Email Address:&lt;/label&gt;
+&lt;input type="email" id="user-email" name="email" required&gt;
+
+&lt;!-- Password field --&gt;
+&lt;label for="user-password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="user-password" name="password" minlength="8" required&gt;
+
+&lt;!-- Website URL --&gt;
+&lt;label for="website"&gt;Website:&lt;/label&gt;
+&lt;input type="url" id="website" name="website" placeholder="https://example.com"&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Number and Date Inputs</h3>
+                <ul>
+                    <li><code>number</code> - Numeric input with validation</li>
+                    <li><code>range</code> - Slider for selecting values</li>
+                    <li><code>date</code> - Date picker</li>
+                    <li><code>time</code> - Time picker</li>
+                    <li><code>datetime-local</code> - Date and time picker</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Number and Date Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Number input with range --&gt;
+&lt;label for="age"&gt;Age:&lt;/label&gt;
+&lt;input type="number" id="age" name="age" min="18" max="100" required&gt;
+
+&lt;!-- Range slider --&gt;
+&lt;label for="satisfaction"&gt;Satisfaction Level:&lt;/label&gt;
+&lt;input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="5"&gt;
+
+&lt;!-- Date picker --&gt;
+&lt;label for="birthdate"&gt;Birth Date:&lt;/label&gt;
+&lt;input type="date" id="birthdate" name="birthdate" required&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Input Types Demo</div>
+                    <div class="live-example-content">
+                        <form style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                            <div style="display: grid; gap: 15px;">
+                                <div>
+                                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+                                    <input type="email" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" placeholder="user@example.com">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Age:</label>
+                                    <input type="number" min="18" max="100" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Birth Date:</label>
+                                    <input type="date" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Satisfaction (1-10):</label>
+                                    <input type="range" min="1" max="10" value="5" style="width: 100%;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Selection Controls</h2>
+                <p>HTML provides several ways for users to select from predefined options:</p>
+
+                <h3>Radio Buttons</h3>
+                <p>Radio buttons allow users to select only one option from a group. All radio buttons in a group must have the same <code>name</code> attribute.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Radio Button Example</div>
+                    <div class="code-content">
+                        <pre>&lt;fieldset&gt;
+    &lt;legend&gt;Preferred Contact Method:&lt;/legend&gt;
+    
+    &lt;input type="radio" id="contact-email" name="contact-method" value="email"&gt;
+    &lt;label for="contact-email"&gt;Email&lt;/label&gt;
+    
+    &lt;input type="radio" id="contact-phone" name="contact-method" value="phone"&gt;
+    &lt;label for="contact-phone"&gt;Phone&lt;/label&gt;
+    
+    &lt;input type="radio" id="contact-mail" name="contact-method" value="mail"&gt;
+    &lt;label for="contact-mail"&gt;Postal Mail&lt;/label&gt;
+&lt;/fieldset&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Checkboxes</h3>
+                <p>Checkboxes allow users to select multiple options or toggle a single option on/off.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Checkbox Example</div>
+                    <div class="code-content">
+                        <pre>&lt;fieldset&gt;
+    &lt;legend&gt;Interests:&lt;/legend&gt;
+    
+    &lt;input type="checkbox" id="web-design" name="interests" value="web-design"&gt;
+    &lt;label for="web-design"&gt;Web Design&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="programming" name="interests" value="programming"&gt;
+    &lt;label for="programming"&gt;Programming&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="photography" name="interests" value="photography"&gt;
+    &lt;label for="photography"&gt;Photography&lt;/label&gt;
+&lt;/fieldset&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Select Dropdown</h3>
+                <p>Select elements create dropdown menus for choosing from a list of options.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Select Dropdown Example</div>
+                    <div class="code-content">
+                        <pre>&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country" required&gt;
+    &lt;option value=""&gt;-- Select a country --&lt;/option&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="ca"&gt;Canada&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+    &lt;option value="au"&gt;Australia&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Multiple selection --&gt;
+&lt;label for="skills"&gt;Skills:&lt;/label&gt;
+&lt;select id="skills" name="skills" multiple&gt;
+    &lt;option value="html"&gt;HTML&lt;/option&gt;
+    &lt;option value="css"&gt;CSS&lt;/option&gt;
+    &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+    &lt;option value="python"&gt;Python&lt;/option&gt;
+&lt;/select&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Selection Controls Demo</div>
+                    <div class="live-example-content">
+                        <form style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                            <fieldset style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 4px;">
+                                <legend style="font-weight: bold; padding: 0 10px;">Contact Preference:</legend>
+                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                    <label><input type="radio" name="demo-contact" value="email" style="margin-right: 5px;"> Email</label>
+                                    <label><input type="radio" name="demo-contact" value="phone" style="margin-right: 5px;"> Phone</label>
+                                    <label><input type="radio" name="demo-contact" value="mail" style="margin-right: 5px;"> Mail</label>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 4px;">
+                                <legend style="font-weight: bold; padding: 0 10px;">Interests:</legend>
+                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                    <label><input type="checkbox" name="demo-interests" value="design" style="margin-right: 5px;"> Design</label>
+                                    <label><input type="checkbox" name="demo-interests" value="coding" style="margin-right: 5px;"> Coding</label>
+                                    <label><input type="checkbox" name="demo-interests" value="marketing" style="margin-right: 5px;"> Marketing</label>
+                                </div>
+                            </fieldset>
+                            
+                            <div>
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Country:</label>
+                                <select style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                    <option>-- Select a country --</option>
+                                    <option>United States</option>
+                                    <option>Canada</option>
+                                    <option>United Kingdom</option>
+                                    <option>Australia</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Text Areas and Labels</h2>
+                <p>For longer text input, use the <code>&lt;textarea&gt;</code> element. Labels are crucial for accessibility and should be associated with their corresponding form controls.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Textarea and Labels</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Textarea for longer text --&gt;
+&lt;label for="comments"&gt;Additional Comments:&lt;/label&gt;
+&lt;textarea id="comments" name="comments" rows="5" cols="50" 
+          placeholder="Enter your comments here..."&gt;&lt;/textarea&gt;
+
+&lt;!-- Label methods --&gt;
+&lt;!-- Method 1: Using 'for' attribute --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+&lt;!-- Method 2: Wrapping the input --&gt;
+&lt;label&gt;
+    Password:
+    &lt;input type="password" name="password"&gt;
+&lt;/label&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Accessibility:</strong> Always associate labels with form controls. This helps screen readers understand what each field is for and allows users to click the label to focus the input.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Form Validation</h2>
+                <p>HTML5 provides built-in validation attributes that help ensure data quality before submission:</p>
+
+                <h3>Validation Attributes</h3>
+                <ul>
+                    <li><code>required</code> - Makes the field mandatory</li>
+                    <li><code>pattern</code> - Validates against a regular expression</li>
+                    <li><code>min/max</code> - Sets minimum/maximum values for numbers and dates</li>
+                    <li><code>minlength/maxlength</code> - Sets character limits for text</li>
+                    <li><code>step</code> - Defines valid number intervals</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Form Validation Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Required field --&gt;
+&lt;input type="email" name="email" required&gt;
+
+&lt;!-- Pattern validation (phone number) --&gt;
+&lt;input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+       placeholder="123-456-7890" title="Format: 123-456-7890"&gt;
+
+&lt;!-- Length constraints --&gt;
+&lt;input type="password" name="password" minlength="8" maxlength="20" required&gt;
+
+&lt;!-- Number range --&gt;
+&lt;input type="number" name="age" min="18" max="120" required&gt;
+
+&lt;!-- Custom validation message --&gt;
+&lt;input type="text" name="username" required 
+       title="Username must be at least 3 characters long"&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Best Practice:</strong> Always provide clear error messages and hints about expected input formats. Client-side validation improves user experience but should always be paired with server-side validation for security.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Form Buttons</h2>
+                <p>Forms typically need buttons to submit data or reset fields. HTML provides several button options:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Form Buttons</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Submit button (submits form) --&gt;
+&lt;input type="submit" value="Submit Form"&gt;
+&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+
+&lt;!-- Reset button (clears all fields) --&gt;
+&lt;input type="reset" value="Clear Form"&gt;
+&lt;button type="reset"&gt;Clear Form&lt;/button&gt;
+
+&lt;!-- Generic button (for JavaScript) --&gt;
+&lt;button type="button"&gt;Custom Action&lt;/button&gt;
+
+&lt;!-- Image submit button --&gt;
+&lt;input type="image" src="submit-button.png" alt="Submit" width="100" height="30"&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Complete Form Example</h2>
+                <p>Here's a comprehensive registration form that demonstrates various form elements working together:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Complete Registration Form</div>
+                    <div class="live-example-content">
+                        <form style="background: #f8f9fa; padding: 25px; border-radius: 8px; border: 1px solid #ddd; max-width: 600px;">
+                            <h3 style="margin-bottom: 20px; color: #2c3e50;">Create Your Account</h3>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                                <div>
+                                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">First Name *</label>
+                                    <input type="text" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">Last Name *</label>
+                                    <input type="text" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email Address *</label>
+                                <input type="email" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Password *</label>
+                                <input type="password" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                <small style="color: #666;">Must be at least 8 characters long</small>
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Birth Date</label>
+                                <input type="date" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            
+                            <fieldset style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 4px;">
+                                <legend style="font-weight: bold; padding: 0 10px;">Account Type:</legend>
+                                <div style="display: flex; gap: 20px;">
+                                    <label><input type="radio" name="account-type" value="personal" style="margin-right: 5px;"> Personal</label>
+                                    <label><input type="radio" name="account-type" value="business" style="margin-right: 5px;"> Business</label>
+                                </div>
+                            </fieldset>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label><input type="checkbox" required style="margin-right: 8px;"> I agree to the Terms of Service *</label>
+                            </div>
+                            
+                            <div style="display: flex; gap: 10px;">
+                                <button type="submit" style="background: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Create Account</button>
+                                <button type="reset" style="background: #95a5a6; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Clear Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Form Best Practices</h2>
+                <p>Creating user-friendly, accessible forms requires following established best practices:</p>
+
+                <h3>User Experience</h3>
+                <ul>
+                    <li><strong>Clear labels:</strong> Use descriptive, concise labels for all form fields</li>
+                    <li><strong>Logical grouping:</strong> Group related fields using fieldsets</li>
+                    <li><strong>Required field indicators:</strong> Mark required fields clearly</li>
+                    <li><strong>Helpful placeholder text:</strong> Provide examples of expected input</li>
+                    <li><strong>Appropriate input types:</strong> Use HTML5 input types for better mobile experience</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <ul>
+                    <li><strong>Associate labels:</strong> Always link labels to their corresponding inputs</li>
+                    <li><strong>Error messages:</strong> Provide clear, helpful error descriptions</li>
+                    <li><strong>Keyboard navigation:</strong> Ensure forms work with tab navigation</li>
+                    <li><strong>Focus management:</strong> Make it clear which field is currently active</li>
+                </ul>
+
+                <h3>Security</h3>
+                <ul>
+                    <li><strong>Server-side validation:</strong> Never rely solely on client-side validation</li>
+                    <li><strong>HTTPS:</strong> Always use secure connections for sensitive data</li>
+                    <li><strong>Input sanitization:</strong> Clean and validate all user input</li>
+                    <li><strong>CSRF protection:</strong> Implement anti-forgery tokens</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Remember:</strong> Forms are often the most critical part of a website for business goals. Invest time in making them intuitive, accessible, and secure.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html6-tables.html" class="prev">← Previous: Tables in HTML</a>
+                <a href="html8-semantic-tags.html">Next: HTML5 Semantic Tags →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

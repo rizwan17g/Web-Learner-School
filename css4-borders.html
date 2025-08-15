@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html" class="active">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Borders</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Borders</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to CSS Borders</h2>
+                <p>CSS borders are decorative and functional elements that define the visible edge of HTML elements. They create visual separation, add emphasis, and help organize content on your web pages. Borders can be styled with different colors, widths, and patterns.</p>
+                
+                <p>Borders are part of the CSS box model, positioned between the element's padding and margin. They don't affect the element's content area but do contribute to the total size of the element unless you're using <code>box-sizing: border-box</code>.</p>
+
+                <p>Understanding borders is essential for creating professional layouts, form styling, decorative elements, and visual hierarchy in your designs. Modern CSS provides extensive control over border appearance and behavior.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> Borders surround an element's padding and content. They can be applied to all four sides individually or collectively, with complete control over style, width, and color.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Width</h2>
+                <p>The <code>border-width</code> property controls the thickness of borders. You can set different widths for each side of an element.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Border Width Examples</div>
+                    <div class="code-content">
+                        <pre>/* Single width for all sides */
+.thin-border {
+    border-width: 1px;
+}
+
+.medium-border {
+    border-width: 3px;
+}
+
+.thick-border {
+    border-width: 5px;
+}
+
+/* Different widths for each side */
+.mixed-width {
+    border-width: 2px 4px 1px 3px;
+    /* top right bottom left */
+}
+
+/* Named thickness values */
+.named-widths {
+    border-width: thin;    /* Usually 1px */
+}
+
+.more-named {
+    border-width: medium;  /* Usually 3px */
+}
+
+.thick-named {
+    border-width: thick;   /* Usually 5px */
+}
+
+/* Individual side properties */
+.individual-sides {
+    border-top-width: 2px;
+    border-right-width: 1px;
+    border-bottom-width: 3px;
+    border-left-width: 1px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Border Width Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="border: 1px solid #3498db; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Thin (1px)</strong><br>
+                                Single pixel border
+                            </div>
+                            <div style="border: 3px solid #e74c3c; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Medium (3px)</strong><br>
+                                Standard border width
+                            </div>
+                            <div style="border: 5px solid #27ae60; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Thick (5px)</strong><br>
+                                Bold, prominent border
+                            </div>
+                            <div style="border-width: 2px 4px 1px 3px; border-style: solid; border-color: #f39c12; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Mixed Widths</strong><br>
+                                Different on each side
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Style</h2>
+                <p>The <code>border-style</code> property determines the pattern of the border line. This property must be set for borders to be visible.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Border Style Examples</div>
+                    <div class="code-content">
+                        <pre>/* Solid border (most common) */
+.solid {
+    border-style: solid;
+}
+
+/* Dashed border */
+.dashed {
+    border-style: dashed;
+}
+
+/* Dotted border */
+.dotted {
+    border-style: dotted;
+}
+
+/* Double line border */
+.double {
+    border-style: double;
+}
+
+/* Groove effect (3D inward) */
+.groove {
+    border-style: groove;
+}
+
+/* Ridge effect (3D outward) */
+.ridge {
+    border-style: ridge;
+}
+
+/* Inset effect (3D inward) */
+.inset {
+    border-style: inset;
+}
+
+/* Outset effect (3D outward) */
+.outset {
+    border-style: outset;
+}
+
+/* No border */
+.none {
+    border-style: none;
+}
+
+/* Hidden (same as none but different specificity) */
+.hidden {
+    border-style: hidden;
+}
+
+/* Different styles for each side */
+.mixed-styles {
+    border-style: solid dashed dotted double;
+    /* top right bottom left */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Border Style Showcase</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+                            <div style="border: 3px solid #3498db; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>solid</strong>
+                            </div>
+                            <div style="border: 3px dashed #e74c3c; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>dashed</strong>
+                            </div>
+                            <div style="border: 3px dotted #27ae60; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>dotted</strong>
+                            </div>
+                            <div style="border: 3px double #f39c12; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>double</strong>
+                            </div>
+                            <div style="border: 4px groove #9b59b6; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>groove</strong>
+                            </div>
+                            <div style="border: 4px ridge #1abc9c; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>ridge</strong>
+                            </div>
+                            <div style="border: 4px inset #34495e; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>inset</strong>
+                            </div>
+                            <div style="border: 4px outset #95a5a6; padding: 10px; text-align: center; font-size: 0.9em;">
+                                <strong>outset</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Color</h2>
+                <p>The <code>border-color</code> property sets the color of borders. You can use any CSS color value and set different colors for each side.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Border Color Examples</div>
+                    <div class="code-content">
+                        <pre>/* Single color for all sides */
+.blue-border {
+    border-color: blue;
+}
+
+.hex-border {
+    border-color: #3498db;
+}
+
+.rgb-border {
+    border-color: rgb(52, 152, 219);
+}
+
+.rgba-border {
+    border-color: rgba(52, 152, 219, 0.7);
+}
+
+/* Different colors for each side */
+.rainbow-border {
+    border-color: red green blue orange;
+    /* top right bottom left */
+}
+
+/* Individual side colors */
+.custom-sides {
+    border-top-color: #e74c3c;
+    border-right-color: #f39c12;
+    border-bottom-color: #27ae60;
+    border-left-color: #3498db;
+}
+
+/* Transparent borders */
+.transparent-border {
+    border-color: transparent;
+}
+
+/* Current text color */
+.current-color {
+    border-color: currentColor;
+    color: #9b59b6;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Border Color Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="border: 3px solid #3498db; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Solid Blue</strong><br>
+                                #3498db
+                            </div>
+                            <div style="border: 3px solid rgba(231, 76, 60, 0.7); padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Transparent Red</strong><br>
+                                rgba(231, 76, 60, 0.7)
+                            </div>
+                            <div style="border-width: 3px; border-style: solid; border-color: #e74c3c #f39c12 #27ae60 #3498db; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Rainbow Border</strong><br>
+                                Different colors per side
+                            </div>
+                            <div style="border: 3px solid; color: #9b59b6; padding: 15px; text-align: center; border-radius: 4px;">
+                                <strong>Current Color</strong><br>
+                                Matches text color
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Shorthand</h2>
+                <p>The <code>border</code> shorthand property allows you to set width, style, and color in a single declaration. This is the most common way to create borders.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Border Shorthand Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic shorthand: width style color */
+.simple-border {
+    border: 2px solid #3498db;
+}
+
+/* Minimal shorthand (style is required) */
+.minimal {
+    border: solid;
+    /* Uses default width and current color */
+}
+
+/* Individual side shorthand */
+.side-borders {
+    border-top: 3px dashed #e74c3c;
+    border-right: 1px solid #27ae60;
+    border-bottom: 2px dotted #f39c12;
+    border-left: 4px double #9b59b6;
+}
+
+/* Common patterns */
+.card {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.highlight-box {
+    border: 3px solid #ffc107;
+    background-color: #fff3cd;
+    padding: 15px;
+}
+
+.error-message {
+    border: 2px solid #dc3545;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+}
+
+/* Reset/remove borders */
+.no-border {
+    border: none;
+    /* or border: 0; */
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Radius</h2>
+                <p>The <code>border-radius</code> property creates rounded corners on elements. This property is essential for modern web design and creating smooth, professional-looking interfaces.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Border Radius Examples</div>
+                    <div class="code-content">
+                        <pre>/* Uniform radius for all corners */
+.rounded {
+    border-radius: 8px;
+}
+
+.very-rounded {
+    border-radius: 20px;
+}
+
+/* Circular elements */
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Pill-shaped buttons */
+.pill-button {
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+/* Individual corner control */
+.custom-corners {
+    border-radius: 10px 5px 15px 0;
+    /* top-left top-right bottom-right bottom-left */
+}
+
+/* Using percentages */
+.percentage-radius {
+    border-radius: 10% 30% 50% 70%;
+}
+
+/* Individual corner properties */
+.individual-corners {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0;
+}
+
+/* Elliptical radius */
+.elliptical {
+    border-radius: 20px 10px;
+    /* horizontal radius / vertical radius */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Border Radius Gallery</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                            <div style="border: 2px solid #3498db; padding: 15px; text-align: center; border-radius: 8px; background: #f8f9fa;">
+                                <strong>8px radius</strong><br>
+                                Subtle rounding
+                            </div>
+                            <div style="border: 2px solid #e74c3c; padding: 15px; text-align: center; border-radius: 20px; background: #f8f9fa;">
+                                <strong>20px radius</strong><br>
+                                More rounded
+                            </div>
+                            <div style="border: 2px solid #27ae60; width: 80px; height: 80px; border-radius: 50%; background: #f8f9fa; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.8em; margin: 0 auto;">
+                                <strong>50% radius</strong><br>
+                                Perfect circle
+                            </div>
+                            <div style="border: 2px solid #f39c12; padding: 10px 20px; text-align: center; border-radius: 25px; background: #f8f9fa;">
+                                <strong>Pill shape</strong><br>
+                                25px radius
+                            </div>
+                            <div style="border: 2px solid #9b59b6; padding: 15px; text-align: center; border-radius: 10px 5px 15px 0; background: #f8f9fa;">
+                                <strong>Mixed corners</strong><br>
+                                Different per corner
+                            </div>
+                            <div style="border: 2px solid #1abc9c; padding: 15px; text-align: center; border-radius: 50px 10px; background: #f8f9fa;">
+                                <strong>Elliptical</strong><br>
+                                Different H/V radius
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Images</h2>
+                <p>CSS border-image properties allow you to use images as borders, creating decorative frames and complex border designs that go beyond solid colors and simple styles.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Border Image Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic border image */
+.border-image-basic {
+    border: 20px solid transparent;
+    border-image: url('border-pattern.png') 20;
+}
+
+/* Border image with slice */
+.border-image-slice {
+    border: 15px solid;
+    border-image: url('decorative-border.png') 15 fill;
+    /* fill keyword includes the center of the image */
+}
+
+/* Border image with repeat */
+.border-image-repeat {
+    border: 10px solid;
+    border-image: url('pattern.png') 10 repeat;
+}
+
+/* Border image with different repeat modes */
+.border-image-stretch {
+    border-image: url('pattern.png') 20 stretch;
+}
+
+.border-image-round {
+    border-image: url('pattern.png') 20 round;
+}
+
+.border-image-space {
+    border-image: url('pattern.png') 20 space;
+}
+
+/* Gradient as border image */
+.gradient-border {
+    border: 3px solid;
+    border-image: linear-gradient(45deg, #3498db, #e74c3c) 1;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Gradient Border Example</div>
+                    <div class="live-example-content">
+                        <div style="border: 4px solid; border-image: linear-gradient(45deg, #3498db, #e74c3c, #27ae60, #f39c12) 1; padding: 20px; text-align: center; margin: 20px 0;">
+                            <strong>Gradient Border</strong><br>
+                            Using linear gradient as border image
+                        </div>
+                        <p style="font-size: 0.9em; color: #666;">
+                            Border images allow for creative border designs using gradients or image patterns.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Box Shadow vs Borders</h2>
+                <p>While not technically borders, box shadows can create border-like effects and are often used alongside or instead of traditional borders for enhanced visual effects.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Box Shadow Examples</div>
+                    <div class="code-content">
+                        <pre>/* Simple shadow that looks like a border */
+.shadow-border {
+    box-shadow: 0 0 0 2px #3498db;
+    /* No offset, no blur, no spread, 2px "border" */
+}
+
+/* Multiple shadow "borders" */
+.multiple-shadow-borders {
+    box-shadow: 
+        0 0 0 2px #3498db,
+        0 0 0 4px #e74c3c,
+        0 0 0 6px #27ae60;
+}
+
+/* Inset shadow border */
+.inset-shadow-border {
+    box-shadow: inset 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+/* Combining real border with shadow */
+.border-with-shadow {
+    border: 2px solid #3498db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus state with shadow border */
+.focus-shadow:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Shadow Border Effects</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="box-shadow: 0 0 0 3px #3498db; padding: 15px; text-align: center; border-radius: 4px; background: white;">
+                                <strong>Shadow Border</strong><br>
+                                No offset shadow
+                            </div>
+                            <div style="box-shadow: 0 0 0 2px #3498db, 0 0 0 4px #e74c3c; padding: 15px; text-align: center; border-radius: 4px; background: white;">
+                                <strong>Multiple Shadows</strong><br>
+                                Layered shadow borders
+                            </div>
+                            <div style="border: 2px solid #27ae60; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); padding: 15px; text-align: center; border-radius: 4px; background: white;">
+                                <strong>Border + Shadow</strong><br>
+                                Combined effect
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Border Examples</h2>
+                <p>Here are common, real-world applications of borders in web design:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Card Design with Borders</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <h4 style="margin-top: 0; color: #2c3e50;">Product Card</h4>
+                            <p style="color: #6c757d; margin-bottom: 15px;">This card uses a subtle border with rounded corners and a slight shadow for depth.</p>
+                            <div style="border-top: 1px solid #dee2e6; padding-top: 15px; margin-top: 15px;">
+                                <span style="background: #28a745; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">In Stock</span>
+                            </div>
+                        </div>
+
+                        <div style="border-left: 4px solid #17a2b8; background: #d1ecf1; padding: 15px; margin-bottom: 20px; border-radius: 0 4px 4px 0;">
+                            <strong style="color: #0c5460;">Info Box</strong>
+                            <p style="margin: 5px 0 0 0; color: #0c5460;">Left border accent creates visual hierarchy and draws attention to important information.</p>
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <button style="border: 2px solid #007bff; background: transparent; color: #007bff; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                                Outline Button
+                            </button>
+                            <button style="border: 2px solid #007bff; background: #007bff; color: white; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                                Filled Button
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Form Elements with Borders</div>
+                    <div class="live-example-content">
+                        <form style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e9ecef;">
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Name</label>
+                                <input type="text" style="width: 100%; padding: 8px; border: 2px solid #ced4da; border-radius: 4px;" placeholder="Enter your name">
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email</label>
+                                <input type="email" style="width: 100%; padding: 8px; border: 2px solid #28a745; border-radius: 4px;" placeholder="Valid email" value="user@example.com">
+                                <small style="color: #28a745;">✓ Valid email format</small>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
+                                <input type="password" style="width: 100%; padding: 8px; border: 2px solid #dc3545; border-radius: 4px;" placeholder="Password">
+                                <small style="color: #dc3545;">✗ Password too short</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Border Best Practices</h2>
+                <p>Following best practices ensures your borders enhance rather than distract from your content:</p>
+
+                <h3>Design Guidelines</h3>
+                <ul>
+                    <li><strong>Use borders purposefully:</strong> Every border should serve a function (separation, emphasis, etc.)</li>
+                    <li><strong>Maintain consistency:</strong> Use consistent border widths and colors throughout your design</li>
+                    <li><strong>Consider contrast:</strong> Ensure borders have sufficient contrast with their surroundings</li>
+                    <li><strong>Don't overuse:</strong> Too many borders can make interfaces feel cluttered</li>
+                </ul>
+
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li><strong>Use border-radius sparingly on large elements:</strong> Can impact rendering performance</li>
+                    <li><strong>Prefer box-shadow over multiple borders:</strong> Better performance for complex effects</li>
+                    <li><strong>Optimize border images:</strong> Compress images used in border-image properties</li>
+                    <li><strong>Use CSS instead of image borders:</strong> When possible, CSS borders are more flexible</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <ul>
+                    <li><strong>Don't rely solely on color:</strong> Use border styles or width changes for important distinctions</li>
+                    <li><strong>Ensure adequate contrast:</strong> Border colors should meet accessibility contrast requirements</li>
+                    <li><strong>Use borders for focus indicators:</strong> Help keyboard users navigate your interface</li>
+                    <li><strong>Test with high contrast mode:</strong> Ensure borders remain visible in accessibility modes</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Remember:</strong> Borders are powerful design tools that can create hierarchy, improve usability, and enhance visual appeal. Use them thoughtfully to support your content and user experience goals.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css3-backgrounds.html" class="prev">← Previous: Backgrounds</a>
+                <a href="css5-fonts-text.html">Next: Fonts & Text Styling →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

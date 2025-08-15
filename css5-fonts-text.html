@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts & Text Styling - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html" class="active">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Fonts & Text Styling</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Fonts & Text Styling</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to Typography in CSS</h2>
+                <p>Typography is one of the most important aspects of web design. It affects readability, user experience, and the overall visual appeal of your website. CSS provides extensive control over font properties, text styling, and layout to help you create beautiful, readable content.</p>
+                
+                <p>Good typography establishes hierarchy, guides the reader's eye, and conveys your brand's personality. Understanding font properties and text styling is essential for creating professional, accessible websites that communicate effectively with your audience.</p>
+
+                <p>CSS font and text properties work together to control every aspect of how text appears on your web pages, from the typeface and size to spacing, alignment, and decorative effects.</p>
+
+                <div class="highlight">
+                    <strong>Key Principle:</strong> Typography should enhance readability and communication, not hinder it. Every typographic choice should serve your content and your users.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Font Family</h2>
+                <p>The <code>font-family</code> property specifies which font to use for text. It's important to provide fallback fonts in case your preferred font isn't available on the user's system.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Font Family Examples</div>
+                    <div class="code-content">
+                        <pre>/* Single font family */
+.serif {
+    font-family: Times;
+}
+
+/* Font stack with fallbacks */
+.modern-serif {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+.sans-serif {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.monospace {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Web fonts */
+.custom-font {
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* System font stack */
+.system-ui {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Generic font families */
+.fantasy {
+    font-family: fantasy;
+}
+
+.cursive {
+    font-family: cursive;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Font Family Showcase</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px;">
+                            <div style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 1.1em;">
+                                <strong>Serif Font (Georgia):</strong> Traditional and formal, great for body text and print-style layouts.
+                            </div>
+                            <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.1em;">
+                                <strong>Sans-serif Font (Helvetica):</strong> Clean and modern, excellent for digital interfaces and headings.
+                            </div>
+                            <div style="font-family: 'Courier New', Courier, monospace; font-size: 1em; background: #f8f9fa; padding: 10px; border-radius: 4px;">
+                                <strong>Monospace Font (Courier):</strong> Fixed-width characters, perfect for code and technical content.
+                            </div>
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 1.1em;">
+                                <strong>System Font:</strong> Uses the operating system's default interface font for familiarity.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Best Practice:</strong> Always include generic font families (serif, sans-serif, monospace) at the end of your font stack to ensure text renders properly even if specific fonts fail to load.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Font Size</h2>
+                <p>The <code>font-size</code> property controls the size of text. Understanding different units and their use cases is crucial for responsive typography.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Font Size Examples</div>
+                    <div class="code-content">
+                        <pre>/* Absolute units */
+.pixels {
+    font-size: 16px;
+}
+
+.points {
+    font-size: 12pt; /* Mainly for print */
+}
+
+/* Relative units */
+.em-size {
+    font-size: 1.2em; /* Relative to parent font size */
+}
+
+.rem-size {
+    font-size: 1.5rem; /* Relative to root font size */
+}
+
+.percentage {
+    font-size: 120%; /* Relative to parent font size */
+}
+
+/* Viewport units */
+.viewport-width {
+    font-size: 4vw; /* 4% of viewport width */
+}
+
+/* Keyword sizes */
+.small {
+    font-size: small;
+}
+
+.medium {
+    font-size: medium;
+}
+
+.large {
+    font-size: large;
+}
+
+.x-large {
+    font-size: x-large;
+}
+
+/* Relative keywords */
+.smaller {
+    font-size: smaller;
+}
+
+.larger {
+    font-size: larger;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Font Size Comparison</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 10px;">
+                            <div style="font-size: 12px;">
+                                <strong>12px:</strong> Small text, fine print, captions
+                            </div>
+                            <div style="font-size: 14px;">
+                                <strong>14px:</strong> Small body text, secondary information
+                            </div>
+                            <div style="font-size: 16px;">
+                                <strong>16px:</strong> Standard body text size (browser default)
+                            </div>
+                            <div style="font-size: 18px;">
+                                <strong>18px:</strong> Large body text, easier reading
+                            </div>
+                            <div style="font-size: 24px;">
+                                <strong>24px:</strong> Subheadings, important text
+                            </div>
+                            <div style="font-size: 32px;">
+                                <strong>32px:</strong> Section headings
+                            </div>
+                            <div style="font-size: 48px;">
+                                <strong>48px:</strong> Page titles, hero text
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Font Weight</h2>
+                <p>The <code>font-weight</code> property controls how bold or light the text appears. It helps create visual hierarchy and emphasis.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Font Weight Examples</div>
+                    <div class="code-content">
+                        <pre>/* Keyword values */
+.thin {
+    font-weight: normal;    /* Same as 400 */
+}
+
+.bold {
+    font-weight: bold;      /* Same as 700 */
+}
+
+.bolder {
+    font-weight: bolder;    /* Relative to parent */
+}
+
+.lighter {
+    font-weight: lighter;   /* Relative to parent */
+}
+
+/* Numeric values (100-900) */
+.weight-100 {
+    font-weight: 100;       /* Thin/Hairline */
+}
+
+.weight-200 {
+    font-weight: 200;       /* Extra Light */
+}
+
+.weight-300 {
+    font-weight: 300;       /* Light */
+}
+
+.weight-400 {
+    font-weight: 400;       /* Normal/Regular */
+}
+
+.weight-500 {
+    font-weight: 500;       /* Medium */
+}
+
+.weight-600 {
+    font-weight: 600;       /* Semi Bold */
+}
+
+.weight-700 {
+    font-weight: 700;       /* Bold */
+}
+
+.weight-800 {
+    font-weight: 800;       /* Extra Bold */
+}
+
+.weight-900 {
+    font-weight: 900;       /* Black/Heavy */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Font Weight Spectrum</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 8px; font-size: 1.1em;">
+                            <div style="font-weight: 100;">
+                                <strong>100 - Thin:</strong> Very light, delicate appearance
+                            </div>
+                            <div style="font-weight: 300;">
+                                <strong>300 - Light:</strong> Lighter than normal, elegant
+                            </div>
+                            <div style="font-weight: 400;">
+                                <strong>400 - Normal:</strong> Standard text weight (default)
+                            </div>
+                            <div style="font-weight: 500;">
+                                <strong>500 - Medium:</strong> Slightly heavier than normal
+                            </div>
+                            <div style="font-weight: 600;">
+                                <strong>600 - Semi Bold:</strong> Moderately bold
+                            </div>
+                            <div style="font-weight: 700;">
+                                <strong>700 - Bold:</strong> Standard bold weight
+                            </div>
+                            <div style="font-weight: 800;">
+                                <strong>800 - Extra Bold:</strong> Very bold
+                            </div>
+                            <div style="font-weight: 900;">
+                                <strong>900 - Black:</strong> Heaviest weight available
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Font Style</h2>
+                <p>The <code>font-style</code> property controls whether text is displayed in normal, italic, or oblique style.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Font Style Examples</div>
+                    <div class="code-content">
+                        <pre>/* Normal text (default) */
+.normal {
+    font-style: normal;
+}
+
+/* Italic text */
+.italic {
+    font-style: italic;
+}
+
+/* Oblique text (slanted) */
+.oblique {
+    font-style: oblique;
+}
+
+/* Common use cases */
+.emphasis {
+    font-style: italic;
+    color: #666;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.technical-term {
+    font-style: italic;
+    font-weight: 500;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Font Style Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px; font-size: 1.1em;">
+                            <div>
+                                <strong>Normal text:</strong> This is the default, upright text style.
+                            </div>
+                            <div style="font-style: italic;">
+                                <strong>Italic text:</strong> This text is slanted and typically used for emphasis, quotes, or foreign words.
+                            </div>
+                            <div style="font-style: oblique;">
+                                <strong>Oblique text:</strong> This is mechanically slanted text, similar to italic but computed rather than designed.
+                            </div>
+                            <div style="border-left: 4px solid #ccc; padding-left: 20px; font-style: italic; color: #666;">
+                                "Typography is the art and technique of arranging type to make written language legible, readable, and appealing."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Text Alignment</h2>
+                <p>The <code>text-align</code> property controls the horizontal alignment of text within its container.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Text Alignment Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic alignment */
+.left {
+    text-align: left;       /* Default for LTR languages */
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.justify {
+    text-align: justify;    /* Stretches text to fill line */
+}
+
+/* Responsive alignment */
+.responsive-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .responsive-center {
+        text-align: left;
+    }
+}
+
+/* Common use cases */
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.article-body {
+    text-align: left;
+    max-width: 65ch;        /* Optimal line length */
+}
+
+.button-container {
+    text-align: center;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Text Alignment Demo</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px;">
+                            <div style="border: 1px solid #ddd; padding: 15px; text-align: left;">
+                                <strong>Left aligned (default):</strong> Most body text uses left alignment for easy reading and natural flow.
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 15px; text-align: center;">
+                                <strong>Center aligned:</strong> Great for headings, titles, and short important messages.
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 15px; text-align: right;">
+                                <strong>Right aligned:</strong> Less common, used for special effects or specific design needs.
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 15px; text-align: justify;">
+                                <strong>Justified:</strong> This longer text demonstrates justified alignment, where text is stretched to fill the entire width of the container, creating straight edges on both sides. This can sometimes create awkward spacing between words.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Text Decoration</h2>
+                <p>The <code>text-decoration</code> property adds decorative effects to text, such as underlines, overlines, and strike-through effects.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Text Decoration Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic decorations */
+.underline {
+    text-decoration: underline;
+}
+
+.overline {
+    text-decoration: overline;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.no-decoration {
+    text-decoration: none;      /* Remove default link underlines */
+}
+
+/* Modern text-decoration shorthand */
+.fancy-underline {
+    text-decoration: underline solid red 2px;
+    /* line style color thickness */
+}
+
+.wavy-underline {
+    text-decoration: underline wavy blue;
+}
+
+.dotted-overline {
+    text-decoration: overline dotted green;
+}
+
+/* Individual properties */
+.custom-decoration {
+    text-decoration-line: underline;
+    text-decoration-color: #3498db;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 2px;
+}
+
+/* Hover effects */
+.hover-underline {
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Text Decoration Styles</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 12px; font-size: 1.1em;">
+                            <div style="text-decoration: underline;">
+                                <strong>Underlined text:</strong> Classic emphasis and link styling
+                            </div>
+                            <div style="text-decoration: overline;">
+                                <strong>Overlined text:</strong> Line above text (less common)
+                            </div>
+                            <div style="text-decoration: line-through;">
+                                <strong>Strike-through text:</strong> Shows deleted or invalid content
+                            </div>
+                            <div style="text-decoration: underline solid #e74c3c 3px;">
+                                <strong>Custom underline:</strong> Thick red solid underline
+                            </div>
+                            <div style="text-decoration: underline wavy #3498db;">
+                                <strong>Wavy underline:</strong> Decorative wavy blue underline
+                            </div>
+                            <div style="text-decoration: underline dotted #27ae60 2px;">
+                                <strong>Dotted underline:</strong> Subtle dotted green underline
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Line Height</h2>
+                <p>The <code>line-height</code> property controls the space between lines of text, crucial for readability and visual rhythm.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Line Height Examples</div>
+                    <div class="code-content">
+                        <pre>/* Different line height values */
+.tight-spacing {
+    line-height: 1;         /* Same as font size */
+}
+
+.normal-spacing {
+    line-height: 1.4;       /* Good for body text */
+}
+
+.loose-spacing {
+    line-height: 1.8;       /* More breathing room */
+}
+
+.pixel-line-height {
+    line-height: 24px;      /* Absolute value */
+}
+
+.percentage-line-height {
+    line-height: 150%;      /* Percentage of font size */
+}
+
+/* Responsive line height */
+.responsive-line-height {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .responsive-line-height {
+        line-height: 1.4;
+    }
+}
+
+/* Context-specific line heights */
+.heading {
+    line-height: 1.2;       /* Tighter for headings */
+}
+
+.body-text {
+    line-height: 1.6;       /* Comfortable for reading */
+}
+
+.button {
+    line-height: 1;         /* Compact for buttons */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Line Height Comparison</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 20px;">
+                            <div style="border: 1px solid #ddd; padding: 15px;">
+                                <strong>Tight spacing (line-height: 1.0):</strong>
+                                <p style="line-height: 1; margin: 10px 0;">
+                                    This paragraph has very tight line spacing. Notice how the lines are close together with minimal space between them. This can make text harder to read, especially for longer content.
+                                </p>
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 15px;">
+                                <strong>Normal spacing (line-height: 1.4):</strong>
+                                <p style="line-height: 1.4; margin: 10px 0;">
+                                    This paragraph has normal line spacing, which provides a good balance between compactness and readability. It's commonly used for body text in many designs.
+                                </p>
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 15px;">
+                                <strong>Loose spacing (line-height: 1.8):</strong>
+                                <p style="line-height: 1.8; margin: 10px 0;">
+                                    This paragraph has loose line spacing with more breathing room between lines. This can improve readability for some content but may make text feel less cohesive.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Letter and Word Spacing</h2>
+                <p>Fine-tune the spacing between letters and words to improve readability and achieve specific design effects.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Letter and Word Spacing</div>
+                    <div class="code-content">
+                        <pre>/* Letter spacing (tracking) */
+.tight-letters {
+    letter-spacing: -0.5px;
+}
+
+.normal-letters {
+    letter-spacing: normal;     /* Default */
+}
+
+.loose-letters {
+    letter-spacing: 2px;
+}
+
+.wide-letters {
+    letter-spacing: 0.1em;      /* Relative to font size */
+}
+
+/* Word spacing */
+.tight-words {
+    word-spacing: -2px;
+}
+
+.normal-words {
+    word-spacing: normal;       /* Default */
+}
+
+.loose-words {
+    word-spacing: 8px;
+}
+
+/* Design applications */
+.logo-text {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.subtitle {
+    letter-spacing: 1px;
+    color: #666;
+}
+
+.code-text {
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Spacing Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px; font-size: 1.1em;">
+                            <div style="letter-spacing: -0.5px;">
+                                <strong>Tight letter spacing (-0.5px):</strong> Letters are closer together
+                            </div>
+                            <div style="letter-spacing: normal;">
+                                <strong>Normal letter spacing:</strong> Default spacing between letters
+                            </div>
+                            <div style="letter-spacing: 2px;">
+                                <strong>Loose letter spacing (2px):</strong> More space between letters
+                            </div>
+                            <div style="word-spacing: 8px;">
+                                <strong>Wide word spacing (8px):</strong> Extra space between words for emphasis
+                            </div>
+                            <div style="letter-spacing: 3px; text-transform: uppercase; font-weight: bold; color: #2c3e50;">
+                                LOGO STYLE TEXT
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Text Transform</h2>
+                <p>The <code>text-transform</code> property controls the capitalization of text without changing the HTML content.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Text Transform Examples</div>
+                    <div class="code-content">
+                        <pre>/* Capitalization options */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;     /* First letter of each word */
+}
+
+.none {
+    text-transform: none;           /* Default, no transformation */
+}
+
+/* Common use cases */
+.navigation-link {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+}
+
+.page-title {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.button-text {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.form-label {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: #666;
+    letter-spacing: 0.5px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Text Transform Demo</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 12px; font-size: 1.1em;">
+                            <div>
+                                <strong>Original:</strong> This Text Has Mixed Capitalization
+                            </div>
+                            <div style="text-transform: uppercase;">
+                                <strong>Uppercase:</strong> This Text Has Mixed Capitalization
+                            </div>
+                            <div style="text-transform: lowercase;">
+                                <strong>Lowercase:</strong> This Text Has Mixed Capitalization
+                            </div>
+                            <div style="text-transform: capitalize;">
+                                <strong>Capitalize:</strong> this text has mixed capitalization
+                            </div>
+                            <div style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.9em; color: #2c3e50;">
+                                <strong>Navigation Style:</strong> about us | services | contact
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Advanced Typography</h2>
+                <p>Modern CSS provides advanced properties for fine-tuning typography and creating sophisticated text effects.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Advanced Typography Properties</div>
+                    <div class="code-content">
+                        <pre>/* Text shadow */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.multiple-shadows {
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Text overflow */
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+/* Word wrapping */
+.break-word {
+    word-wrap: break-word;      /* Legacy */
+    overflow-wrap: break-word;  /* Modern */
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+/* Vertical alignment */
+.vertical-middle {
+    vertical-align: middle;
+}
+
+.vertical-top {
+    vertical-align: top;
+}
+
+/* Font smoothing (webkit specific) */
+.smooth-font {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive typography */
+.fluid-typography {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Advanced Typography Effects</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px;">
+                            <div style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); font-size: 1.3em; font-weight: bold; color: #2c3e50;">
+                                Text with subtle shadow effect
+                            </div>
+                            <div style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 20px rgba(52, 152, 219, 0.3); font-size: 1.3em; font-weight: bold; color: #3498db;">
+                                Text with glow effect
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 10px; max-width: 200px;">
+                                <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    This is very long text that will be truncated with ellipsis
+                                </div>
+                            </div>
+                            <div style="border: 1px solid #ddd; padding: 10px; width: 150px;">
+                                <div style="word-wrap: break-word;">
+                                    This is averyverylongwordthatwillbreak
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Typography Best Practices</h2>
+                <p>Creating effective typography requires understanding both technical implementation and design principles:</p>
+
+                <h3>Readability Guidelines</h3>
+                <ul>
+                    <li><strong>Choose appropriate font sizes:</strong> 16px minimum for body text on screens</li>
+                    <li><strong>Maintain good contrast:</strong> Ensure sufficient color contrast between text and background</li>
+                    <li><strong>Control line length:</strong> Keep lines between 45-75 characters for optimal readability</li>
+                    <li><strong>Use appropriate line height:</strong> 1.4-1.6 for body text, tighter for headings</li>
+                </ul>
+
+                <h3>Hierarchy and Structure</h3>
+                <ul>
+                    <li><strong>Create clear hierarchy:</strong> Use size, weight, and color to establish information priority</li>
+                    <li><strong>Be consistent:</strong> Use a consistent type scale throughout your design</li>
+                    <li><strong>Limit font families:</strong> Use 2-3 font families maximum per design</li>
+                    <li><strong>Consider pairing:</strong> Choose fonts that complement each other</li>
+                </ul>
+
+                <h3>Performance and Accessibility</h3>
+                <ul>
+                    <li><strong>Optimize font loading:</strong> Use font-display: swap for web fonts</li>
+                    <li><strong>Provide fallbacks:</strong> Always include system font fallbacks</li>
+                    <li><strong>Test across devices:</strong> Ensure text renders well on different screens</li>
+                    <li><strong>Support zoom:</strong> Use relative units that scale with user preferences</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Golden Rule:</strong> Typography should be invisible to the reader - it should facilitate communication without drawing attention to itself. Great typography enhances content, never competes with it.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Typography Example</h2>
+                <p>Here's a complete example showing well-structured, readable typography:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Article Typography</div>
+                    <div class="live-example-content">
+                        <article style="max-width: 65ch; margin: 0 auto; padding: 20px; font-family: Georgia, 'Times New Roman', serif;">
+                            <header style="margin-bottom: 2rem; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
+                                <h1 style="font-size: 2.5rem; font-weight: 700; color: #2c3e50; line-height: 1.2; margin-bottom: 0.5rem;">The Art of Typography</h1>
+                                <p style="font-size: 1.1rem; color: #666; font-style: italic; margin: 0;">Creating beautiful, readable text on the web</p>
+                                <p style="font-size: 0.9rem; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-top: 1rem;">March 15, 2023 • 5 min read</p>
+                            </header>
+                            
+                            <div style="font-size: 1.1rem; line-height: 1.6; color: #333;">
+                                <p style="margin-bottom: 1.5rem; font-size: 1.2rem; color: #555;">Typography is the art and technique of arranging type to make written language legible, readable and appealing when displayed.</p>
+                                
+                                <h2 style="font-size: 1.8rem; font-weight: 600; color: #2c3e50; margin: 2rem 0 1rem 0; line-height: 1.3;">The Foundation of Good Design</h2>
+                                
+                                <p style="margin-bottom: 1.5rem;">Good typography establishes hierarchy, guides the reader's eye, and creates an emotional connection with the content. It's the voice of your design - it can whisper or shout, comfort or alarm, inform or entertain.</p>
+                                
+                                <h3 style="font-size: 1.4rem; font-weight: 600; color: #34495e; margin: 1.5rem 0 0.75rem 0;">Key Principles</h3>
+                                
+                                <p style="margin-bottom: 1.5rem;">Understanding these principles will help you create more effective and beautiful text layouts that serve both your content and your readers.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css4-borders.html" class="prev">← Previous: Borders</a>
+                <a href="css6-float-clear.html">Next: Float & Clear →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

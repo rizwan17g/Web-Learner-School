@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Basics - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html" class="active">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Flexbox Basics</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Flexbox Basics</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to CSS Flexbox</h2>
+                <p>CSS Flexbox (Flexible Box Layout) is a powerful one-dimensional layout method that makes it easy to arrange items in rows or columns. Flexbox was designed to provide a more efficient way to lay out, distribute space, and align items in a container, even when their size is unknown or dynamic.</p>
+                
+                <p>Before Flexbox, creating flexible layouts required complex CSS involving floats, positioning, and clearfix hacks. Flexbox simplifies these tasks by providing intuitive properties for controlling alignment, distribution, and ordering of elements.</p>
+
+                <p>Flexbox is ideal for component-level layout, navigation bars, form controls, and any situation where you need to align items along a single axis. It works perfectly alongside CSS Grid, which handles two-dimensional layouts.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> Flexbox works with a flex container (parent) and flex items (children). The container defines how items are arranged, while individual items can override certain behaviors.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Flex Container Basics</h2>
+                <p>To start using Flexbox, you need to create a flex container by applying <code>display: flex</code> to a parent element. This immediately changes how the child elements are laid out.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Creating a Flex Container</div>
+                    <div class="code-content">
+                        <pre>/* Basic flex container */
+.container {
+    display: flex;
+}
+
+/* Inline flex container */
+.inline-container {
+    display: inline-flex;
+}
+
+/* Flex container with some styling */
+.flex-container {
+    display: flex;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Flex items (children) */
+.flex-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 4px;
+    text-align: center;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Basic Flex Container</div>
+                    <div class="live-example-content">
+                        <div style="display: flex; padding: 20px; background-color: #f8f9fa; border-radius: 8px; gap: 10px;">
+                            <div style="background-color: #3498db; color: white; padding: 20px; border-radius: 4px; text-align: center; flex: 1;">
+                                Item 1
+                            </div>
+                            <div style="background-color: #e74c3c; color: white; padding: 20px; border-radius: 4px; text-align: center; flex: 1;">
+                                Item 2
+                            </div>
+                            <div style="background-color: #27ae60; color: white; padding: 20px; border-radius: 4px; text-align: center; flex: 1;">
+                                Item 3
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                            Notice how the items automatically arrange in a row and distribute space evenly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Flex Direction</h2>
+                <p>The <code>flex-direction</code> property defines the main axis and the direction flex items are placed in the container.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Flex Direction Options</div>
+                    <div class="code-content">
+                        <pre>/* Row direction (default) */
+.flex-row {
+    display: flex;
+    flex-direction: row;        /* Items arranged horizontally, left to right */
+}
+
+/* Row reverse */
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse; /* Items arranged horizontally, right to left */
+}
+
+/* Column direction */
+.flex-column {
+    display: flex;
+    flex-direction: column;     /* Items arranged vertically, top to bottom */
+}
+
+/* Column reverse */
+.flex-column-reverse {
+    display: flex;
+    flex-direction: column-reverse; /* Items arranged vertically, bottom to top */
+}
+
+/* Responsive flex direction */
+.responsive-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .responsive-flex {
+        flex-direction: column;
+    }
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Flex Direction Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <strong>Row (default):</strong>
+                                <div style="display: flex; flex-direction: row; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center;">1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center;">2</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center;">3</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Row Reverse:</strong>
+                                <div style="display: flex; flex-direction: row-reverse; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center;">1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center;">2</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center;">3</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Column:</strong>
+                                <div style="display: flex; flex-direction: column; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px; max-width: 200px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center;">1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center;">2</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center;">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Justify Content</h2>
+                <p>The <code>justify-content</code> property controls how flex items are positioned along the main axis (horizontal in row direction, vertical in column direction).</p>
+
+                <div class="code-example">
+                    <div class="code-header">Justify Content Options</div>
+                    <div class="code-content">
+                        <pre>/* Align items to start (default) */
+.justify-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Align items to end */
+.justify-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Center items */
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Distribute space between items */
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Distribute space around items */
+.justify-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Distribute space evenly */
+.justify-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Justify Content Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px;">
+                            <div>
+                                <strong>flex-start (default):</strong>
+                                <div style="display: flex; justify-content: flex-start; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">A</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">B</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px;">C</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>center:</strong>
+                                <div style="display: flex; justify-content: center; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">A</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">B</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px;">C</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>space-between:</strong>
+                                <div style="display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px;">A</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px;">B</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px;">C</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>space-around:</strong>
+                                <div style="display: flex; justify-content: space-around; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px;">A</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px;">B</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px;">C</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Align Items</h2>
+                <p>The <code>align-items</code> property controls how flex items are positioned along the cross axis (vertical in row direction, horizontal in column direction).</p>
+
+                <div class="code-example">
+                    <div class="code-header">Align Items Options</div>
+                    <div class="code-content">
+                        <pre>/* Stretch items to fill container (default) */
+.align-stretch {
+    display: flex;
+    align-items: stretch;
+}
+
+/* Align items to start of cross axis */
+.align-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Align items to end of cross axis */
+.align-end {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Center items on cross axis */
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+/* Align items to baseline */
+.align-baseline {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Perfect centering (both axes) */
+.perfect-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Align Items Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 15px;">
+                            <div>
+                                <strong>flex-start:</strong>
+                                <div style="display: flex; align-items: flex-start; background: #f8f9fa; padding: 15px; border-radius: 8px; height: 100px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">Short</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">Medium Height</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px;">Tall Content Block</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>center:</strong>
+                                <div style="display: flex; align-items: center; background: #f8f9fa; padding: 15px; border-radius: 8px; height: 100px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">Short</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; margin-right: 5px;">Medium Height</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px;">Tall Content Block</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Perfect center (both axes):</strong>
+                                <div style="display: flex; justify-content: center; align-items: center; background: #f8f9fa; padding: 15px; border-radius: 8px; height: 100px;">
+                                    <div style="background: #9b59b6; color: white; padding: 15px; border-radius: 4px;">Perfectly Centered</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Flex Item Properties</h2>
+                <p>Individual flex items can control their own behavior using flex properties: <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>, often combined into the shorthand <code>flex</code> property.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Flex Item Properties</div>
+                    <div class="code-content">
+                        <pre>/* Flex shorthand: grow shrink basis */
+.flex-item-1 {
+    flex: 1;                    /* flex: 1 1 0% - equal growth */
+}
+
+.flex-item-2 {
+    flex: 2;                    /* Takes twice as much space as flex: 1 */
+}
+
+.flex-none {
+    flex: none;                 /* flex: 0 0 auto - no growing or shrinking */
+}
+
+/* Individual properties */
+.grow-item {
+    flex-grow: 1;               /* Can grow to fill space */
+    flex-shrink: 1;             /* Can shrink if needed */
+    flex-basis: 0%;             /* Starting size before growing */
+}
+
+.fixed-width {
+    flex: 0 0 200px;           /* Fixed 200px width, no grow/shrink */
+}
+
+.auto-width {
+    flex: 0 1 auto;            /* Natural width, can shrink */
+}
+
+/* Align individual item differently */
+.special-align {
+    align-self: flex-end;       /* Override container's align-items */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Flex Item Behavior</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <strong>Equal growth (flex: 1):</strong>
+                                <div style="display: flex; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 1;">flex: 1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 1;">flex: 1</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 1;">flex: 1</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Different growth ratios:</strong>
+                                <div style="display: flex; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 1;">flex: 1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 2;">flex: 2</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 1;">flex: 1</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Fixed width with flexible items:</strong>
+                                <div style="display: flex; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 100px;">100px fixed</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 1;">flexible</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 80px;">80px fixed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Flex Wrap</h2>
+                <p>By default, flex items try to fit on a single line. The <code>flex-wrap</code> property controls whether items wrap to new lines when there isn't enough space.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Flex Wrap Options</div>
+                    <div class="code-content">
+                        <pre>/* No wrapping (default) */
+.no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Allow wrapping */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Wrap in reverse order */
+.wrap-reverse {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+/* Shorthand: flex-flow combines direction and wrap */
+.flex-flow-example {
+    display: flex;
+    flex-flow: row wrap;        /* Same as flex-direction: row; flex-wrap: wrap; */
+}
+
+/* Responsive card layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 1 300px;           /* Minimum 300px, can shrink */
+    min-width: 250px;          /* But not below 250px */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Flex Wrap Demo</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <strong>No wrap (items squeeze together):</strong>
+                                <div style="display: flex; flex-wrap: nowrap; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center; min-width: 120px;">Item 1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center; min-width: 120px;">Item 2</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center; min-width: 120px;">Item 3</div>
+                                    <div style="background: #f39c12; color: white; padding: 15px; border-radius: 4px; text-align: center; min-width: 120px;">Item 4</div>
+                                    <div style="background: #9b59b6; color: white; padding: 15px; border-radius: 4px; text-align: center; min-width: 120px;">Item 5</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>With wrap (items wrap to new lines):</strong>
+                                <div style="display: flex; flex-wrap: wrap; background: #f8f9fa; padding: 15px; border-radius: 8px; gap: 10px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 120px;">Item 1</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 120px;">Item 2</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 120px;">Item 3</div>
+                                    <div style="background: #f39c12; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 120px;">Item 4</div>
+                                    <div style="background: #9b59b6; color: white; padding: 15px; border-radius: 4px; text-align: center; flex: 0 0 120px;">Item 5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Common Flexbox Patterns</h2>
+                <p>Here are some practical, real-world examples of how Flexbox is commonly used in web development:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Navigation Bar</div>
+                    <div class="live-example-content">
+                        <nav style="display: flex; justify-content: space-between; align-items: center; background: #2c3e50; padding: 15px 20px; border-radius: 8px; color: white;">
+                            <div style="font-weight: bold; font-size: 1.2em;">MyWebsite</div>
+                            <div style="display: flex; gap: 20px;">
+                                <a href="#" style="color: white; text-decoration: none;">Home</a>
+                                <a href="#" style="color: white; text-decoration: none;">About</a>
+                                <a href="#" style="color: white; text-decoration: none;">Services</a>
+                                <a href="#" style="color: white; text-decoration: none;">Contact</a>
+                            </div>
+                            <button style="background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Login</button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Card Layout</div>
+                    <div class="live-example-content">
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <div style="flex: 1 1 250px; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Product 1</h4>
+                                <p style="color: #666; margin-bottom: 15px;">Description of the first product with some details about its features.</p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: bold; color: #e74c3c;">$29.99</span>
+                                    <button style="background: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div style="flex: 1 1 250px; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Product 2</h4>
+                                <p style="color: #666; margin-bottom: 15px;">Description of the second product with information about what makes it special.</p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: bold; color: #e74c3c;">$39.99</span>
+                                    <button style="background: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div style="flex: 1 1 250px; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Product 3</h4>
+                                <p style="color: #666; margin-bottom: 15px;">Description of the third product highlighting its unique selling points.</p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: bold; color: #e74c3c;">$49.99</span>
+                                    <button style="background: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Centered Modal</div>
+                    <div class="live-example-content">
+                        <div style="position: relative; height: 200px; background: rgba(0,0,0,0.1); border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                            <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 400px; text-align: center;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Confirm Action</h4>
+                                <p style="color: #666; margin-bottom: 20px;">Are you sure you want to delete this item? This action cannot be undone.</p>
+                                <div style="display: flex; gap: 10px; justify-content: center;">
+                                    <button style="background: #95a5a6; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Cancel</button>
+                                    <button style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Flexbox Best Practices</h2>
+                <p>Follow these guidelines to use Flexbox effectively and create maintainable layouts:</p>
+
+                <h3>When to Use Flexbox</h3>
+                <ul>
+                    <li><strong>One-dimensional layouts:</strong> When arranging items in a single row or column</li>
+                    <li><strong>Component-level design:</strong> Navigation bars, button groups, form controls</li>
+                    <li><strong>Alignment challenges:</strong> Centering content, distributing space evenly</li>
+                    <li><strong>Flexible sizing:</strong> When items need to grow or shrink based on available space</li>
+                </ul>
+
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li><strong>Use with moderation:</strong> Don't nest flexbox containers unnecessarily</li>
+                    <li><strong>Prefer CSS Grid for 2D layouts:</strong> Grid is more efficient for complex layouts</li>
+                    <li><strong>Test on different devices:</strong> Ensure flexbox behaves as expected across browsers</li>
+                    <li><strong>Consider older browsers:</strong> Provide fallbacks if supporting legacy browsers</li>
+                </ul>
+
+                <h3>Common Mistakes to Avoid</h3>
+                <ul>
+                    <li><strong>Overusing flex: 1:</strong> Be specific about growth behavior when needed</li>
+                    <li><strong>Forgetting min-width:</strong> Flex items can shrink smaller than content</li>
+                    <li><strong>Not considering wrap:</strong> Plan for content overflow and wrapping behavior</li>
+                    <li><strong>Ignoring accessibility:</strong> Ensure keyboard navigation works with flex layouts</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Golden Rule:</strong> Use Flexbox for component-level layouts and one-dimensional arrangements. Combine with CSS Grid for complete layout systems, and always test your layouts across different screen sizes and content lengths.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css6-float-clear.html" class="prev">← Previous: Float & Clear</a>
+                <a href="css8-grid.html">Next: CSS Grid Basics →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

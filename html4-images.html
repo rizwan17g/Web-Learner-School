@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images in HTML - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html" class="active">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Images in HTML</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Images in HTML</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>The HTML Image Element</h2>
+                <p>Images are essential for creating engaging and visually appealing web pages. The HTML <code>&lt;img&gt;</code> element is used to embed images in web pages. Unlike most HTML elements, the image element is self-closing and doesn't require a closing tag.</p>
+                
+                <p>Images can serve many purposes: decoration, illustration, information display, branding, and user interface elements. They help break up text, explain concepts visually, and make websites more interesting and accessible to different learning styles.</p>
+
+                <p>The <code>&lt;img&gt;</code> element requires at least two attributes: <code>src</code> (source) to specify the image file location, and <code>alt</code> (alternative text) to describe the image for accessibility purposes.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Image Syntax</div>
+                    <div class="code-content">
+                        <pre>&lt;img src="image.jpg" alt="Description of the image"&gt;
+&lt;img src="https://example.com/photo.png" alt="Photo from external source"&gt;
+&lt;img src="../images/logo.svg" alt="Company logo"&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Image Placeholder Example</div>
+                    <div class="live-example-content">
+                        <div style="width: 300px; height: 200px; background: linear-gradient(45deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 8px; margin: 10px 0;">
+                            Sample Image Placeholder<br>
+                            300 x 200 pixels
+                        </div>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 5px;">This represents how an image would appear in your webpage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Essential Image Attributes</h2>
+                <p>Several attributes control how images are displayed and how they behave in your web pages. Understanding these attributes is crucial for proper image implementation.</p>
+
+                <h3>The src Attribute</h3>
+                <p>The <code>src</code> (source) attribute specifies the path to the image file. This can be a relative path to a file on your server or an absolute URL to an image hosted elsewhere.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Different src Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Relative path --&gt;
+&lt;img src="images/photo.jpg" alt="Local photo"&gt;
+
+&lt;!-- Absolute path --&gt;
+&lt;img src="/assets/images/banner.png" alt="Site banner"&gt;
+
+&lt;!-- External URL --&gt;
+&lt;img src="https://example.com/image.jpg" alt="External image"&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>The alt Attribute</h3>
+                <p>The <code>alt</code> attribute provides alternative text for images. This text is displayed if the image fails to load and is read by screen readers for visually impaired users. It's crucial for accessibility and SEO.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Good alt Text Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;img src="dog.jpg" alt="Golden retriever playing fetch in a park"&gt;
+&lt;img src="chart.png" alt="Sales increased 25% from Q1 to Q2 2023"&gt;
+&lt;img src="logo.svg" alt="TechCorp company logo"&gt;
+&lt;img src="decoration.png" alt=""&gt; &lt;!-- Decorative image --&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Width and Height Attributes</h3>
+                <p>The <code>width</code> and <code>height</code> attributes specify the dimensions of the image in pixels. While these can be set with CSS, HTML attributes help prevent layout shifts during page loading.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Width and Height Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;img src="thumbnail.jpg" alt="Photo thumbnail" width="150" height="100"&gt;
+&lt;img src="banner.jpg" alt="Website banner" width="800" height="200"&gt;
+
+&lt;!-- Maintain aspect ratio by setting only one dimension --&gt;
+&lt;img src="portrait.jpg" alt="Team member photo" width="200"&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Performance Tip:</strong> Specifying width and height attributes helps browsers reserve space for images before they load, preventing content from jumping around as images appear.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Image File Formats</h2>
+                <p>Different image formats serve different purposes. Understanding when to use each format helps optimize your website's performance and visual quality.</p>
+
+                <h3>Common Web Image Formats</h3>
+                <ul>
+                    <li><strong>JPEG (.jpg, .jpeg)</strong> - Best for photographs and images with many colors. Good compression but lossy.</li>
+                    <li><strong>PNG (.png)</strong> - Best for images with transparency, logos, and graphics with sharp edges. Lossless compression.</li>
+                    <li><strong>GIF (.gif)</strong> - Supports animation and transparency. Limited to 256 colors. Good for simple animations.</li>
+                    <li><strong>SVG (.svg)</strong> - Vector format that scales perfectly at any size. Ideal for logos, icons, and simple graphics.</li>
+                    <li><strong>WebP (.webp)</strong> - Modern format with superior compression. Not supported by all browsers yet.</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Different Format Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- JPEG for photos --&gt;
+&lt;img src="landscape.jpg" alt="Mountain landscape photo"&gt;
+
+&lt;!-- PNG for logos with transparency --&gt;
+&lt;img src="logo.png" alt="Company logo with transparent background"&gt;
+
+&lt;!-- SVG for scalable graphics --&gt;
+&lt;img src="icon.svg" alt="Search icon" width="24" height="24"&gt;
+
+&lt;!-- GIF for simple animations --&gt;
+&lt;img src="loading.gif" alt="Loading animation"&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Best Practice:</strong> Use JPEG for photos, PNG for graphics with transparency, SVG for icons and logos, and consider WebP for modern browsers with fallbacks.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Responsive Images</h2>
+                <p>Modern web development requires images that work well on different screen sizes and resolutions. HTML provides several techniques for creating responsive images.</p>
+
+                <h3>CSS-based Responsive Images</h3>
+                <p>The most common approach uses CSS to make images scale with their container:</p>
+
+                <div class="code-example">
+                    <div class="code-header">CSS Responsive Image</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- HTML --&gt;
+&lt;img src="photo.jpg" alt="Responsive photo" class="responsive-img"&gt;
+
+&lt;!-- CSS --&gt;
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>The srcset Attribute</h3>
+                <p>The <code>srcset</code> attribute allows you to provide multiple image files for different screen resolutions:</p>
+
+                <div class="code-example">
+                    <div class="code-header">srcset Example</div>
+                    <div class="code-content">
+                        <pre>&lt;img src="photo-400.jpg" 
+     srcset="photo-400.jpg 400w, 
+             photo-800.jpg 800w, 
+             photo-1200.jpg 1200w"
+     alt="High-resolution photo"&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>The picture Element</h3>
+                <p>The <code>&lt;picture&gt;</code> element provides more control over which image to display based on device characteristics:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Picture Element Example</div>
+                    <div class="code-content">
+                        <pre>&lt;picture&gt;
+    &lt;source media="(max-width: 799px)" srcset="mobile-image.jpg"&gt;
+    &lt;source media="(min-width: 800px)" srcset="desktop-image.jpg"&gt;
+    &lt;img src="fallback-image.jpg" alt="Adaptive image"&gt;
+&lt;/picture&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Image Accessibility</h2>
+                <p>Making images accessible ensures that all users, including those with visual impairments, can understand and benefit from your content.</p>
+
+                <h3>Writing Effective Alt Text</h3>
+                <ul>
+                    <li><strong>Be descriptive:</strong> Describe what's important about the image in context</li>
+                    <li><strong>Be concise:</strong> Keep it under 125 characters when possible</li>
+                    <li><strong>Include relevant details:</strong> Colors, actions, emotions if relevant</li>
+                    <li><strong>Skip redundant phrases:</strong> Don't start with "Image of..." or "Picture of..."</li>
+                    <li><strong>Use empty alt for decorative images:</strong> <code>alt=""</code> for purely decorative content</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Alt Text Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Good: Descriptive and contextual --&gt;
+&lt;img src="team-meeting.jpg" alt="Five team members collaborating around a laptop in a modern office"&gt;
+
+&lt;!-- Good: Includes relevant data --&gt;
+&lt;img src="sales-chart.jpg" alt="Bar chart showing 30% increase in sales from January to March"&gt;
+
+&lt;!-- Good: Empty alt for decorative image --&gt;
+&lt;img src="border-decoration.png" alt=""&gt;
+
+&lt;!-- Bad: Too generic --&gt;
+&lt;img src="photo.jpg" alt="photo"&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <strong>Legal Requirement:</strong> In many jurisdictions, web accessibility is legally required. Proper alt text is essential for compliance with accessibility standards like WCAG.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Image Optimization Best Practices</h2>
+                <p>Optimizing images improves website performance, user experience, and search engine rankings.</p>
+
+                <h3>File Size Optimization</h3>
+                <ul>
+                    <li><strong>Compress images:</strong> Use tools to reduce file size without significantly impacting quality</li>
+                    <li><strong>Choose appropriate dimensions:</strong> Don't use larger images than necessary</li>
+                    <li><strong>Use appropriate formats:</strong> Match the format to the image type</li>
+                    <li><strong>Consider lazy loading:</strong> Load images only when they're about to be viewed</li>
+                </ul>
+
+                <h3>SEO Considerations</h3>
+                <ul>
+                    <li><strong>Use descriptive filenames:</strong> "red-sports-car.jpg" instead of "IMG_1234.jpg"</li>
+                    <li><strong>Include keywords naturally:</strong> In alt text and filenames where relevant</li>
+                    <li><strong>Provide image sitemaps:</strong> For better search engine indexing</li>
+                    <li><strong>Use structured data:</strong> For images that represent products or articles</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">SEO-Optimized Image Example</div>
+                    <div class="code-content">
+                        <pre>&lt;img src="chocolate-chip-cookies-recipe.jpg" 
+     alt="Stack of homemade chocolate chip cookies on white plate" 
+     width="400" 
+     height="300"
+     title="Delicious homemade chocolate chip cookies"&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Common Image Implementation Patterns</h2>
+                <p>Here are some practical examples of how images are commonly used in web development:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Image Gallery Pattern</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 15px 0;">
+                            <div style="aspect-ratio: 1; background: linear-gradient(45deg, #e74c3c, #c0392b); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 1</div>
+                            <div style="aspect-ratio: 1; background: linear-gradient(45deg, #3498db, #2980b9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 2</div>
+                            <div style="aspect-ratio: 1; background: linear-gradient(45deg, #27ae60, #229954); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 3</div>
+                            <div style="aspect-ratio: 1; background: linear-gradient(45deg, #f39c12, #e67e22); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">Gallery HTML Structure</div>
+                    <div class="code-content">
+                        <pre>&lt;div class="image-gallery"&gt;
+    &lt;img src="photo1.jpg" alt="Sunset over mountain lake"&gt;
+    &lt;img src="photo2.jpg" alt="Urban cityscape at night"&gt;
+    &lt;img src="photo3.jpg" alt="Forest path in autumn"&gt;
+    &lt;img src="photo4.jpg" alt="Ocean waves on sandy beach"&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+&lt;/style&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html3-links-anchor-tags.html" class="prev">← Previous: Links & Anchor Tags</a>
+                <a href="html5-lists.html">Next: Lists: Ordered & Unordered →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

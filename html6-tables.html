@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in HTML - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html" class="active">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Tables in HTML</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Tables in HTML</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to HTML Tables</h2>
+                <p>HTML tables are used to display data in rows and columns, similar to a spreadsheet or database table. They provide a structured way to present tabular information like statistics, comparisons, schedules, or any data that benefits from being organized in a grid format.</p>
+                
+                <p>Tables consist of rows and columns that intersect to form cells. Each cell can contain text, images, links, or other HTML elements. While tables were once misused for page layout, modern web development uses them specifically for their intended purpose: displaying tabular data.</p>
+
+                <p>Understanding table structure and semantics is essential for creating accessible, well-organized data presentations. Properly structured tables help screen readers navigate content and make data comprehensible to all users.</p>
+
+                <div class="highlight">
+                    <strong>Important:</strong> Use tables only for tabular data, not for page layout. Use CSS Grid or Flexbox for layout purposes.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Basic Table Structure</h2>
+                <p>HTML tables use several elements working together to create the table structure:</p>
+
+                <ul>
+                    <li><code>&lt;table&gt;</code> - The container element for the entire table</li>
+                    <li><code>&lt;tr&gt;</code> - Table row element</li>
+                    <li><code>&lt;td&gt;</code> - Table data cell (regular cell)</li>
+                    <li><code>&lt;th&gt;</code> - Table header cell</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Table Structure</div>
+                    <div class="code-content">
+                        <pre>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Alice Johnson&lt;/td&gt;
+        &lt;td&gt;28&lt;/td&gt;
+        &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Bob Smith&lt;/td&gt;
+        &lt;td&gt;35&lt;/td&gt;
+        &lt;td&gt;Los Angeles&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Carol Davis&lt;/td&gt;
+        &lt;td&gt;42&lt;/td&gt;
+        &lt;td&gt;Chicago&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Basic Table Example</div>
+                    <div class="live-example-content">
+                        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                            <tr style="background-color: #34495e; color: white;">
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Name</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Age</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">City</th>
+                            </tr>
+                            <tr style="background-color: #f8f9fa;">
+                                <td style="border: 1px solid #ddd; padding: 12px;">Alice Johnson</td>
+                                <td style="border: 1px solid #ddd; padding: 12px;">28</td>
+                                <td style="border: 1px solid #ddd; padding: 12px;">New York</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px;">Bob Smith</td>
+                                <td style="border: 1px solid #ddd; padding: 12px;">35</td>
+                                <td style="border: 1px solid #ddd; padding: 12px;">Los Angeles</td>
+                            </tr>
+                            <tr style="background-color: #f8f9fa;">
+                                <td style="border: 1px solid #ddd; padding: 12px;">Carol Davis</td>
+                                <td style="border: 1px solid #ddd; padding: 12px;">42</td>
+                                <td style="border: 1px solid #ddd; padding: 12px;">Chicago</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Table Sections</h2>
+                <p>For better structure and styling, tables can be divided into logical sections using these elements:</p>
+
+                <ul>
+                    <li><code>&lt;thead&gt;</code> - Groups header content</li>
+                    <li><code>&lt;tbody&gt;</code> - Groups body content</li>
+                    <li><code>&lt;tfoot&gt;</code> - Groups footer content</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Table with Sections</div>
+                    <div class="code-content">
+                        <pre>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Quantity&lt;/th&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;$999.00&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;$1,998.00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;$25.00&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;$75.00&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;&lt;strong&gt;Grand Total&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;$2,073.00&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Sectioned Table Example</div>
+                    <div class="live-example-content">
+                        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                            <thead>
+                                <tr style="background-color: #e74c3c; color: white;">
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Product</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Price</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Quantity</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Laptop</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">$999.00</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">2</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">$1,998.00</td>
+                                </tr>
+                                <tr style="background-color: #f8f9fa;">
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Mouse</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">$25.00</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">3</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">$75.00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr style="background-color: #27ae60; color: white; font-weight: bold;">
+                                    <td style="border: 1px solid #ddd; padding: 12px;" colspan="3">Grand Total</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">$2,073.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Cell Spanning</h2>
+                <p>Sometimes you need cells to span multiple rows or columns. HTML provides attributes to achieve this:</p>
+
+                <ul>
+                    <li><code>colspan</code> - Makes a cell span multiple columns</li>
+                    <li><code>rowspan</code> - Makes a cell span multiple rows</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Cell Spanning Example</div>
+                    <div class="code-content">
+                        <pre>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Sales Report Q1-Q2 2023&lt;/th&gt;
+        &lt;th rowspan="2"&gt;Growth&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Q1&lt;/th&gt;
+        &lt;th&gt;Q2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;$50,000&lt;/td&gt;
+        &lt;td&gt;$65,000&lt;/td&gt;
+        &lt;td&gt;+30%&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Spanning Cells Example</div>
+                    <div class="live-example-content">
+                        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                            <tr style="background-color: #3498db; color: white;">
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: center;" colspan="2">Sales Report Q1-Q2 2023</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: center;" rowspan="2">Growth</th>
+                            </tr>
+                            <tr style="background-color: #5dade2; color: white;">
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">Q1</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">Q2</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$50,000</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$65,000</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: center; color: #27ae60; font-weight: bold;">+30%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Table Captions and Accessibility</h2>
+                <p>The <code>&lt;caption&gt;</code> element provides a title or explanation for the table. It should be the first element inside the table and helps screen readers understand the table's purpose.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Table with Caption</div>
+                    <div class="code-content">
+                        <pre>&lt;table&gt;
+    &lt;caption&gt;Employee Performance Ratings - 2023&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Employee&lt;/th&gt;
+            &lt;th&gt;Department&lt;/th&gt;
+            &lt;th&gt;Rating&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Sarah Wilson&lt;/td&gt;
+            &lt;td&gt;Marketing&lt;/td&gt;
+            &lt;td&gt;Excellent&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mike Chen&lt;/td&gt;
+            &lt;td&gt;Development&lt;/td&gt;
+            &lt;td&gt;Outstanding&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Table with Caption</div>
+                    <div class="live-example-content">
+                        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                            <caption style="font-weight: bold; margin-bottom: 10px; color: #2c3e50; font-size: 1.1em;">Employee Performance Ratings - 2023</caption>
+                            <thead>
+                                <tr style="background-color: #34495e; color: white;">
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Employee</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Department</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Sarah Wilson</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Marketing</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; color: #27ae60; font-weight: bold;">Excellent</td>
+                                </tr>
+                                <tr style="background-color: #f8f9fa;">
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Mike Chen</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Development</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; color: #e74c3c; font-weight: bold;">Outstanding</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Responsive Tables</h2>
+                <p>Tables can be challenging on small screens. Here are some techniques to make tables more mobile-friendly:</p>
+
+                <h3>Horizontal Scrolling</h3>
+                <p>Wrap tables in a container with horizontal scroll for overflow:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Responsive Table Container</div>
+                    <div class="code-content">
+                        <pre>&lt;div class="table-container"&gt;
+    &lt;table&gt;
+        &lt;!-- Table content --&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    min-width: 600px;
+    width: 100%;
+    border-collapse: collapse;
+}
+&lt;/style&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Mobile Tip:</strong> Consider alternative presentations for complex tables on mobile devices, such as stacked cards or accordion-style layouts using CSS media queries.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Table Best Practices</h2>
+                <p>Follow these guidelines to create effective, accessible tables:</p>
+
+                <h3>Structure and Semantics</h3>
+                <ul>
+                    <li><strong>Use proper headers:</strong> Always use <code>&lt;th&gt;</code> elements for headers</li>
+                    <li><strong>Include captions:</strong> Provide context with <code>&lt;caption&gt;</code> elements</li>
+                    <li><strong>Group related content:</strong> Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code></li>
+                    <li><strong>Associate headers with data:</strong> Use <code>scope</code> attribute for complex tables</li>
+                </ul>
+
+                <h3>Visual Design</h3>
+                <ul>
+                    <li><strong>Maintain consistency:</strong> Use consistent spacing and alignment</li>
+                    <li><strong>Enhance readability:</strong> Alternate row colors or add borders</li>
+                    <li><strong>Highlight important data:</strong> Use color or formatting strategically</li>
+                    <li><strong>Consider mobile users:</strong> Ensure tables work on small screens</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Accessibility Reminder:</strong> Properly structured tables with headers, captions, and clear relationships help screen readers convey tabular information effectively to visually impaired users.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Common Table Use Cases</h2>
+                <p>Here are some typical scenarios where tables are the appropriate choice:</p>
+
+                <ul>
+                    <li><strong>Financial Reports:</strong> Income statements, budgets, expense tracking</li>
+                    <li><strong>Comparison Charts:</strong> Product features, pricing plans, specifications</li>
+                    <li><strong>Schedules:</strong> Class timetables, event calendars, work rosters</li>
+                    <li><strong>Data Analysis:</strong> Survey results, statistics, research findings</li>
+                    <li><strong>Contact Lists:</strong> Employee directories, customer databases</li>
+                    <li><strong>Sports Statistics:</strong> League tables, player stats, game results</li>
+                </ul>
+
+                <div class="live-example">
+                    <div class="live-example-header">Pricing Comparison Table</div>
+                    <div class="live-example-content">
+                        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                            <caption style="font-weight: bold; margin-bottom: 10px; color: #2c3e50;">Subscription Plans Comparison</caption>
+                            <thead>
+                                <tr style="background-color: #2c3e50; color: white;">
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Feature</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">Basic</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">Pro</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; font-weight: bold;">Price/month</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$9</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center; background: #fff3cd;">$29</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">$99</td>
+                                </tr>
+                                <tr style="background-color: #f8f9fa;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; font-weight: bold;">Storage</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">10GB</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">100GB</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; font-weight: bold;">Support</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">Email</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">24/7 Chat</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">Dedicated</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html5-lists.html" class="prev">← Previous: Lists: Ordered & Unordered</a>
+                <a href="html7-forms-input.html">Next: Forms & Input Elements →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

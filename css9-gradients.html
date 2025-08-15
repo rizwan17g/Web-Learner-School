@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradients - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html" class="active">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Gradients</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Gradients</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to CSS Gradients</h2>
+                <p>CSS gradients are smooth transitions between two or more colors that can be used as backgrounds, creating beautiful visual effects without requiring image files. Gradients are lightweight, scalable, and can be dynamically modified with CSS, making them perfect for modern web design.</p>
+                
+                <p>Gradients can replace many background images, reducing file sizes and improving page load times. They're particularly useful for creating buttons, headers, overlays, and decorative elements that need to look crisp at any resolution.</p>
+
+                <p>CSS provides several types of gradients: linear gradients that transition colors along a straight line, radial gradients that emanate from a central point, and conic gradients that rotate around a center point. Each type offers unique creative possibilities for your designs.</p>
+
+                <div class="highlight">
+                    <strong>Key Advantage:</strong> Gradients are vector-based and infinitely scalable, making them perfect for responsive designs and high-resolution displays without any loss of quality.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Linear Gradients</h2>
+                <p>Linear gradients transition colors along a straight line. You can control the direction and add multiple color stops to create complex effects.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Linear Gradient Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic linear gradient (top to bottom by default) */
+.gradient-basic {
+    background: linear-gradient(#3498db, #2980b9);
+}
+
+/* Gradient with direction */
+.gradient-right {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+}
+
+.gradient-diagonal {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+/* Gradient with multiple colors */
+.gradient-rainbow {
+    background: linear-gradient(to right, 
+        red, orange, yellow, green, blue, indigo, violet);
+}
+
+/* Gradient with color stops */
+.gradient-stops {
+    background: linear-gradient(to right,
+        #3498db 0%,
+        #e74c3c 50%,
+        #27ae60 100%);
+}
+
+/* Gradient with transparency */
+.gradient-transparent {
+    background: linear-gradient(to bottom,
+        rgba(52, 152, 219, 0.8),
+        rgba(52, 152, 219, 0));
+}
+
+/* Complex gradient with multiple stops */
+.gradient-complex {
+    background: linear-gradient(135deg,
+        #667eea 0%,
+        #764ba2 25%,
+        #f093fb 50%,
+        #f5576c 75%,
+        #4facfe 100%);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Linear Gradient Gallery</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="height: 120px; background: linear-gradient(#3498db, #2980b9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Top to Bottom
+                            </div>
+                            <div style="height: 120px; background: linear-gradient(to right, #e74c3c, #c0392b); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Left to Right
+                            </div>
+                            <div style="height: 120px; background: linear-gradient(45deg, #27ae60, #2ecc71); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                45° Diagonal
+                            </div>
+                            <div style="height: 120px; background: linear-gradient(to right, #f093fb, #f5576c, #4facfe); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Multiple Colors
+                            </div>
+                            <div style="height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Complex Gradient
+                            </div>
+                            <div style="height: 120px; background: linear-gradient(to bottom, rgba(52, 152, 219, 0.9), rgba(52, 152, 219, 0)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2c3e50; font-weight: bold; border: 1px solid #ddd;">
+                                Transparent Fade
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Radial Gradients</h2>
+                <p>Radial gradients transition colors outward from a central point, creating circular or elliptical patterns. They're perfect for creating spotlight effects, buttons, and artistic backgrounds.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Radial Gradient Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic radial gradient (center to edge) */
+.radial-basic {
+    background: radial-gradient(#3498db, #2980b9);
+}
+
+/* Radial gradient with specific shape */
+.radial-circle {
+    background: radial-gradient(circle, #e74c3c, #c0392b);
+}
+
+.radial-ellipse {
+    background: radial-gradient(ellipse, #27ae60, #2ecc71);
+}
+
+/* Radial gradient with position */
+.radial-positioned {
+    background: radial-gradient(circle at top left, #f39c12, #e67e22);
+}
+
+.radial-bottom-right {
+    background: radial-gradient(circle at bottom right, #9b59b6, #8e44ad);
+}
+
+/* Radial gradient with size */
+.radial-closest {
+    background: radial-gradient(circle closest-side at center, #1abc9c, #16a085);
+}
+
+.radial-farthest {
+    background: radial-gradient(ellipse farthest-corner, #34495e, #2c3e50);
+}
+
+/* Multiple color stops */
+.radial-multiple {
+    background: radial-gradient(circle,
+        #fff 20%,
+        #3498db 40%,
+        #e74c3c 60%,
+        #27ae60 80%,
+        #000 100%);
+}
+
+/* Radial gradient with transparency */
+.radial-spotlight {
+    background: radial-gradient(circle at center,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(0, 0, 0, 0.8) 100%);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Radial Gradient Gallery</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="height: 120px; background: radial-gradient(circle, #3498db, #2980b9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Basic Circle
+                            </div>
+                            <div style="height: 120px; background: radial-gradient(ellipse, #e74c3c, #c0392b); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Ellipse Shape
+                            </div>
+                            <div style="height: 120px; background: radial-gradient(circle at top left, #27ae60, #2ecc71); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Top Left Origin
+                            </div>
+                            <div style="height: 120px; background: radial-gradient(circle at bottom right, #f39c12, #e67e22); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Bottom Right
+                            </div>
+                            <div style="height: 120px; background: radial-gradient(circle, #fff 20%, #9b59b6 40%, #8e44ad 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Multiple Stops
+                            </div>
+                            <div style="height: 120px; background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(52, 152, 219, 0.7) 50%, rgba(0, 0, 0, 0.8) 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Spotlight Effect
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Conic Gradients</h2>
+                <p>Conic gradients sweep colors around a center point, creating pie chart-like effects. They're great for creating loading spinners, progress indicators, and artistic effects.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Conic Gradient Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic conic gradient */
+.conic-basic {
+    background: conic-gradient(#3498db, #e74c3c, #27ae60, #3498db);
+}
+
+/* Conic gradient with specific starting angle */
+.conic-angled {
+    background: conic-gradient(from 90deg, #f39c12, #e67e22);
+}
+
+/* Conic gradient with position */
+.conic-positioned {
+    background: conic-gradient(at top left, #9b59b6, #8e44ad, #9b59b6);
+}
+
+/* Rainbow conic gradient */
+.conic-rainbow {
+    background: conic-gradient(
+        red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+/* Conic gradient with hard stops (pie chart effect) */
+.conic-pie {
+    background: conic-gradient(
+        #3498db 0deg 120deg,
+        #e74c3c 120deg 240deg,
+        #27ae60 240deg 360deg);
+}
+
+/* Loading spinner effect */
+.conic-spinner {
+    background: conic-gradient(
+        transparent 0deg 300deg,
+        #3498db 300deg 360deg);
+    border-radius: 50%;
+}
+
+/* Progress indicator */
+.conic-progress {
+    background: conic-gradient(
+        #27ae60 0deg 216deg,  /* 60% complete (216deg = 60% of 360deg) */
+        #ecf0f1 216deg 360deg);
+    border-radius: 50%;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Conic Gradient Gallery</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                            <div style="height: 120px; background: conic-gradient(#3498db, #e74c3c, #27ae60, #3498db); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                                Basic Conic
+                            </div>
+                            <div style="height: 120px; width: 120px; background: conic-gradient(red, orange, yellow, green, blue, indigo, violet, red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); margin: 0 auto;">
+                                Rainbow
+                            </div>
+                            <div style="height: 120px; width: 120px; background: conic-gradient(#3498db 0deg 120deg, #e74c3c 120deg 240deg, #27ae60 240deg 360deg); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); margin: 0 auto;">
+                                Pie Chart
+                            </div>
+                            <div style="height: 120px; width: 120px; background: conic-gradient(transparent 0deg 270deg, #3498db 270deg 360deg); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #3498db; font-weight: bold; margin: 0 auto; position: relative;">
+                                <div style="position: absolute; width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8em;">75%</div>
+                            </div>
+                            <div style="height: 120px; width: 120px; background: conic-gradient(#27ae60 0deg 144deg, #f39c12 144deg 216deg, #e74c3c 216deg 360deg); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); margin: 0 auto;">
+                                Progress
+                            </div>
+                            <div style="height: 120px; width: 120px; background: conic-gradient(from 45deg, #9b59b6, #8e44ad, #9b59b6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); margin: 0 auto;">
+                                Angled
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Repeating Gradients</h2>
+                <p>Repeating gradients create pattern effects by repeating the gradient continuously. They're useful for creating stripes, textures, and decorative patterns.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Repeating Gradient Examples</div>
+                    <div class="code-content">
+                        <pre>/* Repeating linear gradient - stripes */
+.repeating-linear {
+    background: repeating-linear-gradient(
+        45deg,
+        #3498db 0px,
+        #3498db 10px,
+        #2980b9 10px,
+        #2980b9 20px
+    );
+}
+
+/* Diagonal stripes */
+.diagonal-stripes {
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(52, 152, 219, 0.5) 10px,
+        rgba(52, 152, 219, 0.5) 20px
+    );
+}
+
+/* Repeating radial gradient - concentric circles */
+.repeating-radial {
+    background: repeating-radial-gradient(
+        circle,
+        #e74c3c 0px,
+        #e74c3c 15px,
+        #c0392b 15px,
+        #c0392b 30px
+    );
+}
+
+/* Chevron pattern */
+.chevron-pattern {
+    background: repeating-linear-gradient(
+        90deg,
+        #27ae60 0px,
+        #27ae60 20px,
+        #2ecc71 20px,
+        #2ecc71 40px
+    );
+}
+
+/* Warning stripes */
+.warning-stripes {
+    background: repeating-linear-gradient(
+        45deg,
+        #f39c12 0px,
+        #f39c12 15px,
+        #e67e22 15px,
+        #e67e22 30px
+    );
+}
+
+/* Subtle texture pattern */
+.texture-pattern {
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0px,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Repeating Gradient Patterns</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="height: 120px; background: repeating-linear-gradient(45deg, #3498db 0px, #3498db 10px, #2980b9 10px, #2980b9 20px); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Diagonal Stripes
+                            </div>
+                            <div style="height: 120px; background: repeating-linear-gradient(90deg, #27ae60 0px, #27ae60 20px, #2ecc71 20px, #2ecc71 40px); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Vertical Stripes
+                            </div>
+                            <div style="height: 120px; background: repeating-radial-gradient(circle, #e74c3c 0px, #e74c3c 15px, #c0392b 15px, #c0392b 30px); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Concentric Circles
+                            </div>
+                            <div style="height: 120px; background: repeating-linear-gradient(45deg, #f39c12 0px, #f39c12 15px, #fff 15px, #fff 30px); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2c3e50; font-weight: bold;">
+                                Warning Pattern
+                            </div>
+                            <div style="height: 120px; background-color: #9b59b6; background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 10px, transparent 10px, transparent 20px); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Overlay Pattern
+                            </div>
+                            <div style="height: 120px; background: #34495e; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 2px); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Subtle Texture
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Multiple Backgrounds with Gradients</h2>
+                <p>You can layer multiple gradients and combine them with images to create complex visual effects. This technique is powerful for creating sophisticated designs without additional image files.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Multiple Background Examples</div>
+                    <div class="code-content">
+                        <pre>/* Layered linear gradients */
+.layered-gradients {
+    background: 
+        linear-gradient(45deg, rgba(52, 152, 219, 0.8), transparent),
+        linear-gradient(-45deg, rgba(231, 76, 60, 0.8), transparent),
+        linear-gradient(90deg, rgba(39, 174, 96, 0.3), transparent);
+}
+
+/* Gradient overlay on image */
+.image-overlay {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Complex pattern combination */
+.complex-pattern {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Mesh gradient effect */
+.mesh-gradient {
+    background: 
+        radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%);
+}
+
+/* Animated gradient background */
+.animated-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Complex Gradient Combinations</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                            <div style="height: 150px; background: linear-gradient(45deg, rgba(52, 152, 219, 0.8), transparent), linear-gradient(-45deg, rgba(231, 76, 60, 0.8), transparent), linear-gradient(90deg, rgba(39, 174, 96, 0.3), transparent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Layered Gradients
+                            </div>
+                            <div style="height: 150px; background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.5) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.5) 0%, transparent 50%), linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Complex Pattern
+                            </div>
+                            <div style="height: 150px; background: radial-gradient(at 40% 20%, hsla(28,100%,74%,0.8) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,0.8) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,0.8) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,0.8) 0px, transparent 50%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #2c3e50; font-weight: bold;">
+                                Mesh Gradient
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Gradient Applications</h2>
+                <p>Here are common, real-world uses of gradients in modern web design:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Gradient Buttons</div>
+                    <div class="live-example-content">
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                            <button style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;">
+                                Primary Button
+                            </button>
+                            <button style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;">
+                                Secondary Button
+                            </button>
+                            <button style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;">
+                                Info Button
+                            </button>
+                            <button style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: transform 0.2s ease;">
+                                Success Button
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Hero Section with Gradient Overlay</div>
+                    <div class="live-example-content">
+                        <div style="height: 300px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%), repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 50px, #e0e0e0 50px, #e0e0e0 100px); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; border-radius: 8px;">
+                            <h2 style="margin: 0 0 15px 0; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Welcome to Our Platform</h2>
+                            <p style="margin: 0 0 25px 0; font-size: 1.2em; opacity: 0.9; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Create amazing things with beautiful gradients</p>
+                            <button style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-weight: bold; backdrop-filter: blur(10px);">
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Card with Gradient Accents</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <div style="height: 8px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);"></div>
+                                <div style="padding: 25px;">
+                                    <h4 style="margin: 0 0 15px 0; color: #2c3e50;">Premium Plan</h4>
+                                    <p style="margin: 0 0 20px 0; color: #666; line-height: 1.6;">Get access to all premium features with unlimited usage and priority support.</p>
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <span style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">$29/mo</span>
+                                        <button style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Choose Plan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <div style="height: 8px; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);"></div>
+                                <div style="padding: 25px;">
+                                    <h4 style="margin: 0 0 15px 0; color: #2c3e50;">Enterprise Plan</h4>
+                                    <p style="margin: 0 0 20px 0; color: #666; line-height: 1.6;">Advanced features for large teams with custom integrations and dedicated support.</p>
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <span style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">$99/mo</span>
+                                        <button style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Choose Plan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Gradient Best Practices</h2>
+                <p>Follow these guidelines to create effective, beautiful gradients that enhance your design:</p>
+
+                <h3>Color Selection</h3>
+                <ul>
+                    <li><strong>Use harmonious colors:</strong> Choose colors that work well together in the color wheel</li>
+                    <li><strong>Consider contrast:</strong> Ensure text remains readable over gradient backgrounds</li>
+                    <li><strong>Limit color stops:</strong> Too many colors can create muddy or chaotic effects</li>
+                    <li><strong>Test accessibility:</strong> Verify color combinations meet accessibility standards</li>
+                </ul>
+
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li><strong>Use gradients instead of images:</strong> They're smaller and scale better</li>
+                    <li><strong>Avoid excessive complexity:</strong> Complex gradients can impact rendering performance</li>
+                    <li><strong>Consider mobile devices:</strong> Test gradient performance on various devices</li>
+                    <li><strong>Optimize for older browsers:</strong> Provide fallback colors for unsupported browsers</li>
+                </ul>
+
+                <h3>Design Guidelines</h3>
+                <ul>
+                    <li><strong>Maintain consistency:</strong> Use similar gradient styles throughout your design</li>
+                    <li><strong>Don't overuse:</strong> Gradients should enhance, not dominate your design</li>
+                    <li><strong>Consider brand colors:</strong> Incorporate your brand palette into gradient designs</li>
+                    <li><strong>Test across contexts:</strong> Ensure gradients work in different layout scenarios</li>
+                </ul>
+
+                <h3>Common Mistakes to Avoid</h3>
+                <ul>
+                    <li><strong>Harsh transitions:</strong> Very contrasting colors can create jarring effects</li>
+                    <li><strong>Overuse of radial gradients:</strong> They can make designs look dated if overused</li>
+                    <li><strong>Ignoring mobile performance:</strong> Complex gradients can slow down mobile rendering</li>
+                    <li><strong>Forgetting fallbacks:</strong> Always provide solid color fallbacks</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Gradient Best Practices Code</div>
+                    <div class="code-content">
+                        <pre>/* Good: Simple, harmonious gradient with fallback */
+.good-gradient {
+    background-color: #3498db;  /* Fallback for older browsers */
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+/* Good: Subtle gradient for text readability */
+.subtle-gradient {
+    background: linear-gradient(135deg, 
+        rgba(52, 152, 219, 0.9) 0%, 
+        rgba(41, 128, 185, 0.9) 100%);
+    color: white;
+}
+
+/* Avoid: Too many color stops */
+.avoid-complex {
+    background: linear-gradient(to right, 
+        red, orange, yellow, green, blue, indigo, violet, pink, purple);
+    /* This creates a muddy, chaotic appearance */
+}
+
+/* Good: Accessible gradient with sufficient contrast */
+.accessible-gradient {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ffffff;  /* High contrast text */
+}
+
+/* Performance-optimized gradient */
+.optimized-gradient {
+    background-color: #667eea;  /* Fallback */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Simple two-color gradient performs better */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Golden Rule:</strong> Use gradients purposefully to enhance your design, not as decoration. They should improve user experience and visual hierarchy while maintaining excellent performance and accessibility.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css8-grid.html" class="prev">← Previous: CSS Grid Basics</a>
+                <a href="index.html">Back to Home →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

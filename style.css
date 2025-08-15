@@ -1,0 +1,486 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.nav-header {
+    padding: 20px;
+    background: #34495e;
+    border-bottom: 2px solid #3498db;
+}
+
+.nav-header h2 {
+    color: #3498db;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.nav-section {
+    padding: 20px;
+    border-bottom: 1px solid #34495e;
+}
+
+.nav-section h3 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-section ul {
+    list-style: none;
+}
+
+.nav-section li {
+    margin-bottom: 8px;
+}
+
+.nav-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.nav-section a:hover {
+    background: #3498db;
+    color: white;
+    transform: translateX(5px);
+}
+
+.nav-section a.active {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    background: #2c3e50;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mobile-nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 280px;
+    min-height: 100vh;
+    background: white;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Welcome Header */
+.welcome-header {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.welcome-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.page-header .breadcrumb {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.page-header .breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.page-header .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Content Sections */
+.intro-section {
+    padding: 40px;
+}
+
+.intro-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid #3498db;
+}
+
+.intro-card h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.learning-path {
+    margin: 30px 0;
+}
+
+.learning-path h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.path-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.path-section h3 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.path-section ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.path-section li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Tips Section */
+.tips-section {
+    margin: 40px 0;
+}
+
+.tips-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-top: 4px solid #27ae60;
+}
+
+.tip-card h4 {
+    color: #27ae60;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Content Sections for Topic Pages */
+.section {
+    background: white;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.section h3 {
+    color: #e74c3c;
+    margin: 25px 0 15px 0;
+    font-size: 1.3em;
+}
+
+.section p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.section ul, .section ol {
+    margin: 15px 0 15px 30px;
+}
+
+.section li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Code Examples */
+.code-example {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.code-header {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.code-content {
+    padding: 20px;
+}
+
+.code-content pre {
+    background: #2c3e50;
+    color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.code-content code {
+    background: #e9ecef;
+    color: #e74c3c;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* Live Example */
+.live-example {
+    background: #f8f9fa;
+    border: 2px solid #27ae60;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.live-example-header {
+    background: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.live-example-content {
+    padding: 20px;
+    background: white;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    padding: 20px 0;
+    border-top: 2px solid #ecf0f1;
+}
+
+.nav-links a {
+    background: #3498db;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    background: #2980b9;
+}
+
+.nav-links .prev {
+    background: #95a5a6;
+}
+
+.nav-links .prev:hover {
+    background: #7f8c8d;
+}
+
+/* Footer */
+.home-footer {
+    text-align: center;
+    padding: 40px;
+    background: #34495e;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .mobile-nav-toggle {
+        display: flex;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .content-wrapper {
+        padding: 20px;
+    }
+    
+    .welcome-header {
+        padding: 40px 20px;
+    }
+    
+    .welcome-header h1 {
+        font-size: 2em;
+    }
+    
+    .intro-section {
+        padding: 20px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-header h1 {
+        font-size: 1.6em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .section {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    .code-content {
+        padding: 15px;
+    }
+    
+    .code-content pre {
+        padding: 15px;
+        font-size: 0.8em;
+    }
+}
+
+/* Highlight Classes */
+.highlight {
+    background: #fff3cd;
+    padding: 15px;
+    border-left: 4px solid #ffc107;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.important {
+    background: #f8d7da;
+    padding: 15px;
+    border-left: 4px solid #dc3545;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.note {
+    background: #d1ecf1;
+    padding: 15px;
+    border-left: 4px solid #17a2b8;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+}

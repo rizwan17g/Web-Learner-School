@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float & Clear - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html" class="active">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Float & Clear</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Float & Clear</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to CSS Float</h2>
+                <p>The CSS <code>float</code> property was originally designed to allow text to wrap around images, similar to how text flows around images in print media. While modern layout methods like Flexbox and Grid have largely superseded float for complex layouts, understanding float is still important for specific use cases and legacy code maintenance.</p>
+                
+                <p>When an element is floated, it is removed from the normal document flow and positioned to the left or right side of its container. Other elements then flow around the floated element, creating text wrap effects and multi-column layouts.</p>
+
+                <p>Float behavior can sometimes be unexpected, leading to layout issues like collapsed containers. Understanding how to properly use float and clear is essential for controlling these behaviors and creating predictable layouts.</p>
+
+                <div class="highlight">
+                    <strong>Modern Context:</strong> While float is less commonly used for layout today, it remains the best solution for text wrapping around images and certain specific design patterns.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Float Property Values</h2>
+                <p>The <code>float</code> property has several values that control how elements are positioned and how content flows around them.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Float Property Values</div>
+                    <div class="code-content">
+                        <pre>/* Float values */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-none {
+    float: none;        /* Default value, no floating */
+}
+
+.float-inherit {
+    float: inherit;     /* Inherits parent's float value */
+}
+
+/* Common float patterns */
+.image-left {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.image-right {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.sidebar {
+    float: right;
+    width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.main-content {
+    margin-right: 270px;    /* Leave space for sidebar */
+}</pre>
+                    </div>
+                </div>
+
+                <h3>How Float Works</h3>
+                <ul>
+                    <li><strong>Removed from normal flow:</strong> Floated elements don't occupy space in normal document flow</li>
+                    <li><strong>Positioned to container edge:</strong> Floated elements move to the left or right edge of their container</li>
+                    <li><strong>Content wraps around:</strong> Non-floated content flows around floated elements</li>
+                    <li><strong>Stacks horizontally:</strong> Multiple floated elements stack next to each other</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Text Wrapping with Float</h2>
+                <p>The original and still most appropriate use of float is to wrap text around images, creating magazine-style layouts.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Text Wrapping Examples</div>
+                    <div class="code-content">
+                        <pre>/* Image floated left with text wrapping */
+.article-image-left {
+    float: left;
+    margin: 0 20px 15px 0;
+    border-radius: 8px;
+    max-width: 300px;
+}
+
+/* Image floated right with text wrapping */
+.article-image-right {
+    float: right;
+    margin: 0 0 15px 20px;
+    border-radius: 8px;
+    max-width: 300px;
+}
+
+/* Responsive image float */
+.responsive-float {
+    float: left;
+    margin: 0 20px 15px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .responsive-float {
+        float: none;
+        margin: 0 0 20px 0;
+        display: block;
+    }
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Text Wrapping Demo</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                            <div style="width: 120px; height: 80px; background: linear-gradient(45deg, #3498db, #2980b9); float: left; margin: 0 15px 15px 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em; text-align: center;">
+                                Floated<br>Left
+                            </div>
+                            <p style="margin: 0; text-align: justify;">
+                                This paragraph demonstrates how text wraps around a floated element. The blue box is floated to the left, so the text flows around it naturally. This is the classic use case for the float property - creating magazine-style layouts where text wraps around images or other content blocks. Notice how the text adjusts to the shape of the floated element, creating a natural reading flow. This technique was revolutionary when it was first introduced to CSS.
+                            </p>
+                        </div>
+                        
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                            <div style="width: 120px; height: 80px; background: linear-gradient(45deg, #e74c3c, #c0392b); float: right; margin: 0 0 15px 15px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em; text-align: center;">
+                                Floated<br>Right
+                            </div>
+                            <p style="margin: 0; text-align: justify;">
+                                Here's an example of a right-floated element with text wrapping around it. The red box is positioned on the right side, and the text flows around the left edge. This creates a different visual rhythm and can be used to add variety to your content layout. Float is particularly useful for this type of content integration where you want seamless text flow around visual elements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Multiple Float Elements</h2>
+                <p>When multiple elements are floated in the same direction, they stack horizontally. This was commonly used to create multi-column layouts before Flexbox and Grid.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Multiple Float Layout</div>
+                    <div class="code-content">
+                        <pre>/* Three-column layout using floats */
+.column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.column:last-child {
+    margin-right: 0;        /* Remove margin from last column */
+}
+
+/* Two-column layout */
+.main-column {
+    float: left;
+    width: 65%;
+}
+
+.sidebar-column {
+    float: right;
+    width: 30%;
+    background: #f8f9fa;
+    padding: 20px;
+}
+
+/* Gallery using floated images */
+.gallery-item {
+    float: left;
+    width: 23%;
+    margin-right: 2.6667%;
+    margin-bottom: 20px;
+}
+
+.gallery-item:nth-child(4n) {
+    margin-right: 0;        /* Remove margin from every 4th item */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Multiple Float Columns</div>
+                    <div class="live-example-content">
+                        <div style="overflow: hidden;">  <!-- Clearfix for demo -->
+                            <div style="float: left; width: 30%; margin-right: 5%; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Column 1</h4>
+                                <p style="margin-bottom: 0; font-size: 0.9em; color: #666;">This is the first column created using float: left. Each column has a specific width and margin.</p>
+                            </div>
+                            <div style="float: left; width: 30%; margin-right: 5%; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Column 2</h4>
+                                <p style="margin-bottom: 0; font-size: 0.9em; color: #666;">The second column stacks next to the first because they're both floated left and have enough space.</p>
+                            </div>
+                            <div style="float: left; width: 30%; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Column 3</h4>
+                                <p style="margin-bottom: 0; font-size: 0.9em; color: #666;">The third column completes our three-column layout. Note how the last column has no right margin.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Clear Property</h2>
+                <p>The <code>clear</code> property controls whether an element can be positioned next to floated elements or must be moved below them. This is essential for controlling layout when working with floated elements.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Clear Property Examples</div>
+                    <div class="code-content">
+                        <pre>/* Clear property values */
+.clear-left {
+    clear: left;        /* No floated elements on the left side */
+}
+
+.clear-right {
+    clear: right;       /* No floated elements on the right side */
+}
+
+.clear-both {
+    clear: both;        /* No floated elements on either side */
+}
+
+.clear-none {
+    clear: none;        /* Default - allows floated elements on both sides */
+}
+
+/* Common clearing patterns */
+.section-break {
+    clear: both;        /* Force element below all floated elements */
+    margin-top: 30px;
+}
+
+.after-float {
+    clear: left;        /* Clear only left-floated elements */
+    padding-top: 20px;
+}
+
+/* Footer that clears all floated content */
+.page-footer {
+    clear: both;
+    background: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Clear Property Demo</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                            <div style="width: 100px; height: 60px; background: #3498db; float: left; margin: 0 10px 10px 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em;">
+                                Float Left
+                            </div>
+                            <div style="width: 100px; height: 60px; background: #e74c3c; float: right; margin: 0 0 10px 10px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em;">
+                                Float Right
+                            </div>
+                            <p style="margin: 0 0 15px 0;">This text flows around the floated elements above.</p>
+                            
+                            <div style="clear: both; background: #f39c12; padding: 10px; border-radius: 4px; color: white; text-align: center; font-weight: bold;">
+                                This element uses clear: both - it appears below all floated elements
+                            </div>
+                        </div>
+                        
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                            <div style="width: 80px; height: 50px; background: #27ae60; float: left; margin: 0 10px 10px 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7em; text-align: center;">
+                                Float<br>Left
+                            </div>
+                            <div style="clear: left; background: #9b59b6; padding: 8px; border-radius: 4px; color: white; font-size: 0.9em;">
+                                This element uses clear: left - it clears only left-floated elements
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Clearfix Technique</h2>
+                <p>One common problem with floated elements is that their parent containers don't automatically expand to contain them. The clearfix technique solves this by forcing the container to include floated children.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Clearfix Methods</div>
+                    <div class="code-content">
+                        <pre>/* Method 1: Overflow clearfix */
+.clearfix-overflow {
+    overflow: hidden;       /* Simple but can clip content */
+}
+
+/* Method 2: Modern clearfix using pseudo-elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Method 3: Comprehensive clearfix */
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/* Legacy support for older browsers */
+.clearfix {
+    *zoom: 1;              /* For IE6/7 */
+}
+
+/* Method 4: Flexbox alternative (modern) */
+.modern-clearfix {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modern-clearfix > * {
+    flex: none;            /* Prevent flex items from growing */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Clearfix Problem & Solution</div>
+                    <div class="live-example-content">
+                        <div style="margin-bottom: 20px;">
+                            <h4>Problem: Container doesn't contain floated children</h4>
+                            <div style="border: 2px solid #e74c3c; background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                                <div style="width: 100px; height: 60px; background: #3498db; float: left; margin: 0 10px 0 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em;">
+                                    Floated
+                                </div>
+                                <div style="width: 100px; height: 60px; background: #27ae60; float: left; margin: 0 10px 0 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em;">
+                                    Elements
+                                </div>
+                                <!-- Notice the container doesn't expand -->
+                            </div>
+                            <p style="font-size: 0.9em; color: #666; margin-top: 5px;">The red border shows that the container doesn't expand to contain the floated elements.</p>
+                        </div>
+                        
+                        <div>
+                            <h4>Solution: Using clearfix</h4>
+                            <div style="border: 2px solid #27ae60; background: #f8f9fa; padding: 20px; border-radius: 8px; overflow: hidden;">
+                                <div style="width: 100px; height: 60px; background: #3498db; float: left; margin: 0 10px 0 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em;">
+                                    Floated
+                                </div>
+                                <div style="width: 100px; height: 60px; background: #27ae60; float: left; margin: 0 10px 0 0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em;">
+                                    Elements
+                                </div>
+                            </div>
+                            <p style="font-size: 0.9em; color: #666; margin-top: 5px;">The green border shows the container now properly contains the floated elements using overflow: hidden.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Common Float Issues and Solutions</h2>
+                <p>Float can cause several layout issues. Understanding these problems and their solutions is crucial for working with floated elements effectively.</p>
+
+                <h3>Issue 1: Container Collapse</h3>
+                <p><strong>Problem:</strong> Parent containers don't expand to contain floated children.<br>
+                <strong>Solution:</strong> Use clearfix techniques or set overflow: hidden on the parent.</p>
+
+                <h3>Issue 2: Text Wrapping Issues</h3>
+                <p><strong>Problem:</strong> Text wraps in unexpected ways around floated elements.<br>
+                <strong>Solution:</strong> Add appropriate margins to floated elements and use clear where needed.</p>
+
+                <h3>Issue 3: Uneven Column Heights</h3>
+                <p><strong>Problem:</strong> Floated columns have different heights, causing layout breaks.<br>
+                <strong>Solution:</strong> Use equal heights techniques or consider Flexbox/Grid alternatives.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Float Problem Solutions</div>
+                    <div class="code-content">
+                        <pre>/* Solution 1: Proper clearfix */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Solution 2: Adequate margins for text wrap */
+.floated-image {
+    float: left;
+    margin: 0 20px 20px 0;  /* Space around floated element */
+}
+
+/* Solution 3: Responsive float behavior */
+.responsive-float {
+    float: left;
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .responsive-float {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Solution 4: Controlled text wrapping */
+.no-wrap {
+    clear: both;            /* Prevent text from wrapping */
+    padding-top: 20px;
+}
+
+/* Solution 5: Equal height columns (fake) */
+.equal-height-container {
+    overflow: hidden;
+}
+
+.equal-height-column {
+    float: left;
+    width: 33.333%;
+    margin-bottom: -9999px;  /* Large negative margin */
+    padding-bottom: 9999px;  /* Large positive padding */
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Float vs Modern Layout Methods</h2>
+                <p>While float was essential for layout in the past, modern CSS provides better alternatives for most use cases:</p>
+
+                <h3>When to Use Float</h3>
+                <ul>
+                    <li><strong>Text wrapping:</strong> Around images or pull quotes</li>
+                    <li><strong>Legacy support:</strong> When you need to support very old browsers</li>
+                    <li><strong>Simple side-by-side layouts:</strong> Where Flexbox might be overkill</li>
+                    <li><strong>Magazine-style layouts:</strong> Complex text wrapping scenarios</li>
+                </ul>
+
+                <h3>When to Use Modern Alternatives</h3>
+                <ul>
+                    <li><strong>Flexbox:</strong> For flexible, responsive layouts and alignment</li>
+                    <li><strong>Grid:</strong> For complex two-dimensional layouts</li>
+                    <li><strong>Display table:</strong> For equal-height columns</li>
+                    <li><strong>Positioning:</strong> For precise element placement</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Float vs Modern Layout Comparison</div>
+                    <div class="code-content">
+                        <pre>/* Float method (old way) */
+.float-columns .column {
+    float: left;
+    width: 33.333%;
+    padding: 20px;
+}
+
+.float-columns::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Flexbox method (modern way) */
+.flex-columns {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-columns .column {
+    flex: 1;                /* Equal width columns */
+    padding: 20px;
+}
+
+/* Grid method (most modern) */
+.grid-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-columns .column {
+    padding: 20px;
+}
+
+/* Still use float for text wrapping */
+.article-image {
+    float: left;
+    margin: 0 20px 15px 0;
+    border-radius: 8px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Modern Recommendation:</strong> Use Flexbox or Grid for layouts, and reserve float primarily for text wrapping around images or legacy browser support.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Float Examples</h2>
+                <p>Here are some practical, real-world applications where float is still the best solution:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Article with Image Float</div>
+                    <div class="live-example-content">
+                        <article style="max-width: 600px; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+                            <h3 style="color: #2c3e50; margin-bottom: 15px;">The Benefits of Web Standards</h3>
+                            
+                            <div style="width: 180px; height: 120px; background: linear-gradient(45deg, #3498db, #2980b9); float: right; margin: 0 0 15px 20px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em; text-align: center;">
+                                Featured<br>Image
+                            </div>
+                            
+                            <p style="text-align: justify; margin-bottom: 15px;">
+                                Web standards ensure that websites work consistently across different browsers and devices. When developers follow these standards, users can access content regardless of their choice of browser or assistive technology.
+                            </p>
+                            
+                            <p style="text-align: justify; margin-bottom: 15px;">
+                                The World Wide Web Consortium (W3C) develops these standards through a collaborative process involving browser vendors, developers, and accessibility experts. This ensures that the web remains an open and accessible platform for everyone.
+                            </p>
+                            
+                            <p style="text-align: justify; margin-bottom: 0;">
+                                By following web standards, developers create more maintainable code, better performance, and improved accessibility. This benefits both users and developers in the long term.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Pull Quote with Float</div>
+                    <div class="live-example-content">
+                        <div style="max-width: 600px; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+                            <p style="margin-bottom: 15px;">
+                                Typography plays a crucial role in web design, affecting both readability and user experience. Good typography choices can make or break a website's effectiveness.
+                            </p>
+                            
+                            <blockquote style="float: right; width: 200px; margin: 0 0 15px 20px; padding: 15px; background: #f8f9fa; border-left: 4px solid #3498db; font-style: italic; font-size: 1.1em; color: #2c3e50;">
+                                "Typography is the art and technique of arranging type."
+                            </blockquote>
+                            
+                            <p style="text-align: justify; margin-bottom: 15px;">
+                                When selecting fonts for your website, consider readability, brand personality, and performance. Web fonts should load quickly and provide a good fallback experience.
+                            </p>
+                            
+                            <p style="text-align: justify; margin-bottom: 15px;">
+                                Hierarchy is essential in typography. Use different font sizes, weights, and colors to guide users through your content and highlight important information.
+                            </p>
+                            
+                            <p style="text-align: justify; margin-bottom: 0; clear: both; padding-top: 15px; border-top: 1px solid #eee;">
+                                Remember that typography should enhance your content, not distract from it. Keep it simple, readable, and purposeful.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Float Best Practices</h2>
+                <p>Follow these guidelines to use float effectively and avoid common pitfalls:</p>
+
+                <h3>Layout Guidelines</h3>
+                <ul>
+                    <li><strong>Use appropriate margins:</strong> Always add margins to floated elements to create proper spacing</li>
+                    <li><strong>Clear when necessary:</strong> Use clear property to control element positioning</li>
+                    <li><strong>Implement clearfix:</strong> Always use clearfix on containers with floated children</li>
+                    <li><strong>Consider responsive behavior:</strong> Float may not work well on small screens</li>
+                </ul>
+
+                <h3>Modern Approach</h3>
+                <ul>
+                    <li><strong>Limit float usage:</strong> Reserve for text wrapping and specific design needs</li>
+                    <li><strong>Prefer Flexbox/Grid:</strong> For most layout tasks, use modern layout methods</li>
+                    <li><strong>Progressive enhancement:</strong> Start with float for older browsers, enhance with modern CSS</li>
+                    <li><strong>Test thoroughly:</strong> Float behavior can be unpredictable across different contexts</li>
+                </ul>
+
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li><strong>Minimize reflows:</strong> Excessive float usage can cause layout recalculations</li>
+                    <li><strong>Optimize for mobile:</strong> Consider whether float is appropriate for touch interfaces</li>
+                    <li><strong>Use CSS Grid/Flexbox:</strong> Modern browsers handle these more efficiently</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Future-Proofing:</strong> While understanding float is important, focus on mastering modern layout methods like Flexbox and Grid for new projects. Use float primarily for its original purpose: text wrapping around content.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css5-fonts-text.html" class="prev">← Previous: Fonts & Text Styling</a>
+                <a href="css7-flexbox.html">Next: Flexbox Basics →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

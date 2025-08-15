@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Basics - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html" class="active">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>CSS Grid Basics</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > CSS Grid Basics</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to CSS Grid</h2>
+                <p>CSS Grid Layout is a powerful two-dimensional layout system that allows you to create complex web layouts with rows and columns. Unlike Flexbox, which is one-dimensional, Grid can handle both horizontal and vertical alignment simultaneously, making it perfect for overall page layouts and complex component designs.</p>
+                
+                <p>Grid revolutionizes how we approach web layout by providing a native CSS solution for problems that previously required complex workarounds with floats, positioning, or table displays. It offers precise control over both the size and position of grid items.</p>
+
+                <p>With CSS Grid, you can create responsive layouts that adapt beautifully to different screen sizes without media queries, overlap elements intentionally, and align content in ways that were previously difficult or impossible with other layout methods.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> CSS Grid works with a grid container (parent) that defines rows and columns, and grid items (children) that are placed within this grid system. Items can span multiple rows or columns.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Creating a Grid Container</h2>
+                <p>To start using CSS Grid, you apply <code>display: grid</code> to a container element. This creates a grid formatting context for all direct children.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Grid Container</div>
+                    <div class="code-content">
+                        <pre>/* Basic grid container */
+.grid-container {
+    display: grid;
+}
+
+/* Inline grid container */
+.inline-grid {
+    display: inline-grid;
+}
+
+/* Grid with explicit columns */
+.three-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Grid with explicit rows */
+.two-row-grid {
+    display: grid;
+    grid-template-rows: 100px 200px;
+}
+
+/* Grid with gaps */
+.grid-with-gaps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;               /* Shorthand for row-gap and column-gap */
+}
+
+/* Grid item styling */
+.grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Basic Grid Layout</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                            <div style="background: #3498db; color: white; padding: 20px; text-align: center; border-radius: 4px;">Item 1</div>
+                            <div style="background: #e74c3c; color: white; padding: 20px; text-align: center; border-radius: 4px;">Item 2</div>
+                            <div style="background: #27ae60; color: white; padding: 20px; text-align: center; border-radius: 4px;">Item 3</div>
+                            <div style="background: #f39c12; color: white; padding: 20px; text-align: center; border-radius: 4px;">Item 4</div>
+                            <div style="background: #9b59b6; color: white; padding: 20px; text-align: center; border-radius: 4px;">Item 5</div>
+                            <div style="background: #1abc9c; color: white; padding: 20px; text-align: center; border-radius: 4px;">Item 6</div>
+                        </div>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                            This grid has 3 equal columns (1fr each) with a 15px gap between items.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid Template Columns and Rows</h2>
+                <p>The <code>grid-template-columns</code> and <code>grid-template-rows</code> properties define the structure of your grid by specifying the size of columns and rows.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Grid Template Examples</div>
+                    <div class="code-content">
+                        <pre>/* Fixed pixel sizes */
+.fixed-grid {
+    display: grid;
+    grid-template-columns: 200px 300px 150px;
+    grid-template-rows: 100px 150px;
+}
+
+/* Fractional units (fr) */
+.fractional-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;    /* Middle column is twice as wide */
+}
+
+/* Mixed units */
+.mixed-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 100px; /* Fixed, flexible, fixed */
+}
+
+/* Using repeat() function */
+.repeat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    grid-template-rows: repeat(2, 150px);   /* 2 rows of 150px each */
+}
+
+/* Auto-sizing columns */
+.auto-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;   /* Content, flexible, content */
+}
+
+/* Minimum and maximum sizes */
+.minmax-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Different Column Configurations</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <strong>Equal columns (1fr 1fr 1fr):</strong>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; text-align: center; border-radius: 4px;">1fr</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; border-radius: 4px;">1fr</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; text-align: center; border-radius: 4px;">1fr</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Proportional columns (1fr 2fr 1fr):</strong>
+                                <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; text-align: center; border-radius: 4px;">1fr</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; border-radius: 4px;">2fr</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; text-align: center; border-radius: 4px;">1fr</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Mixed units (100px 1fr 80px):</strong>
+                                <div style="display: grid; grid-template-columns: 100px 1fr 80px; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 15px; text-align: center; border-radius: 4px; font-size: 0.8em;">100px</div>
+                                    <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; border-radius: 4px;">1fr (flexible)</div>
+                                    <div style="background: #27ae60; color: white; padding: 15px; text-align: center; border-radius: 4px; font-size: 0.8em;">80px</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid Lines and Placement</h2>
+                <p>Grid items can be positioned precisely using grid lines. Lines are numbered starting from 1, and you can use <code>grid-column</code> and <code>grid-row</code> properties to place items.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Grid Item Placement</div>
+                    <div class="code-content">
+                        <pre>/* Grid container */
+.placement-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+/* Specific grid item placement */
+.header {
+    grid-column: 1 / 5;      /* Span from line 1 to line 5 (all columns) */
+    grid-row: 1;             /* First row */
+}
+
+.sidebar {
+    grid-column: 1;          /* First column */
+    grid-row: 2 / 4;         /* Span rows 2 to 4 */
+}
+
+.main-content {
+    grid-column: 2 / 5;      /* Columns 2 to 5 */
+    grid-row: 2;             /* Second row */
+}
+
+.footer {
+    grid-column: 2 / 5;      /* Columns 2 to 5 */
+    grid-row: 3;             /* Third row */
+}
+
+/* Shorthand properties */
+.shorthand-item {
+    grid-area: 1 / 2 / 3 / 4;  /* row-start / col-start / row-end / col-end */
+}
+
+/* Spanning items */
+.span-item {
+    grid-column: span 2;     /* Span 2 columns from current position */
+    grid-row: span 3;        /* Span 3 rows from current position */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Grid Item Placement Demo</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 80px); gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div style="grid-column: 1 / 5; grid-row: 1; background: #2c3e50; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                Header (spans all columns)
+                            </div>
+                            <div style="grid-column: 1; grid-row: 2 / 4; background: #3498db; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                Sidebar<br>(spans 2 rows)
+                            </div>
+                            <div style="grid-column: 2 / 5; grid-row: 2; background: #27ae60; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                Main Content
+                            </div>
+                            <div style="grid-column: 2 / 5; grid-row: 3; background: #e74c3c; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid Areas and Template Areas</h2>
+                <p>The <code>grid-template-areas</code> property provides a visual way to define grid layouts using named areas, making complex layouts more readable and maintainable.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Grid Template Areas</div>
+                    <div class="code-content">
+                        <pre>/* Define grid layout with named areas */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 150px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main ads"
+        "footer footer footer";
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* Assign items to named areas */
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.main {
+    grid-area: main;
+}
+
+.ads {
+    grid-area: ads;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Responsive grid areas */
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "ads"
+            "footer";
+    }
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Grid Template Areas Layout</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: 150px 1fr 100px; grid-template-rows: auto 150px auto; grid-template-areas: 'header header header' 'sidebar main ads' 'footer footer footer'; gap: 15px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div style="grid-area: header; background: #2c3e50; color: white; padding: 15px; text-align: center; border-radius: 4px;">
+                                Header Area
+                            </div>
+                            <div style="grid-area: sidebar; background: #3498db; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                Sidebar
+                            </div>
+                            <div style="grid-area: main; background: #27ae60; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                                Main Content Area
+                            </div>
+                            <div style="grid-area: ads; background: #f39c12; color: white; padding: 15px; text-align: center; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.9em;">
+                                Ads
+                            </div>
+                            <div style="grid-area: footer; background: #e74c3c; color: white; padding: 15px; text-align: center; border-radius: 4px;">
+                                Footer Area
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Auto-Placement and Auto-Sizing</h2>
+                <p>CSS Grid can automatically place items and size tracks based on content. This is useful for dynamic layouts where the number of items may vary.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Auto-Placement Examples</div>
+                    <div class="code-content">
+                        <pre>/* Auto-fit columns */
+.auto-fit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Auto-fill columns */
+.auto-fill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Auto rows */
+.auto-rows-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+}
+
+/* Dense packing */
+.dense-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;      /* Fill gaps with smaller items */
+    gap: 10px;
+}
+
+/* Masonry-like layout */
+.masonry-like {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 10px;       /* Small row height */
+    gap: 15px;
+}
+
+.masonry-item {
+    grid-row-end: span var(--rows); /* CSS custom property for height */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Auto-Responsive Grid</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div style="background: #3498db; color: white; padding: 20px; text-align: center; border-radius: 4px;">Card 1</div>
+                            <div style="background: #e74c3c; color: white; padding: 20px; text-align: center; border-radius: 4px;">Card 2</div>
+                            <div style="background: #27ae60; color: white; padding: 20px; text-align: center; border-radius: 4px;">Card 3</div>
+                            <div style="background: #f39c12; color: white; padding: 20px; text-align: center; border-radius: 4px;">Card 4</div>
+                            <div style="background: #9b59b6; color: white; padding: 20px; text-align: center; border-radius: 4px;">Card 5</div>
+                        </div>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                            This grid automatically adjusts the number of columns based on available space (minimum 180px per column).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid Alignment</h2>
+                <p>CSS Grid provides powerful alignment properties to control how grid items are positioned within their grid areas and how the grid itself is aligned within its container.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Grid Alignment Properties</div>
+                    <div class="code-content">
+                        <pre>/* Align items within their grid areas */
+.align-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px;
+    align-items: center;        /* start, end, center, stretch */
+    justify-items: center;      /* start, end, center, stretch */
+    gap: 10px;
+}
+
+/* Align individual item */
+.special-item {
+    align-self: end;           /* Override align-items for this item */
+    justify-self: start;       /* Override justify-items for this item */
+}
+
+/* Align the grid within its container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 100px);
+    justify-content: center;    /* start, end, center, space-between, space-around, space-evenly */
+    align-content: center;      /* start, end, center, space-between, space-around, space-evenly */
+    gap: 10px;
+    height: 400px;
+    border: 2px solid #ddd;
+}
+
+/* Shorthand properties */
+.place-items-grid {
+    display: grid;
+    place-items: center;        /* align-items justify-items */
+}
+
+.place-content-grid {
+    display: grid;
+    place-content: center;      /* align-content justify-content */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Grid Alignment Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; gap: 20px;">
+                            <div>
+                                <strong>Items centered in their areas:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 80px; align-items: center; justify-items: center; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px; width: 60px; text-align: center;">A</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; width: 60px; text-align: center;">B</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px; width: 60px; text-align: center;">C</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <strong>Items at different positions:</strong>
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 80px; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                    <div style="background: #3498db; color: white; padding: 10px; border-radius: 4px; width: 60px; text-align: center; align-self: start; justify-self: start;">Start</div>
+                                    <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; width: 60px; text-align: center; align-self: center; justify-self: center;">Center</div>
+                                    <div style="background: #27ae60; color: white; padding: 10px; border-radius: 4px; width: 60px; text-align: center; align-self: end; justify-self: end;">End</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Grid Examples</h2>
+                <p>Here are some real-world examples showing how CSS Grid is commonly used in modern web development:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Photo Gallery Layout</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); grid-auto-rows: 150px; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div style="background: linear-gradient(45deg, #3498db, #2980b9); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 1</div>
+                            <div style="background: linear-gradient(45deg, #e74c3c, #c0392b); border-radius: 4px; grid-column: span 2; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Featured Photo</div>
+                            <div style="background: linear-gradient(45deg, #27ae60, #229954); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 3</div>
+                            <div style="background: linear-gradient(45deg, #f39c12, #e67e22); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 4</div>
+                            <div style="background: linear-gradient(45deg, #9b59b6, #8e44ad); border-radius: 4px; grid-row: span 2; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Tall Photo</div>
+                            <div style="background: linear-gradient(45deg, #1abc9c, #16a085); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 6</div>
+                            <div style="background: linear-gradient(45deg, #34495e, #2c3e50); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9em;">Photo 7</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Dashboard Layout</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: 200px 1fr 200px; grid-template-rows: 60px 1fr 40px; grid-template-areas: 'header header header' 'sidebar main widgets' 'footer footer footer'; gap: 15px; height: 300px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div style="grid-area: header; background: #2c3e50; color: white; padding: 15px; border-radius: 4px; display: flex; align-items: center; justify-content: space-between;">
+                                <span style="font-weight: bold;">Dashboard</span>
+                                <span style="font-size: 0.9em;">Welcome, User!</span>
+                            </div>
+                            <div style="grid-area: sidebar; background: #34495e; color: white; padding: 15px; border-radius: 4px;">
+                                <div style="margin-bottom: 10px; padding: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; font-size: 0.9em;">📊 Analytics</div>
+                                <div style="margin-bottom: 10px; padding: 8px; border-radius: 4px; font-size: 0.9em;">👥 Users</div>
+                                <div style="margin-bottom: 10px; padding: 8px; border-radius: 4px; font-size: 0.9em;">⚙️ Settings</div>
+                            </div>
+                            <div style="grid-area: main; background: white; border: 1px solid #ddd; border-radius: 4px; padding: 15px;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Main Content Area</h4>
+                                <p style="color: #666; font-size: 0.9em; margin-bottom: 0;">This is where the primary dashboard content would be displayed, such as charts, data tables, or key metrics.</p>
+                            </div>
+                            <div style="grid-area: widgets; background: #ecf0f1; border-radius: 4px; padding: 15px;">
+                                <div style="background: #3498db; color: white; padding: 10px; margin-bottom: 10px; border-radius: 4px; text-align: center; font-size: 0.8em;">Widget 1</div>
+                                <div style="background: #e74c3c; color: white; padding: 10px; border-radius: 4px; text-align: center; font-size: 0.8em;">Widget 2</div>
+                            </div>
+                            <div style="grid-area: footer; background: #95a5a6; color: white; padding: 10px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.9em;">
+                                © 2023 Dashboard App
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Product Card Grid</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="height: 150px; background: linear-gradient(45deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Product Image</div>
+                                <div style="padding: 15px;">
+                                    <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Product Name</h4>
+                                    <p style="margin: 0 0 15px 0; color: #666; font-size: 0.9em;">Product description goes here with key features and benefits.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-weight: bold; color: #e74c3c; font-size: 1.1em;">$29.99</span>
+                                        <button style="background: #27ae60; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 0.9em;">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="height: 150px; background: linear-gradient(45deg, #e74c3c, #c0392b); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Product Image</div>
+                                <div style="padding: 15px;">
+                                    <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Another Product</h4>
+                                    <p style="margin: 0 0 15px 0; color: #666; font-size: 0.9em;">Description of the second product with its unique selling points.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-weight: bold; color: #e74c3c; font-size: 1.1em;">$39.99</span>
+                                        <button style="background: #27ae60; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 0.9em;">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="height: 150px; background: linear-gradient(45deg, #27ae60, #229954); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">Product Image</div>
+                                <div style="padding: 15px;">
+                                    <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Third Product</h4>
+                                    <p style="margin: 0 0 15px 0; color: #666; font-size: 0.9em;">Features and benefits of the third product in our catalog.</p>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-weight: bold; color: #e74c3c; font-size: 1.1em;">$49.99</span>
+                                        <button style="background: #27ae60; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 0.9em;">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Grid vs Flexbox</h2>
+                <p>Understanding when to use CSS Grid versus Flexbox is crucial for efficient layout design. Both are powerful but serve different purposes.</p>
+
+                <h3>Use CSS Grid When:</h3>
+                <ul>
+                    <li><strong>Two-dimensional layouts:</strong> When you need to control both rows and columns</li>
+                    <li><strong>Overall page layouts:</strong> Creating the main structure of your page</li>
+                    <li><strong>Complex positioning:</strong> When items need to span multiple rows/columns</li>
+                    <li><strong>Overlapping elements:</strong> When you need items to overlap intentionally</li>
+                    <li><strong>Layout-first approach:</strong> When the layout structure is more important than content</li>
+                </ul>
+
+                <h3>Use Flexbox When:</h3>
+                <ul>
+                    <li><strong>One-dimensional layouts:</strong> Arranging items in a single row or column</li>
+                    <li><strong>Component-level design:</strong> Navigation bars, button groups, form controls</li>
+                    <li><strong>Content-first approach:</strong> When content size should determine layout</li>
+                    <li><strong>Alignment and distribution:</strong> Centering items or distributing space</li>
+                    <li><strong>Flexible sizing:</strong> When items need to grow or shrink based on available space</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Grid vs Flexbox Example</div>
+                    <div class="code-content">
+                        <pre>/* Grid for overall page layout */
+.page-layout {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Flexbox for header navigation */
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Grid for card layout within main area */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Flexbox for individual card content */
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: auto;   /* Push buttons to bottom */
+}</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Best Practice:</strong> Use CSS Grid for layout structure and Flexbox for component alignment. They work beautifully together - Grid for the big picture, Flexbox for the details.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>CSS Grid Best Practices</h2>
+                <p>Follow these guidelines to create efficient, maintainable grid layouts:</p>
+
+                <h3>Layout Strategy</h3>
+                <ul>
+                    <li><strong>Start with content:</strong> Understand your content before designing the grid</li>
+                    <li><strong>Use semantic HTML:</strong> Grid should enhance, not replace, proper HTML structure</li>
+                    <li><strong>Mobile-first approach:</strong> Design for small screens first, then enhance for larger screens</li>
+                    <li><strong>Keep it simple:</strong> Complex grids can be hard to maintain and debug</li>
+                </ul>
+
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li><strong>Minimize grid recalculations:</strong> Avoid frequent changes to grid structure</li>
+                    <li><strong>Use efficient sizing:</strong> Prefer fr units over percentages for better performance</li>
+                    <li><strong>Test across browsers:</strong> Ensure consistent behavior across different browsers</li>
+                    <li><strong>Consider older browsers:</strong> Provide fallbacks for browsers without grid support</li>
+                </ul>
+
+                <h3>Accessibility Guidelines</h3>
+                <ul>
+                    <li><strong>Maintain logical order:</strong> Grid visual order should match HTML source order when possible</li>
+                    <li><strong>Test keyboard navigation:</strong> Ensure tab order makes sense</li>
+                    <li><strong>Use appropriate landmarks:</strong> Grid shouldn't interfere with screen reader navigation</li>
+                    <li><strong>Provide sufficient contrast:</strong> Ensure grid gaps don't create accessibility issues</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Future-Proof Tip:</strong> CSS Grid continues to evolve with new features like subgrid. Stay updated with the latest developments to take advantage of new capabilities as they become available.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css7-flexbox.html" class="prev">← Previous: Flexbox Basics</a>
+                <a href="css9-gradients.html">Next: Gradients →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

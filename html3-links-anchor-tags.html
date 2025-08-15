@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links & Anchor Tags - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html" class="active">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Links & Anchor Tags</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Links & Anchor Tags</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to HTML Links</h2>
+                <p>Links are the foundation of the World Wide Web. They connect web pages together, allowing users to navigate from one page to another with a simple click. The HTML anchor tag <code>&lt;a&gt;</code> is used to create links.</p>
+                
+                <p>Links can point to other web pages, sections within the same page, email addresses, phone numbers, or downloadable files. They are what make the web a connected network of information rather than isolated documents.</p>
+
+                <p>The anchor element uses the <code>href</code> (hypertext reference) attribute to specify the destination of the link. Without this attribute, the element is just a placeholder for a link.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Link Syntax</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="https://www.example.com"&gt;Visit Example Website&lt;/a&gt;
+&lt;a href="about.html"&gt;Go to About Page&lt;/a&gt;
+&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Basic Links in Action</div>
+                    <div class="live-example-content">
+                        <p>Here are some example links:</p>
+                        <p><a href="index.html" style="color: #3498db; text-decoration: underline;">Return to Home Page</a></p>
+                        <p><a href="#section-types" style="color: #3498db; text-decoration: underline;">Jump to Link Types Section</a></p>
+                        <p><a href="mailto:hello@example.com" style="color: #3498db; text-decoration: underline;">Send an Email</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="section-types">
+                <h2>Types of Links</h2>
+                <p>HTML supports several different types of links, each serving specific purposes in web navigation and functionality.</p>
+
+                <h3>1. External Links</h3>
+                <p>External links point to pages on other websites. These links should include the full URL including the protocol (http:// or https://).</p>
+
+                <div class="code-example">
+                    <div class="code-header">External Link Example</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="https://www.google.com"&gt;Search with Google&lt;/a&gt;
+&lt;a href="https://github.com"&gt;Visit GitHub&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>2. Internal Links</h3>
+                <p>Internal links point to other pages within the same website. You can use relative paths (without the full URL) for these links.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Internal Link Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="contact.html"&gt;Contact Us&lt;/a&gt;
+&lt;a href="../index.html"&gt;Back to Home&lt;/a&gt;
+&lt;a href="images/gallery.html"&gt;View Gallery&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>3. Anchor Links (Jump Links)</h3>
+                <p>Anchor links jump to specific sections within the same page. They use the hash symbol (#) followed by the ID of the target element.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Anchor Link Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="#top"&gt;Go to Top&lt;/a&gt;
+&lt;a href="#contact-section"&gt;Jump to Contact&lt;/a&gt;
+
+&lt;!-- Target elements with IDs --&gt;
+&lt;h2 id="top"&gt;Top Section&lt;/h2&gt;
+&lt;section id="contact-section"&gt;Contact Information&lt;/section&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>4. Email Links</h3>
+                <p>Email links open the user's default email client with a pre-filled recipient address.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Email Link Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="mailto:contact@example.com"&gt;Send Email&lt;/a&gt;
+&lt;a href="mailto:info@company.com?subject=Inquiry&amp;body=Hello"&gt;Email with Subject&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>5. Telephone Links</h3>
+                <p>Telephone links allow users to call a phone number, especially useful on mobile devices.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Telephone Link Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="tel:+1234567890"&gt;Call (123) 456-7890&lt;/a&gt;
+&lt;a href="tel:+15551234567"&gt;Emergency Contact&lt;/a&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Link Attributes</h2>
+                <p>The anchor tag supports several important attributes that control link behavior and provide additional information.</p>
+
+                <h3>The target Attribute</h3>
+                <p>The <code>target</code> attribute specifies where to open the linked document. The most common values are:</p>
+                <ul>
+                    <li><code>_self</code> - Opens in the same window/tab (default)</li>
+                    <li><code>_blank</code> - Opens in a new window/tab</li>
+                    <li><code>_parent</code> - Opens in the parent frame</li>
+                    <li><code>_top</code> - Opens in the full body of the window</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Target Attribute Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="https://www.example.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;
+&lt;a href="document.pdf" target="_blank"&gt;View PDF&lt;/a&gt;
+&lt;a href="internal-page.html" target="_self"&gt;Same Window&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>The title Attribute</h3>
+                <p>The <code>title</code> attribute provides additional information about the link, displayed as a tooltip when users hover over the link.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Title Attribute Example</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="https://www.example.com" title="Visit Example Company's Homepage"&gt;Example&lt;/a&gt;
+&lt;a href="contact.html" title="Get in touch with our team"&gt;Contact Us&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>The download Attribute</h3>
+                <p>The <code>download</code> attribute suggests that the linked resource should be downloaded rather than displayed in the browser.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Download Attribute Example</div>
+                    <div class="code-content">
+                        <pre>&lt;a href="resume.pdf" download&gt;Download My Resume&lt;/a&gt;
+&lt;a href="report.pdf" download="annual-report-2023.pdf"&gt;Download Report&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Security Note:</strong> When using <code>target="_blank"</code>, consider adding <code>rel="noopener noreferrer"</code> for security reasons to prevent the new page from accessing your original page.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Styling Links with CSS</h2>
+                <p>While this is an HTML tutorial, it's worth understanding how links can be styled. Links have different states that can be targeted with CSS:</p>
+
+                <ul>
+                    <li><code>:link</code> - Unvisited links</li>
+                    <li><code>:visited</code> - Links that have been visited</li>
+                    <li><code>:hover</code> - Links when mouse hovers over them</li>
+                    <li><code>:active</code> - Links when being clicked</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Link Styling (CSS)</div>
+                    <div class="code-content">
+                        <pre>a:link {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #9b59b6;
+}
+
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #f39c12;
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Best Practices for Links</h2>
+                <p>Creating effective links improves user experience and accessibility. Here are key guidelines to follow:</p>
+
+                <h3>Use Descriptive Link Text</h3>
+                <p>Link text should clearly describe the destination or action. Avoid generic phrases like "click here" or "read more."</p>
+
+                <div class="code-example">
+                    <div class="code-header">Good vs Bad Link Text</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Bad --&gt;
+&lt;a href="report.pdf"&gt;Click here&lt;/a&gt; to download the report.
+
+&lt;!-- Good --&gt;
+&lt;a href="report.pdf"&gt;Download the annual financial report (PDF)&lt;/a&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Provide Context for External Links</h3>
+                <p>Let users know when a link will take them to an external site or open in a new window.</p>
+
+                <h3>Make Links Accessible</h3>
+                <p>Ensure links are easily distinguishable from regular text and provide sufficient color contrast.</p>
+
+                <div class="note">
+                    <strong>Accessibility Tip:</strong> Screen readers announce link text to users. Descriptive link text helps visually impaired users understand where the link will take them.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Link Examples</h2>
+                <p>Here's a comprehensive example showing various types of links in a realistic context:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Navigation Menu Example</div>
+                    <div class="live-example-content">
+                        <nav style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                            <h4 style="margin-bottom: 10px; color: #2c3e50;">Main Navigation</h4>
+                            <ul style="list-style: none; margin: 0; padding: 0;">
+                                <li style="margin-bottom: 8px;"><a href="index.html" style="color: #3498db;">🏠 Home</a></li>
+                                <li style="margin-bottom: 8px;"><a href="html1-introduction.html" style="color: #3498db;">📚 HTML Tutorial</a></li>
+                                <li style="margin-bottom: 8px;"><a href="css1-introduction.html" style="color: #3498db;">🎨 CSS Tutorial</a></li>
+                                <li style="margin-bottom: 8px;"><a href="mailto:support@example.com" style="color: #3498db;">✉️ Contact Support</a></li>
+                                <li style="margin-bottom: 8px;"><a href="tel:+1234567890" style="color: #3498db;">📞 Call Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">Navigation Code</div>
+                    <div class="code-content">
+                        <pre>&lt;nav&gt;
+    &lt;h4&gt;Main Navigation&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;🏠 Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="html1-introduction.html"&gt;📚 HTML Tutorial&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="css1-introduction.html"&gt;🎨 CSS Tutorial&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="mailto:support@example.com"&gt;✉️ Contact Support&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="tel:+1234567890"&gt;📞 Call Us&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html2-headings-paragraphs.html" class="prev">← Previous: Headings & Paragraphs</a>
+                <a href="html4-images.html">Next: Images in HTML →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

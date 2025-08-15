@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html" class="active">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>CSS Selectors</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > CSS Selectors</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>What are CSS Selectors?</h2>
+                <p>CSS selectors are patterns used to select and target HTML elements that you want to style. Think of selectors as a way to "point" to specific elements on your page and say "apply these styles to these elements."</p>
+                
+                <p>Selectors are the first part of every CSS rule and determine which elements will receive the styling. Mastering selectors gives you precise control over your page's appearance and allows you to create sophisticated, well-organized stylesheets.</p>
+
+                <p>There are many different types of selectors, from simple element selectors to complex combinations that can target elements based on their position, attributes, or relationship to other elements.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> Selectors are the bridge between your CSS styles and your HTML elements. The more precisely you can select elements, the more control you have over your design.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Basic Selectors</h2>
+                <p>Let's start with the fundamental selectors that form the foundation of CSS styling:</p>
+
+                <h3>Element Selector</h3>
+                <p>Selects all elements of a specific HTML tag type. This is the most basic selector.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Element Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select all paragraphs */
+p {
+    color: blue;
+    margin-bottom: 15px;
+}
+
+/* Select all headings level 1 */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Select all links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Select all images */
+img {
+    max-width: 100%;
+    height: auto;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>Class Selector</h3>
+                <p>Selects elements with a specific class attribute. Classes are reusable and can be applied to multiple elements.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Class Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select elements with class="highlight" */
+.highlight {
+    background-color: yellow;
+    padding: 10px;
+}
+
+/* Select elements with class="button" */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Select elements with class="warning" */
+.warning {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+    padding: 15px;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>ID Selector</h3>
+                <p>Selects a single element with a specific ID attribute. IDs should be unique on a page.</p>
+
+                <div class="code-example">
+                    <div class="code-header">ID Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select element with id="header" */
+#header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+/* Select element with id="main-content" */
+#main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Select element with id="footer" */
+#footer {
+    background-color: #34495e;
+    text-align: center;
+    padding: 30px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Basic Selectors in Action</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                            <h3 style="color: #e74c3c; margin-top: 0;">Element Selector (h3)</h3>
+                            <p style="color: #2c3e50; margin-bottom: 15px;">Element selector (p) - all paragraphs get this style</p>
+                            
+                            <div style="background-color: #fff3cd; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+                                <strong>Class selector (.highlight)</strong> - elements with class="highlight"
+                            </div>
+                            
+                            <div style="background-color: #d4edda; padding: 15px; border-radius: 4px; border-left: 4px solid #28a745;">
+                                <strong>ID selector (#special)</strong> - unique element with id="special"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Combinator Selectors</h2>
+                <p>Combinator selectors target elements based on their relationship to other elements in the HTML structure:</p>
+
+                <h3>Descendant Selector (Space)</h3>
+                <p>Selects elements that are descendants of another element, regardless of how deeply nested they are.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Descendant Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select all paragraphs inside articles */
+article p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Select all links inside navigation */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+/* Select all images inside figure elements */
+figure img {
+    width: 100%;
+    border-radius: 8px;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>Child Selector (>)</h3>
+                <p>Selects elements that are direct children of another element.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Child Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select only direct paragraph children of main */
+main > p {
+    margin-bottom: 20px;
+}
+
+/* Select only direct list items of nav ul */
+nav ul > li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Select only direct div children of container */
+.container > div {
+    flex: 1;
+    margin: 10px;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>Adjacent Sibling Selector (+)</h3>
+                <p>Selects an element that immediately follows another element.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Adjacent Sibling Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select paragraphs immediately after h2 */
+h2 + p {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* Select images immediately after paragraphs */
+p + img {
+    margin-top: 20px;
+}
+
+/* Select divs immediately after headers */
+header + div {
+    padding-top: 30px;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>General Sibling Selector (~)</h3>
+                <p>Selects all elements that are siblings of another element.</p>
+
+                <div class="code-example">
+                    <div class="code-header">General Sibling Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select all paragraphs that are siblings after h2 */
+h2 ~ p {
+    color: #666;
+}
+
+/* Select all images that are siblings after a paragraph */
+p ~ img {
+    border: 1px solid #ddd;
+}
+
+/* Select all sections that are siblings after header */
+header ~ section {
+    margin-top: 40px;
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Attribute Selectors</h2>
+                <p>Attribute selectors target elements based on their attributes and attribute values:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Attribute Selector Examples</div>
+                    <div class="code-content">
+                        <pre>/* Select elements with a specific attribute */
+[title] {
+    border-bottom: 1px dotted;
+}
+
+/* Select elements with a specific attribute value */
+[type="email"] {
+    border: 2px solid blue;
+}
+
+/* Select elements where attribute begins with a value */
+[href^="https"] {
+    color: green;
+}
+
+/* Select elements where attribute ends with a value */
+[src$=".jpg"] {
+    border: 2px solid red;
+}
+
+/* Select elements where attribute contains a value */
+[class*="btn"] {
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* Select elements where attribute contains a word */
+[class~="active"] {
+    background-color: #007bff;
+    color: white;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Attribute Selectors Demo</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                            <p><a href="https://example.com" style="color: green; text-decoration: underline;">HTTPS link (green)</a> - [href^="https"]</p>
+                            <p><a href="http://example.com" style="color: blue; text-decoration: underline;">HTTP link (blue)</a> - [href^="http"]</p>
+                            
+                            <input type="email" placeholder="Email input" style="border: 2px solid blue; padding: 8px; margin: 10px 0; display: block;">
+                            <p style="font-size: 0.9em; color: #666;">Email input styled with [type="email"]</p>
+                            
+                            <button style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; margin-right: 10px;">Button with "btn" class</button>
+                            <span style="font-size: 0.9em; color: #666;">Styled with [class*="btn"]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Pseudo-Classes</h2>
+                <p>Pseudo-classes select elements based on their state or position, not their attributes or content:</p>
+
+                <h3>Link and User Action Pseudo-classes</h3>
+                <div class="code-example">
+                    <div class="code-header">Link and Action Pseudo-classes</div>
+                    <div class="code-content">
+                        <pre>/* Unvisited links */
+a:link {
+    color: #007bff;
+}
+
+/* Visited links */
+a:visited {
+    color: #6f42c1;
+}
+
+/* Hover state */
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Active state (being clicked) */
+a:active {
+    color: #004085;
+}
+
+/* Focus state (keyboard navigation) */
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>Structural Pseudo-classes</h3>
+                <div class="code-example">
+                    <div class="code-header">Structural Pseudo-classes</div>
+                    <div class="code-content">
+                        <pre>/* First child element */
+li:first-child {
+    font-weight: bold;
+}
+
+/* Last child element */
+li:last-child {
+    border-bottom: none;
+}
+
+/* Nth child elements */
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* First of type */
+p:first-of-type {
+    font-size: 1.2em;
+}
+
+/* Only child */
+div:only-child {
+    text-align: center;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>Form Pseudo-classes</h3>
+                <div class="code-example">
+                    <div class="code-header">Form Pseudo-classes</div>
+                    <div class="code-content">
+                        <pre>/* Required fields */
+input:required {
+    border-left: 3px solid red;
+}
+
+/* Valid fields */
+input:valid {
+    border-left: 3px solid green;
+}
+
+/* Invalid fields */
+input:invalid {
+    border-left: 3px solid red;
+}
+
+/* Disabled elements */
+input:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Checked checkboxes and radio buttons */
+input:checked {
+    transform: scale(1.1);
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Pseudo-Elements</h2>
+                <p>Pseudo-elements create virtual elements that you can style, allowing you to target specific parts of elements:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Pseudo-element Examples</div>
+                    <div class="code-content">
+                        <pre>/* Style the first line of paragraphs */
+p::first-line {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Style the first letter of paragraphs */
+p::first-letter {
+    font-size: 2em;
+    float: left;
+    margin-right: 5px;
+}
+
+/* Insert content before elements */
+.quote::before {
+    content: '"';
+    font-size: 2em;
+    color: #666;
+}
+
+.quote::after {
+    content: '"';
+    font-size: 2em;
+    color: #666;
+}
+
+/* Style placeholder text */
+input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Create decorative elements */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+    margin-top: 10px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Pseudo-elements in Action</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                            <h3 style="margin-top: 0; position: relative;">Section Title
+                                <span style="content: ''; display: block; width: 50px; height: 3px; background-color: #007bff; margin-top: 10px;"></span>
+                            </h3>
+                            
+                            <p style="margin-bottom: 15px;">
+                                <span style="font-size: 2em; float: left; margin-right: 5px; line-height: 1;">T</span>
+                                <span style="font-weight: bold; font-size: 1.1em;">his paragraph demonstrates ::first-letter and ::first-line effects.</span> The rest of the paragraph continues with normal styling to show the contrast.
+                            </p>
+                            
+                            <div style="font-size: 1.2em; color: #666;">
+                                <span style="font-size: 2em; color: #666;">"</span>This is a quote with decorative quotation marks.<span style="font-size: 2em; color: #666;">"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Selector Specificity and Best Practices</h2>
+                <p>Understanding how selectors work together and their relative specificity is crucial for maintainable CSS:</p>
+
+                <h3>Specificity Calculation</h3>
+                <ul>
+                    <li><strong>Inline styles:</strong> 1000 points</li>
+                    <li><strong>IDs:</strong> 100 points each</li>
+                    <li><strong>Classes, attributes, pseudo-classes:</strong> 10 points each</li>
+                    <li><strong>Elements and pseudo-elements:</strong> 1 point each</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Specificity Examples</div>
+                    <div class="code-content">
+                        <pre>/* Specificity: 1 (1 element) */
+p { color: black; }
+
+/* Specificity: 10 (1 class) */
+.highlight { color: blue; }
+
+/* Specificity: 11 (1 class + 1 element) */
+p.highlight { color: green; }
+
+/* Specificity: 100 (1 ID) */
+#special { color: red; }
+
+/* Specificity: 111 (1 ID + 1 class + 1 element) */
+#special.highlight p { color: purple; }
+
+/* Specificity: 21 (2 classes + 1 element) */
+.container.main p { color: orange; }</pre>
+                    </div>
+                </div>
+
+                <h3>Best Practices for Selectors</h3>
+                <ul>
+                    <li><strong>Keep specificity low:</strong> Use classes instead of IDs when possible</li>
+                    <li><strong>Avoid overly specific selectors:</strong> Don't use more specificity than needed</li>
+                    <li><strong>Use meaningful class names:</strong> Choose names that describe purpose, not appearance</li>
+                    <li><strong>Avoid !important:</strong> Solve specificity conflicts with better selectors</li>
+                    <li><strong>Group related selectors:</strong> Organize your CSS logically</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Golden Rule:</strong> Write selectors that are as specific as needed, but no more specific than necessary. This keeps your CSS flexible and maintainable.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Advanced Selector Combinations</h2>
+                <p>Combining different selector types gives you powerful targeting capabilities:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Advanced Selector Combinations</div>
+                    <div class="code-content">
+                        <pre>/* Multiple classes */
+.button.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.button.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Class with pseudo-class */
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Attribute selector with pseudo-class */
+input[type="email"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Complex combinations */
+.article-content > p:first-child::first-letter {
+    font-size: 3em;
+    color: #007bff;
+    float: left;
+    margin-right: 8px;
+}
+
+/* Multiple selector grouping */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/* Targeting specific form elements */
+form input[type="text"]:required:invalid {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Pro Tip:</strong> When combining selectors, read them from right to left. The browser processes selectors this way, and it helps you understand what elements will be selected.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css1-introduction.html" class="prev">← Previous: Introduction to CSS</a>
+                <a href="css3-backgrounds.html">Next: Backgrounds →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

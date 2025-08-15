@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html" class="active">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Introduction to CSS</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Introduction to CSS</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>What is CSS?</h2>
+                <p>CSS (Cascading Style Sheets) is the language used to style and layout web pages. While HTML provides the structure and content, CSS controls the visual presentation - colors, fonts, spacing, positioning, animations, and responsive behavior.</p>
+                
+                <p>Think of HTML as the skeleton and muscles of a webpage, while CSS is the skin, clothing, and makeup that determines how everything looks. CSS transforms plain HTML documents into visually appealing, professional websites that engage users and communicate effectively.</p>
+
+                <p>CSS follows a "cascading" model, meaning styles can be inherited from parent elements to children, and multiple style rules can be applied to the same element with specific rules determining which styles take precedence.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> CSS separates content (HTML) from presentation (styling), making websites easier to maintain and allowing the same content to have different visual presentations.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>How CSS Works</h2>
+                <p>CSS works by selecting HTML elements and applying style rules to them. A CSS rule consists of a selector (which elements to style) and declarations (what styles to apply).</p>
+
+                <div class="code-example">
+                    <div class="code-header">CSS Rule Structure</div>
+                    <div class="code-content">
+                        <pre>/* CSS Rule Anatomy */
+selector {
+    property: value;
+    property: value;
+}
+
+/* Example: Style all paragraphs */
+p {
+    color: blue;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Example: Style elements with class "highlight" */
+.highlight {
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 5px;
+}</pre>
+                    </div>
+                </div>
+
+                <h3>CSS Rule Components</h3>
+                <ul>
+                    <li><strong>Selector:</strong> Identifies which HTML elements to style</li>
+                    <li><strong>Property:</strong> The aspect of the element you want to change (color, size, etc.)</li>
+                    <li><strong>Value:</strong> The setting for that property</li>
+                    <li><strong>Declaration:</strong> A property-value pair</li>
+                    <li><strong>Declaration Block:</strong> All declarations wrapped in curly braces</li>
+                </ul>
+
+                <div class="live-example">
+                    <div class="live-example-header">CSS in Action</div>
+                    <div class="live-example-content">
+                        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                            <h4 style="color: #e74c3c; margin-top: 0;">Styled with CSS</h4>
+                            <p style="color: #2c3e50; font-size: 16px; line-height: 1.6;">This paragraph has been styled with CSS to have a specific color, font size, and line height.</p>
+                            <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
+                                <strong>Highlighted section:</strong> This div has a yellow background, padding, rounded corners, and a colored left border - all styled with CSS!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Ways to Add CSS</h2>
+                <p>There are three main ways to add CSS to your HTML documents, each with different use cases and priority levels:</p>
+
+                <h3>1. Inline CSS</h3>
+                <p>CSS applied directly to HTML elements using the <code>style</code> attribute. Has highest priority but is not recommended for maintainable code.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Inline CSS Example</div>
+                    <div class="code-content">
+                        <pre>&lt;h1 style="color: red; font-size: 24px;"&gt;Styled Heading&lt;/h1&gt;
+&lt;p style="background-color: lightblue; padding: 10px;"&gt;Styled paragraph&lt;/p&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>2. Internal CSS</h3>
+                <p>CSS written inside a <code>&lt;style&gt;</code> element in the HTML document's <code>&lt;head&gt;</code> section. Good for single-page styles.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Internal CSS Example</div>
+                    <div class="code-content">
+                        <pre>&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: red;
+            font-size: 24px;
+        }
+        
+        p {
+            background-color: lightblue;
+            padding: 10px;
+        }
+        
+        .special {
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>3. External CSS</h3>
+                <p>CSS written in separate .css files and linked to HTML documents. Best practice for maintainable, reusable styles.</p>
+
+                <div class="code-example">
+                    <div class="code-header">External CSS Example</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- In your HTML file --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+
+/* In your styles.css file */
+h1 {
+    color: red;
+    font-size: 24px;
+}
+
+p {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.special {
+    border: 2px solid green;
+    border-radius: 5px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Best Practice:</strong> Use external CSS files for most styling. They're easier to maintain, can be cached by browsers, and allow styles to be shared across multiple pages.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>CSS Comments and Organization</h2>
+                <p>CSS comments help document your code and organize styles. Good organization makes your CSS easier to maintain and understand.</p>
+
+                <div class="code-example">
+                    <div class="code-header">CSS Comments and Organization</div>
+                    <div class="code-content">
+                        <pre>/* ===================================
+   MAIN STYLESHEET
+   Table of Contents:
+   1. Reset and Base Styles
+   2. Typography
+   3. Layout
+   4. Components
+   5. Utilities
+   =================================== */
+
+/* 1. Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 2. Typography */
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* 3. Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. Components */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Cascade and Specificity</h2>
+                <p>CSS follows specific rules to determine which styles apply when multiple rules target the same element. Understanding the cascade and specificity is crucial for controlling your styles effectively.</p>
+
+                <h3>Cascade Order (from lowest to highest priority)</h3>
+                <ol>
+                    <li>Browser default styles</li>
+                    <li>External stylesheets</li>
+                    <li>Internal stylesheets</li>
+                    <li>Inline styles</li>
+                    <li>Styles marked with <code>!important</code></li>
+                </ol>
+
+                <h3>Specificity Rules</h3>
+                <p>When rules have the same cascade level, specificity determines which applies:</p>
+                <ul>
+                    <li><strong>Inline styles:</strong> Highest specificity (1000 points)</li>
+                    <li><strong>IDs:</strong> High specificity (100 points)</li>
+                    <li><strong>Classes, attributes, pseudo-classes:</strong> Medium specificity (10 points)</li>
+                    <li><strong>Elements and pseudo-elements:</strong> Low specificity (1 point)</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Specificity Examples</div>
+                    <div class="code-content">
+                        <pre>/* Specificity: 1 (element) */
+p {
+    color: black;
+}
+
+/* Specificity: 10 (class) */
+.highlight {
+    color: blue;
+}
+
+/* Specificity: 100 (ID) */
+#special {
+    color: red;
+}
+
+/* Specificity: 111 (ID + class + element) */
+#special.highlight p {
+    color: green;
+}
+
+/* Inline style would have specificity: 1000 */
+&lt;p style="color: purple;"&gt;This text will be purple&lt;/p&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Tip:</strong> Avoid using <code>!important</code> unless absolutely necessary. It makes CSS harder to maintain and override. Instead, use more specific selectors.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>CSS Values and Units</h2>
+                <p>CSS properties accept different types of values and units. Understanding these is essential for creating flexible, responsive designs.</p>
+
+                <h3>Length Units</h3>
+                <ul>
+                    <li><strong>px (pixels):</strong> Absolute unit, fixed size</li>
+                    <li><strong>em:</strong> Relative to parent element's font size</li>
+                    <li><strong>rem:</strong> Relative to root element's font size</li>
+                    <li><strong>%:</strong> Percentage of parent element</li>
+                    <li><strong>vw/vh:</strong> Percentage of viewport width/height</li>
+                </ul>
+
+                <h3>Color Values</h3>
+                <ul>
+                    <li><strong>Named colors:</strong> red, blue, green, etc.</li>
+                    <li><strong>Hex codes:</strong> #ff0000, #333, etc.</li>
+                    <li><strong>RGB:</strong> rgb(255, 0, 0)</li>
+                    <li><strong>RGBA:</strong> rgba(255, 0, 0, 0.5) - includes transparency</li>
+                    <li><strong>HSL:</strong> hsl(0, 100%, 50%)</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">CSS Values and Units</div>
+                    <div class="code-content">
+                        <pre>/* Length units */
+.container {
+    width: 100%;           /* Percentage */
+    max-width: 1200px;     /* Pixels */
+    padding: 2rem;         /* Root em units */
+    margin: 1em auto;      /* Em units */
+    height: 50vh;          /* Viewport height */
+}
+
+/* Color values */
+.color-examples {
+    color: red;                    /* Named color */
+    background-color: #3498db;     /* Hex color */
+    border-color: rgb(52, 152, 219); /* RGB color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* RGBA with transparency */
+}
+
+/* Font sizes */
+.typography {
+    font-size: 16px;       /* Absolute size */
+    line-height: 1.5;      /* Unitless number */
+    margin-bottom: 1rem;   /* Relative size */
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Browser Developer Tools</h2>
+                <p>Browser developer tools are essential for learning and debugging CSS. They let you inspect elements, modify styles in real-time, and understand how CSS rules are applied.</p>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Element Inspector:</strong> View HTML structure and applied styles</li>
+                    <li><strong>Style Editor:</strong> Modify CSS properties and see changes instantly</li>
+                    <li><strong>Computed Styles:</strong> See final calculated values for all properties</li>
+                    <li><strong>Box Model Viewer:</strong> Visualize margins, padding, borders, and content</li>
+                    <li><strong>Responsive Mode:</strong> Test different screen sizes</li>
+                </ul>
+
+                <h3>How to Access Developer Tools</h3>
+                <ul>
+                    <li><strong>Right-click:</strong> "Inspect Element" on any page element</li>
+                    <li><strong>Keyboard shortcut:</strong> F12 or Ctrl+Shift+I (Cmd+Option+I on Mac)</li>
+                    <li><strong>Browser menu:</strong> Tools > Developer Tools</li>
+                </ul>
+
+                <div class="live-example">
+                    <div class="live-example-header">Developer Tools Exercise</div>
+                    <div class="live-example-content">
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                            <p style="color: #2c3e50; margin-bottom: 10px;"><strong>Try this:</strong> Right-click on this text and select "Inspect Element" to see how CSS styles are applied!</p>
+                            <div style="background: linear-gradient(45deg, #3498db, #2980b9); color: white; padding: 15px; border-radius: 5px;">
+                                <p style="margin: 0;">This element has multiple CSS properties applied. Use the developer tools to explore them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>CSS Best Practices</h2>
+                <p>Following best practices from the beginning will help you write maintainable, efficient CSS that's easy to understand and modify.</p>
+
+                <h3>Organization and Structure</h3>
+                <ul>
+                    <li><strong>Use external stylesheets:</strong> Keep CSS separate from HTML</li>
+                    <li><strong>Organize with comments:</strong> Group related styles together</li>
+                    <li><strong>Use consistent naming:</strong> Choose clear, descriptive class names</li>
+                    <li><strong>Follow a methodology:</strong> Consider BEM, OOCSS, or similar approaches</li>
+                </ul>
+
+                <h3>Writing Efficient CSS</h3>
+                <ul>
+                    <li><strong>Avoid overly specific selectors:</strong> Keep specificity manageable</li>
+                    <li><strong>Don't repeat yourself:</strong> Create reusable classes</li>
+                    <li><strong>Use shorthand properties:</strong> Combine related properties when possible</li>
+                    <li><strong>Minimize use of !important:</strong> Solve specificity issues properly</li>
+                </ul>
+
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li><strong>Minimize CSS files:</strong> Remove unused styles</li>
+                    <li><strong>Use efficient selectors:</strong> Avoid complex descendant selectors</li>
+                    <li><strong>Optimize for mobile:</strong> Use mobile-first responsive design</li>
+                    <li><strong>Leverage browser caching:</strong> Use external stylesheets</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Remember:</strong> Good CSS is not just about making things look pretty - it should be maintainable, performant, and accessible to all users.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Getting Started with CSS</h2>
+                <p>Ready to start writing CSS? Here are some practical first steps:</p>
+
+                <div class="code-example">
+                    <div class="code-header">Your First CSS File</div>
+                    <div class="code-content">
+                        <pre>/* styles.css - Your first CSS file */
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set up basic typography */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Style headings */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #34495e;
+}
+
+/* Style paragraphs */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Create a container for your content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <strong>Next Steps:</strong> Now that you understand CSS basics, you're ready to learn about selectors, which give you precise control over which elements to style.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html9-audio-video.html" class="prev">← Previous: Audio & Video</a>
+                <a href="css2-selectors.html">Next: CSS Selectors →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

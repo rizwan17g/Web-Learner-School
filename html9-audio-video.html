@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio & Video - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html" class="active">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Audio & Video</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Audio & Video</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to HTML5 Media</h2>
+                <p>HTML5 revolutionized web multimedia by introducing native support for audio and video content without requiring plugins like Flash. The <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements provide a standardized way to embed and control media content directly in web pages.</p>
+                
+                <p>Before HTML5, embedding media required third-party plugins that were often unreliable, had security issues, and didn't work on all devices. Native HTML5 media elements are more secure, accessible, and work consistently across modern browsers and mobile devices.</p>
+
+                <p>These elements support multiple file formats, provide built-in controls, and can be extensively customized with JavaScript. They're essential for creating engaging, multimedia-rich websites and applications.</p>
+
+                <div class="highlight">
+                    <strong>Key Advantage:</strong> HTML5 media elements work natively in browsers without plugins, providing better performance, security, and accessibility than legacy solutions.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Audio Element</h2>
+                <p>The <code>&lt;audio&gt;</code> element embeds audio content in web pages. It supports multiple audio formats and provides built-in playback controls that users can operate without JavaScript.</p>
+
+                <p>Audio elements can include background music, sound effects, podcasts, music samples, or any other audio content. They support both streaming and downloadable audio files.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Audio Element</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Simple audio with controls --&gt;
+&lt;audio controls&gt;
+    &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+    &lt;source src="podcast.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;!-- Audio with additional attributes --&gt;
+&lt;audio controls preload="metadata" loop&gt;
+    &lt;source src="background-music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="background-music.wav" type="audio/wav"&gt;
+    &lt;p&gt;Your browser doesn't support HTML5 audio. &lt;a href="background-music.mp3"&gt;Download the audio file&lt;/a&gt;.&lt;/p&gt;
+&lt;/audio&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Audio Attributes</h3>
+                <ul>
+                    <li><code>controls</code> - Shows playback controls (play, pause, volume, etc.)</li>
+                    <li><code>autoplay</code> - Starts playing automatically (use carefully!)</li>
+                    <li><code>loop</code> - Repeats the audio when it ends</li>
+                    <li><code>muted</code> - Starts with audio muted</li>
+                    <li><code>preload</code> - Controls how much to preload ("none", "metadata", "auto")</li>
+                </ul>
+
+                <div class="live-example">
+                    <div class="live-example-header">Audio Player Example</div>
+                    <div class="live-example-content">
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                            <h4 style="margin-top: 0; color: #2c3e50;">Sample Audio Player</h4>
+                            <div style="background: #34495e; padding: 15px; border-radius: 5px; color: white; display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 40px; height: 40px; background: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    ▶️
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="background: #95a5a6; height: 4px; border-radius: 2px; position: relative;">
+                                        <div style="background: #3498db; height: 4px; width: 30%; border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; font-size: 0.8em; margin-top: 5px;">
+                                        <span>1:23</span>
+                                        <span>3:45</span>
+                                    </div>
+                                </div>
+                                <div style="font-size: 0.9em;">🔊</div>
+                            </div>
+                            <p style="margin-bottom: 0; margin-top: 10px; font-size: 0.9em; color: #666;">
+                                This represents how an HTML5 audio player appears with default browser controls.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Video Element</h2>
+                <p>The <code>&lt;video&gt;</code> element embeds video content in web pages. Like audio elements, it supports multiple formats and provides native playback controls without requiring plugins.</p>
+
+                <p>Video elements are perfect for tutorials, presentations, promotional content, entertainment, or any visual media. They can be made responsive and integrate seamlessly with your page design.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Video Element</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Simple video with controls --&gt;
+&lt;video controls width="640" height="360"&gt;
+    &lt;source src="tutorial.mp4" type="video/mp4"&gt;
+    &lt;source src="tutorial.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Video with poster and attributes --&gt;
+&lt;video controls width="100%" height="auto" poster="video-thumbnail.jpg" preload="metadata"&gt;
+    &lt;source src="presentation.mp4" type="video/mp4"&gt;
+    &lt;source src="presentation.ogg" type="video/ogg"&gt;
+    &lt;track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English"&gt;
+    &lt;track kind="subtitles" src="subtitles-es.vtt" srclang="es" label="Español"&gt;
+    &lt;p&gt;Your browser doesn't support HTML5 video. &lt;a href="presentation.mp4"&gt;Download the video&lt;/a&gt;.&lt;/p&gt;
+&lt;/video&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Video Attributes</h3>
+                <ul>
+                    <li><code>controls</code> - Shows video controls (play, pause, fullscreen, etc.)</li>
+                    <li><code>width/height</code> - Sets video dimensions</li>
+                    <li><code>poster</code> - Image shown before video plays</li>
+                    <li><code>autoplay</code> - Starts playing automatically (use with caution)</li>
+                    <li><code>loop</code> - Repeats the video when it ends</li>
+                    <li><code>muted</code> - Starts with audio muted</li>
+                    <li><code>playsinline</code> - Plays inline on mobile devices</li>
+                </ul>
+
+                <div class="live-example">
+                    <div class="live-example-header">Video Player Example</div>
+                    <div class="live-example-content">
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                            <h4 style="margin-top: 0; color: #2c3e50;">Sample Video Player</h4>
+                            <div style="background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+                                <div style="aspect-ratio: 16/9; background: linear-gradient(45deg, #2c3e50, #34495e); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2em;">
+                                    📹 Video Content Area
+                                </div>
+                                <div style="background: rgba(0,0,0,0.8); color: white; padding: 10px; display: flex; align-items: center; gap: 15px;">
+                                    <button style="background: none; border: none; color: white; font-size: 1.2em; cursor: pointer;">▶️</button>
+                                    <div style="flex: 1; background: #555; height: 4px; border-radius: 2px; position: relative;">
+                                        <div style="background: #3498db; height: 4px; width: 25%; border-radius: 2px;"></div>
+                                    </div>
+                                    <span style="font-size: 0.9em;">2:15 / 8:30</span>
+                                    <button style="background: none; border: none; color: white; font-size: 1em; cursor: pointer;">🔊</button>
+                                    <button style="background: none; border: none; color: white; font-size: 1em; cursor: pointer;">⛶</button>
+                                </div>
+                            </div>
+                            <p style="margin-bottom: 0; margin-top: 10px; font-size: 0.9em; color: #666;">
+                                This represents how an HTML5 video player appears with native browser controls.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Multiple Source Formats</h2>
+                <p>Different browsers support different media formats. To ensure maximum compatibility, provide multiple source formats using the <code>&lt;source&gt;</code> element. Browsers will use the first format they support.</p>
+
+                <h3>Audio Format Recommendations</h3>
+                <ul>
+                    <li><strong>MP3</strong> - Widely supported, good compression</li>
+                    <li><strong>OGG</strong> - Open source format, good quality</li>
+                    <li><strong>WAV</strong> - Uncompressed, high quality, large file size</li>
+                    <li><strong>AAC</strong> - Good compression, supported by most browsers</li>
+                </ul>
+
+                <h3>Video Format Recommendations</h3>
+                <ul>
+                    <li><strong>MP4 (H.264)</strong> - Most widely supported format</li>
+                    <li><strong>WebM</strong> - Open source, good compression, modern browsers</li>
+                    <li><strong>OGG</strong> - Open source alternative</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Multiple Source Example</div>
+                    <div class="code-content">
+                        <pre>&lt;video controls width="100%" poster="video-poster.jpg"&gt;
+    &lt;!-- List formats in order of preference --&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;source src="video.ogg" type="video/ogg"&gt;
+    
+    &lt;!-- Fallback content for unsupported browsers --&gt;
+    &lt;p&gt;Your browser doesn't support HTML5 video. 
+       &lt;a href="video.mp4"&gt;Download the video file&lt;/a&gt;.&lt;/p&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    &lt;source src="audio.wav" type="audio/wav"&gt;
+    
+    &lt;p&gt;Your browser doesn't support HTML5 audio. 
+       &lt;a href="audio.mp3"&gt;Download the audio file&lt;/a&gt;.&lt;/p&gt;
+&lt;/audio&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Best Practice:</strong> Always provide fallback content for browsers that don't support HTML5 media elements, and offer multiple formats for maximum compatibility.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Accessibility and Subtitles</h2>
+                <p>Making media content accessible is crucial for users with hearing or visual impairments. HTML5 provides the <code>&lt;track&gt;</code> element for adding captions, subtitles, and other text tracks.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Video with Accessibility Features</div>
+                    <div class="code-content">
+                        <pre>&lt;video controls width="100%" poster="lecture-poster.jpg"&gt;
+    &lt;source src="lecture.mp4" type="video/mp4"&gt;
+    &lt;source src="lecture.webm" type="video/webm"&gt;
+    
+    &lt;!-- Captions for deaf/hard-of-hearing users --&gt;
+    &lt;track kind="captions" src="captions-en.vtt" srclang="en" label="English Captions" default&gt;
+    
+    &lt;!-- Subtitles in different languages --&gt;
+    &lt;track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English"&gt;
+    &lt;track kind="subtitles" src="subtitles-es.vtt" srclang="es" label="Español"&gt;
+    &lt;track kind="subtitles" src="subtitles-fr.vtt" srclang="fr" label="Français"&gt;
+    
+    &lt;!-- Audio descriptions for visually impaired users --&gt;
+    &lt;track kind="descriptions" src="descriptions.vtt" srclang="en" label="Audio Descriptions"&gt;
+    
+    Your browser doesn't support HTML5 video.
+&lt;/video&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Track Types</h3>
+                <ul>
+                    <li><code>captions</code> - Full transcription including sound effects</li>
+                    <li><code>subtitles</code> - Translation of dialogue</li>
+                    <li><code>descriptions</code> - Audio descriptions for visual content</li>
+                    <li><code>chapters</code> - Navigation points within the media</li>
+                    <li><code>metadata</code> - Additional information not displayed to users</li>
+                </ul>
+
+                <div class="note">
+                    <strong>WebVTT Format:</strong> Track files use the WebVTT (.vtt) format, which is a simple text format for timed text tracks. This ensures captions and subtitles are synchronized with the media.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Responsive Media</h2>
+                <p>Media elements should adapt to different screen sizes. Use CSS to make audio and video players responsive and ensure they work well on all devices.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Responsive Video CSS</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- HTML --&gt;
+&lt;div class="video-container"&gt;
+    &lt;video controls&gt;
+        &lt;source src="responsive-video.mp4" type="video/mp4"&gt;
+        Your browser doesn't support video.
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+&lt;style&gt;
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Maintain 16:9 aspect ratio */
+.aspect-ratio-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.aspect-ratio-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+&lt;/style&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Media Performance Optimization</h2>
+                <p>Optimizing media files and delivery is crucial for good user experience and page performance:</p>
+
+                <h3>File Optimization</h3>
+                <ul>
+                    <li><strong>Compression:</strong> Use appropriate compression settings for your content type</li>
+                    <li><strong>Resolution:</strong> Provide multiple resolutions for different devices</li>
+                    <li><strong>Length:</strong> Keep videos concise to reduce file size and improve engagement</li>
+                    <li><strong>Format:</strong> Choose the right format for your use case</li>
+                </ul>
+
+                <h3>Loading Strategies</h3>
+                <ul>
+                    <li><strong>Preload attribute:</strong> Control how much content to preload</li>
+                    <li><strong>Lazy loading:</strong> Load media only when needed</li>
+                    <li><strong>Progressive loading:</strong> Allow playback while downloading</li>
+                    <li><strong>CDN delivery:</strong> Use content delivery networks for faster loading</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Performance-Optimized Media</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Lazy-loaded video with minimal preloading --&gt;
+&lt;video controls preload="none" poster="thumbnail.jpg" width="100%"&gt;
+    &lt;source src="optimized-video.mp4" type="video/mp4"&gt;
+    &lt;source src="optimized-video.webm" type="video/webm"&gt;
+&lt;/video&gt;
+
+&lt;!-- Audio with metadata preloading --&gt;
+&lt;audio controls preload="metadata"&gt;
+    &lt;source src="compressed-audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="compressed-audio.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Best Practices for Media</h2>
+                <p>Follow these guidelines to create effective, accessible, and performant media implementations:</p>
+
+                <h3>User Experience</h3>
+                <ul>
+                    <li><strong>Avoid autoplay:</strong> Let users choose when to play media</li>
+                    <li><strong>Provide controls:</strong> Always include player controls</li>
+                    <li><strong>Use posters:</strong> Show meaningful thumbnails for videos</li>
+                    <li><strong>Include fallbacks:</strong> Provide alternative content or downloads</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <ul>
+                    <li><strong>Add captions:</strong> Include captions for all video content</li>
+                    <li><strong>Provide transcripts:</strong> Offer text alternatives</li>
+                    <li><strong>Use descriptive text:</strong> Include meaningful fallback content</li>
+                    <li><strong>Test with screen readers:</strong> Ensure assistive technology compatibility</li>
+                </ul>
+
+                <h3>Performance</h3>
+                <ul>
+                    <li><strong>Optimize file sizes:</strong> Balance quality and file size</li>
+                    <li><strong>Use appropriate preloading:</strong> Don't waste bandwidth</li>
+                    <li><strong>Consider mobile users:</strong> Account for data usage and smaller screens</li>
+                    <li><strong>Test on slow connections:</strong> Ensure good experience on all networks</li>
+                </ul>
+
+                <div class="highlight">
+                    <strong>Remember:</strong> Media elements should enhance your content, not distract from it. Always prioritize user control, accessibility, and performance.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Complete Media Example</h2>
+                <p>Here's a comprehensive example showing best practices for HTML5 media implementation:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Professional Media Implementation</div>
+                    <div class="live-example-content">
+                        <div style="max-width: 600px; margin: 0 auto;">
+                            <!-- Video Section -->
+                            <div style="margin-bottom: 30px;">
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">📹 Tutorial Video</h4>
+                                <div style="background: #000; border-radius: 8px; overflow: hidden;">
+                                    <div style="aspect-ratio: 16/9; background: linear-gradient(45deg, #34495e, #2c3e50); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1em;">
+                                        HTML5 Video Tutorial
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.9); color: white; padding: 8px 12px; display: flex; align-items: center; gap: 10px; font-size: 0.9em;">
+                                        <span>▶️</span>
+                                        <div style="flex: 1; background: #555; height: 3px; border-radius: 2px;">
+                                            <div style="background: #3498db; height: 3px; width: 40%; border-radius: 2px;"></div>
+                                        </div>
+                                        <span>3:22 / 8:15</span>
+                                        <span>🔊</span>
+                                        <span>CC</span>
+                                        <span>⛶</span>
+                                    </div>
+                                </div>
+                                <p style="font-size: 0.9em; color: #666; margin-top: 8px;">
+                                    Includes captions, multiple formats, and responsive design
+                                </p>
+                            </div>
+                            
+                            <!-- Audio Section -->
+                            <div>
+                                <h4 style="color: #2c3e50; margin-bottom: 10px;">🎵 Audio Example</h4>
+                                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 35px; height: 35px; background: #27ae60; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer;">
+                                            ▶️
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: bold; color: #2c3e50; margin-bottom: 4px;">Sample Audio Track</div>
+                                            <div style="background: #ddd; height: 3px; border-radius: 2px;">
+                                                <div style="background: #27ae60; height: 3px; width: 60%; border-radius: 2px;"></div>
+                                            </div>
+                                            <div style="display: flex; justify-content: space-between; font-size: 0.8em; color: #666; margin-top: 4px;">
+                                                <span>2:45</span>
+                                                <span>4:32</span>
+                                            </div>
+                                        </div>
+                                        <div style="cursor: pointer;">🔊</div>
+                                    </div>
+                                </div>
+                                <p style="font-size: 0.9em; color: #666; margin-top: 8px;">
+                                    Optimized for all browsers with fallback support
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html8-semantic-tags.html" class="prev">← Previous: HTML5 Semantic Tags</a>
+                <a href="css1-introduction.html">Next: Introduction to CSS →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

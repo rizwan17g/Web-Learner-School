@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html" class="active">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Introduction to HTML</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Introduction to HTML</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>What is HTML?</h2>
+                <p>HTML (HyperText Markup Language) is the standard markup language used to create web pages. It provides the structure and content of websites by using a system of tags to define different elements like headings, paragraphs, links, images, and more.</p>
+                
+                <p>Think of HTML as the skeleton of a webpage. Just like how a skeleton gives structure to a body, HTML gives structure to a website. It tells the browser what content to display and how that content should be organized.</p>
+
+                <p>HTML was created by Tim Berners-Lee in 1990 and has evolved significantly over the years. The current version, HTML5, includes many new features that make web development more powerful and accessible.</p>
+
+                <div class="highlight">
+                    <strong>Key Point:</strong> HTML is not a programming language - it's a markup language. It doesn't perform calculations or logic; it simply structures and presents content.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>HTML Document Structure</h2>
+                <p>Every HTML document follows a basic structure that includes several essential elements. This structure ensures that browsers can properly interpret and display your content.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic HTML Document Structure</div>
+                    <div class="code-content">
+                        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph of content.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                </div>
+
+                <h3>Understanding Each Part:</h3>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code> - Declares the document type and version of HTML</li>
+                    <li><code>&lt;html&gt;</code> - The root element that contains all other elements</li>
+                    <li><code>&lt;head&gt;</code> - Contains metadata about the document (not visible on the page)</li>
+                    <li><code>&lt;title&gt;</code> - Sets the title shown in the browser tab</li>
+                    <li><code>&lt;body&gt;</code> - Contains all visible content of the webpage</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>HTML Tags and Elements</h2>
+                <p>HTML uses tags to mark up content. Tags are keywords surrounded by angle brackets (&lt; &gt;). Most tags come in pairs: an opening tag and a closing tag. The closing tag includes a forward slash before the tag name.</p>
+
+                <p>An HTML element consists of the opening tag, the content, and the closing tag. Some elements, called void elements, don't have closing tags because they don't contain content.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Tag Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- Opening and closing tags --&gt;
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+
+&lt;!-- Void elements (self-closing) --&gt;
+&lt;br&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+&lt;hr&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Remember:</strong> Always close your tags! Most HTML tags need both opening and closing tags to work properly.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>HTML Attributes</h2>
+                <p>Attributes provide additional information about HTML elements. They are always specified in the opening tag and usually come in name/value pairs like <code>name="value"</code>.</p>
+
+                <p>Attributes can control how an element behaves, what it looks like, or provide metadata about the element. Some attributes are required for certain elements to function properly.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Common Attributes</div>
+                    <div class="code-content">
+                        <pre>&lt;!-- id attribute (unique identifier) --&gt;
+&lt;div id="header"&gt;Header content&lt;/div&gt;
+
+&lt;!-- class attribute (for styling) --&gt;
+&lt;p class="highlight"&gt;Important text&lt;/p&gt;
+
+&lt;!-- src attribute (image source) --&gt;
+&lt;img src="photo.jpg" alt="A beautiful sunset"&gt;
+
+&lt;!-- href attribute (link destination) --&gt;
+&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Live Example</h2>
+                <p>Here's a simple HTML page that demonstrates the concepts we've covered:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Live HTML Example</div>
+                    <div class="live-example-content">
+                        <h1 style="color: #e74c3c; margin-bottom: 10px;">My First HTML Page</h1>
+                        <p style="margin-bottom: 15px;">This is a paragraph with some <strong>bold text</strong> and <em>italic text</em>.</p>
+                        <p style="margin-bottom: 15px;">HTML allows us to structure content in a meaningful way.</p>
+                        <hr style="margin: 20px 0;">
+                        <p style="color: #666;">This content is created using basic HTML elements!</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">Code for the above example</div>
+                    <div class="code-content">
+                        <pre>&lt;h1&gt;My First HTML Page&lt;/h1&gt;
+&lt;p&gt;This is a paragraph with some &lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;HTML allows us to structure content in a meaningful way.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This content is created using basic HTML elements!&lt;/p&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Why Learn HTML?</h2>
+                <p>Understanding HTML is essential for anyone interested in web development. Here are some compelling reasons to master HTML:</p>
+
+                <ul>
+                    <li><strong>Foundation of the Web:</strong> Every website uses HTML as its foundation</li>
+                    <li><strong>Easy to Learn:</strong> HTML has a simple, logical syntax that beginners can quickly grasp</li>
+                    <li><strong>Career Opportunities:</strong> HTML knowledge is required for web development jobs</li>
+                    <li><strong>Creative Expression:</strong> Build websites, blogs, and web applications</li>
+                    <li><strong>Problem Solving:</strong> Create solutions and tools for real-world problems</li>
+                    <li><strong>Always Relevant:</strong> HTML continues to evolve and remain essential</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Next Steps:</strong> Now that you understand HTML basics, you're ready to explore specific HTML elements like headings, paragraphs, and links in the following lessons.
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="prev">← Back to Home</a>
+                <a href="html2-headings-paragraphs.html">Next: Headings & Paragraphs →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

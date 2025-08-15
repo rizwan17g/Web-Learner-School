@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headings & Paragraphs - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html" class="active">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Headings & Paragraphs</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > HTML Topics > Headings & Paragraphs</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>HTML Headings</h2>
+                <p>Headings are used to create titles and subtitles in your web content. HTML provides six levels of headings, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, where <code>&lt;h1&gt;</code> represents the most important heading and <code>&lt;h6&gt;</code> represents the least important.</p>
+                
+                <p>Headings are crucial for both SEO (Search Engine Optimization) and accessibility. They help search engines understand your content structure and assist screen readers in navigating your page effectively.</p>
+
+                <p>Think of headings like an outline for your content. Just as you would organize a book with chapters and sections, headings organize your webpage content in a logical hierarchy.</p>
+
+                <div class="code-example">
+                    <div class="code-header">HTML Heading Tags</div>
+                    <div class="code-content">
+                        <pre>&lt;h1&gt;Main Title (Most Important)&lt;/h1&gt;
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+&lt;h3&gt;Subsection Heading&lt;/h3&gt;
+&lt;h4&gt;Sub-subsection Heading&lt;/h4&gt;
+&lt;h5&gt;Minor Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">How Headings Look</div>
+                    <div class="live-example-content">
+                        <h1 style="margin: 10px 0; font-size: 2em;">This is an H1 heading</h1>
+                        <h2 style="margin: 10px 0; font-size: 1.7em;">This is an H2 heading</h2>
+                        <h3 style="margin: 10px 0; font-size: 1.4em;">This is an H3 heading</h3>
+                        <h4 style="margin: 10px 0; font-size: 1.2em;">This is an H4 heading</h4>
+                        <h5 style="margin: 10px 0; font-size: 1em;">This is an H5 heading</h5>
+                        <h6 style="margin: 10px 0; font-size: 0.9em;">This is an H6 heading</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Best Practices for Headings</h2>
+                <p>Using headings correctly is essential for creating well-structured, accessible websites. Here are the key principles to follow when working with headings:</p>
+
+                <h3>Hierarchical Structure</h3>
+                <p>Always use headings in hierarchical order. Start with <code>&lt;h1&gt;</code> for your main title, then use <code>&lt;h2&gt;</code> for major sections, <code>&lt;h3&gt;</code> for subsections, and so on. Don't skip levels in the hierarchy.</p>
+
+                <h3>One H1 Per Page</h3>
+                <p>Use only one <code>&lt;h1&gt;</code> tag per page. This should represent the main topic or title of your page. Having multiple H1 tags can confuse search engines and screen readers.</p>
+
+                <h3>Descriptive and Meaningful</h3>
+                <p>Make your headings descriptive and meaningful. They should give readers a clear idea of what the following content is about.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Good Heading Structure Example</div>
+                    <div class="code-content">
+                        <pre>&lt;h1&gt;Complete Guide to Web Development&lt;/h1&gt;
+
+&lt;h2&gt;Frontend Development&lt;/h2&gt;
+&lt;h3&gt;HTML Basics&lt;/h3&gt;
+&lt;h3&gt;CSS Styling&lt;/h3&gt;
+&lt;h3&gt;JavaScript Programming&lt;/h3&gt;
+
+&lt;h2&gt;Backend Development&lt;/h2&gt;
+&lt;h3&gt;Server-side Languages&lt;/h3&gt;
+&lt;h4&gt;PHP&lt;/h4&gt;
+&lt;h4&gt;Python&lt;/h4&gt;
+&lt;h3&gt;Databases&lt;/h3&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>Accessibility Note:</strong> Screen readers use headings to navigate content. A proper heading structure helps visually impaired users understand and navigate your content efficiently.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>HTML Paragraphs</h2>
+                <p>Paragraphs are the building blocks of written content on the web. The <code>&lt;p&gt;</code> tag is used to define paragraphs in HTML. Browsers automatically add space before and after paragraphs, creating visual separation between blocks of text.</p>
+
+                <p>Each paragraph should contain a single idea or concept. When you want to introduce a new idea, start a new paragraph. This makes your content easier to read and understand.</p>
+
+                <p>Paragraphs are block-level elements, which means they take up the full width available and always start on a new line. They cannot contain other block-level elements, but they can contain inline elements like links, emphasis, and images.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Basic Paragraph Syntax</div>
+                    <div class="code-content">
+                        <pre>&lt;p&gt;This is a paragraph. It contains one or more sentences that form a complete thought or idea.&lt;/p&gt;
+
+&lt;p&gt;This is another paragraph. Notice how browsers automatically add space between paragraphs.&lt;/p&gt;
+
+&lt;p&gt;You can include &lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt; within paragraphs.&lt;/p&gt;</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Text Formatting Elements</h2>
+                <p>HTML provides several elements for formatting text within paragraphs. These elements add semantic meaning to your content while also providing visual formatting.</p>
+
+                <h3>Basic Text Formatting</h3>
+                <ul>
+                    <li><code>&lt;strong&gt;</code> - Important text (usually bold)</li>
+                    <li><code>&lt;em&gt;</code> - Emphasized text (usually italic)</li>
+                    <li><code>&lt;mark&gt;</code> - Highlighted text</li>
+                    <li><code>&lt;small&gt;</code> - Smaller text</li>
+                    <li><code>&lt;del&gt;</code> - Deleted text (strikethrough)</li>
+                    <li><code>&lt;ins&gt;</code> - Inserted text (underlined)</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-header">Text Formatting Examples</div>
+                    <div class="code-content">
+                        <pre>&lt;p&gt;This is &lt;strong&gt;very important&lt;/strong&gt; information.&lt;/p&gt;
+&lt;p&gt;This text is &lt;em&gt;emphasized&lt;/em&gt; for clarity.&lt;/p&gt;
+&lt;p&gt;You can &lt;mark&gt;highlight&lt;/mark&gt; specific words.&lt;/p&gt;
+&lt;p&gt;This is &lt;small&gt;fine print&lt;/small&gt; text.&lt;/p&gt;
+&lt;p&gt;This text was &lt;del&gt;removed&lt;/del&gt; and this was &lt;ins&gt;added&lt;/ins&gt;.&lt;/p&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Formatted Text Example</div>
+                    <div class="live-example-content">
+                        <p>This is <strong>very important</strong> information.</p>
+                        <p>This text is <em>emphasized</em> for clarity.</p>
+                        <p>You can <mark style="background-color: yellow;">highlight</mark> specific words.</p>
+                        <p>This is <small>fine print</small> text.</p>
+                        <p>This text was <del>removed</del> and this was <ins>added</ins>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Line Breaks and Horizontal Rules</h2>
+                <p>Sometimes you need more control over text layout than paragraphs provide. HTML offers additional elements for managing spacing and visual separation.</p>
+
+                <h3>Line Breaks</h3>
+                <p>The <code>&lt;br&gt;</code> element creates a line break within text. It's useful for addresses, poems, or any content where line breaks are significant to the meaning.</p>
+
+                <h3>Horizontal Rules</h3>
+                <p>The <code>&lt;hr&gt;</code> element creates a horizontal line across the page, useful for separating content sections.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Line Breaks and Horizontal Rules</div>
+                    <div class="code-content">
+                        <pre>&lt;p&gt;First line of address&lt;br&gt;
+Second line of address&lt;br&gt;
+City, State ZIP&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This content is separated by a horizontal rule.&lt;/p&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Line Breaks and Rules Example</div>
+                    <div class="live-example-content">
+                        <p>123 Main Street<br>
+                        Apartment 4B<br>
+                        New York, NY 10001</p>
+                        
+                        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">
+                        
+                        <p>This content appears after the horizontal rule, creating a clear visual separation.</p>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Best Practice:</strong> Use <code>&lt;br&gt;</code> sparingly. In most cases, separate paragraphs or CSS styling provide better content structure than line breaks.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Example: Article Structure</h2>
+                <p>Let's see how headings and paragraphs work together to create a well-structured article:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Complete Article Structure</div>
+                    <div class="live-example-content">
+                        <h1 style="margin-bottom: 15px; color: #2c3e50;">The Benefits of Learning Web Development</h1>
+                        
+                        <p style="margin-bottom: 15px;">Web development has become one of the most sought-after skills in today's digital economy. Whether you're looking to change careers or enhance your current skill set, learning web development offers numerous advantages.</p>
+                        
+                        <h2 style="margin: 20px 0 10px 0; color: #e74c3c;">Career Opportunities</h2>
+                        <p style="margin-bottom: 15px;">The demand for web developers continues to grow as businesses increasingly move online. <strong>Job security</strong> and <em>competitive salaries</em> make this field particularly attractive.</p>
+                        
+                        <h2 style="margin: 20px 0 10px 0; color: #e74c3c;">Creative Expression</h2>
+                        <p style="margin-bottom: 15px;">Web development combines technical skills with creative design, allowing you to build beautiful and functional websites that solve real-world problems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="html1-introduction.html" class="prev">← Previous: Introduction to HTML</a>
+                <a href="html3-links-anchor-tags.html">Next: Links & Anchor Tags →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

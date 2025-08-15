@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgrounds - HTML & CSS Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h2>HTML & CSS Hub</h2>
+        </div>
+        
+        <div class="nav-section">
+            <h3>HTML Topics</h3>
+            <ul>
+                <li><a href="html1-introduction.html">1. Introduction to HTML</a></li>
+                <li><a href="html2-headings-paragraphs.html">2. Headings & Paragraphs</a></li>
+                <li><a href="html3-links-anchor-tags.html">3. Links & Anchor Tags</a></li>
+                <li><a href="html4-images.html">4. Images in HTML</a></li>
+                <li><a href="html5-lists.html">5. Lists: Ordered & Unordered</a></li>
+                <li><a href="html6-tables.html">6. Tables in HTML</a></li>
+                <li><a href="html7-forms-input.html">7. Forms & Input Elements</a></li>
+                <li><a href="html8-semantic-tags.html">8. HTML5 Semantic Tags</a></li>
+                <li><a href="html9-audio-video.html">9. Audio & Video</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-section">
+            <h3>CSS Topics</h3>
+            <ul>
+                <li><a href="css1-introduction.html">1. Introduction to CSS</a></li>
+                <li><a href="css2-selectors.html">2. CSS Selectors</a></li>
+                <li><a href="css3-backgrounds.html" class="active">3. Backgrounds</a></li>
+                <li><a href="css4-borders.html">4. Borders</a></li>
+                <li><a href="css5-fonts-text.html">5. Fonts & Text Styling</a></li>
+                <li><a href="css6-float-clear.html">6. Float & Clear</a></li>
+                <li><a href="css7-flexbox.html">7. Flexbox Basics</a></li>
+                <li><a href="css8-grid.html">8. CSS Grid Basics</a></li>
+                <li><a href="css9-gradients.html">9. Gradients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Backgrounds</h1>
+            <p class="breadcrumb"><a href="index.html">Home</a> > CSS Topics > Backgrounds</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="section">
+                <h2>Introduction to CSS Backgrounds</h2>
+                <p>CSS backgrounds are one of the most powerful tools for creating visually appealing web designs. They allow you to set colors, images, gradients, and patterns behind your content, creating depth, visual interest, and brand identity.</p>
+                
+                <p>Background properties work together to create layered effects, from simple solid colors to complex multi-layered compositions with images, gradients, and positioning. Understanding backgrounds is essential for modern web design.</p>
+
+                <p>CSS provides multiple background properties that can be used individually or combined to create sophisticated visual effects. These properties give you precise control over how backgrounds appear and behave across different screen sizes and devices.</p>
+
+                <div class="highlight">
+                    <strong>Key Concept:</strong> Backgrounds are drawn behind the content of an element, starting from the border area and extending to the padding and content areas, but not including the margin.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Color</h2>
+                <p>The <code>background-color</code> property sets a solid color as the background of an element. This is the foundation of most background designs.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Color Examples</div>
+                    <div class="code-content">
+                        <pre>/* Named colors */
+.primary {
+    background-color: red;
+}
+
+.secondary {
+    background-color: lightblue;
+}
+
+/* Hex colors */
+.brand-blue {
+    background-color: #3498db;
+}
+
+.brand-dark {
+    background-color: #2c3e50;
+}
+
+/* RGB colors */
+.custom {
+    background-color: rgb(255, 99, 71);
+}
+
+/* RGBA with transparency */
+.translucent {
+    background-color: rgba(255, 99, 71, 0.7);
+}
+
+/* HSL colors */
+.hsl-color {
+    background-color: hsl(120, 100%, 50%);
+}
+
+/* Transparent background */
+.transparent {
+    background-color: transparent;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Background Color Examples</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="background-color: #3498db; color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                <strong>Solid Blue</strong><br>
+                                #3498db
+                            </div>
+                            <div style="background-color: rgba(231, 76, 60, 0.7); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                <strong>Transparent Red</strong><br>
+                                rgba(231, 76, 60, 0.7)
+                            </div>
+                            <div style="background-color: hsl(142, 71%, 48%); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                                <strong>HSL Green</strong><br>
+                                hsl(142, 71%, 48%)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Images</h2>
+                <p>The <code>background-image</code> property allows you to use images as backgrounds. This creates rich, textured designs and can include photos, patterns, textures, or graphics.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Image Examples</div>
+                    <div class="code-content">
+                        <pre>/* Single background image */
+.hero-section {
+    background-image: url('hero-bg.jpg');
+    height: 400px;
+    color: white;
+}
+
+/* Pattern or texture */
+.textured {
+    background-image: url('texture.png');
+}
+
+/* Icon or decorative image */
+.with-icon {
+    background-image: url('icon.svg');
+    padding-left: 30px;
+}
+
+/* Multiple background images */
+.layered {
+    background-image: 
+        url('overlay.png'),
+        url('main-image.jpg');
+}
+
+/* Combining image with gradient */
+.image-gradient {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('background.jpg');
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Background Image Simulation</div>
+                    <div class="live-example-content">
+                        <div style="height: 200px; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em; font-weight: bold; border-radius: 8px;">
+                            Background Image with Overlay
+                        </div>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                            This simulates a background image with a dark overlay for better text readability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Positioning</h2>
+                <p>The <code>background-position</code> property controls where the background image is positioned within the element.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Position Examples</div>
+                    <div class="code-content">
+                        <pre>/* Keyword positions */
+.top-left {
+    background-position: top left;
+}
+
+.center {
+    background-position: center;
+}
+
+.bottom-right {
+    background-position: bottom right;
+}
+
+/* Percentage positions */
+.custom-position {
+    background-position: 75% 25%;
+}
+
+/* Pixel positions */
+.exact-position {
+    background-position: 50px 100px;
+}
+
+/* Multiple values for multiple backgrounds */
+.multiple-positions {
+    background-image: url('icon1.png'), url('icon2.png');
+    background-position: top left, bottom right;
+}
+
+/* Mixed units */
+.mixed {
+    background-position: center 20px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Background Position Demo</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                            <div style="height: 100px; border: 2px solid #ddd; position: relative; background: #f8f9fa;">
+                                <div style="width: 20px; height: 20px; background: #e74c3c; position: absolute; top: 0; left: 0; border-radius: 50%;"></div>
+                                <span style="position: absolute; bottom: 5px; left: 5px; font-size: 0.8em;">top left</span>
+                            </div>
+                            <div style="height: 100px; border: 2px solid #ddd; position: relative; background: #f8f9fa;">
+                                <div style="width: 20px; height: 20px; background: #e74c3c; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%;"></div>
+                                <span style="position: absolute; bottom: 5px; left: 5px; font-size: 0.8em;">center</span>
+                            </div>
+                            <div style="height: 100px; border: 2px solid #ddd; position: relative; background: #f8f9fa;">
+                                <div style="width: 20px; height: 20px; background: #e74c3c; position: absolute; bottom: 0; right: 0; border-radius: 50%;"></div>
+                                <span style="position: absolute; bottom: 5px; left: 5px; font-size: 0.8em;">bottom right</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Size</h2>
+                <p>The <code>background-size</code> property controls how background images are sized within their container.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Size Examples</div>
+                    <div class="code-content">
+                        <pre>/* Cover the entire container */
+.cover {
+    background-size: cover;
+    /* Image covers entire container, may be cropped */
+}
+
+/* Contain within container */
+.contain {
+    background-size: contain;
+    /* Entire image visible, may leave empty space */
+}
+
+/* Specific dimensions */
+.fixed-size {
+    background-size: 200px 100px;
+    /* Exact width and height */
+}
+
+/* Percentage sizing */
+.percentage {
+    background-size: 50% 75%;
+    /* Relative to container size */
+}
+
+/* Auto sizing */
+.auto {
+    background-size: auto;
+    /* Image's natural size */
+}
+
+/* Multiple background sizes */
+.multiple {
+    background-image: url('bg1.jpg'), url('bg2.jpg');
+    background-size: cover, 100px 100px;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Background Size Comparison</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="height: 120px; border: 2px solid #ddd; background: repeating-linear-gradient(45deg, #3498db, #3498db 10px, #2980b9 10px, #2980b9 20px); background-size: cover; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 4px;">
+                                cover
+                            </div>
+                            <div style="height: 120px; border: 2px solid #ddd; background: repeating-linear-gradient(45deg, #e74c3c, #e74c3c 20px, #c0392b 20px, #c0392b 40px); background-size: contain; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 4px;">
+                                contain
+                            </div>
+                            <div style="height: 120px; border: 2px solid #ddd; background: repeating-linear-gradient(45deg, #27ae60, #27ae60 15px, #229954 15px, #229954 30px); background-size: 100px 60px; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 4px;">
+                                100px 60px
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Repeat</h2>
+                <p>The <code>background-repeat</code> property controls how background images are repeated (or not repeated) within their container.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Repeat Examples</div>
+                    <div class="code-content">
+                        <pre>/* No repetition */
+.no-repeat {
+    background-repeat: no-repeat;
+}
+
+/* Repeat in both directions (default) */
+.repeat {
+    background-repeat: repeat;
+}
+
+/* Repeat horizontally only */
+.repeat-x {
+    background-repeat: repeat-x;
+}
+
+/* Repeat vertically only */
+.repeat-y {
+    background-repeat: repeat-y;
+}
+
+/* Round to fit */
+.round {
+    background-repeat: round;
+    /* Scales image to fit evenly */
+}
+
+/* Space evenly */
+.space {
+    background-repeat: space;
+    /* Distributes images with equal spacing */
+}
+
+/* Multiple backgrounds */
+.multiple-repeat {
+    background-image: url('pattern.png'), url('texture.jpg');
+    background-repeat: repeat, no-repeat;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Background Repeat Demo</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                            <div style="height: 100px; border: 2px solid #ddd; background: radial-gradient(circle, #3498db 20%, transparent 20%); background-size: 30px 30px; background-repeat: repeat; border-radius: 4px; position: relative;">
+                                <span style="position: absolute; bottom: 5px; left: 5px; background: rgba(0,0,0,0.7); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">repeat</span>
+                            </div>
+                            <div style="height: 100px; border: 2px solid #ddd; background: radial-gradient(circle, #e74c3c 20%, transparent 20%); background-size: 30px 30px; background-repeat: no-repeat; background-position: center; border-radius: 4px; position: relative;">
+                                <span style="position: absolute; bottom: 5px; left: 5px; background: rgba(0,0,0,0.7); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">no-repeat</span>
+                            </div>
+                            <div style="height: 100px; border: 2px solid #ddd; background: radial-gradient(circle, #27ae60 20%, transparent 20%); background-size: 30px 30px; background-repeat: repeat-x; border-radius: 4px; position: relative;">
+                                <span style="position: absolute; bottom: 5px; left: 5px; background: rgba(0,0,0,0.7); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">repeat-x</span>
+                            </div>
+                            <div style="height: 100px; border: 2px solid #ddd; background: radial-gradient(circle, #f39c12 20%, transparent 20%); background-size: 30px 30px; background-repeat: repeat-y; border-radius: 4px; position: relative;">
+                                <span style="position: absolute; bottom: 5px; left: 5px; background: rgba(0,0,0,0.7); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">repeat-y</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Attachment</h2>
+                <p>The <code>background-attachment</code> property determines whether a background image is fixed or scrolls with the content.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Attachment Examples</div>
+                    <div class="code-content">
+                        <pre>/* Scrolls with content (default) */
+.scroll {
+    background-attachment: scroll;
+}
+
+/* Fixed to viewport */
+.fixed {
+    background-attachment: fixed;
+    /* Creates parallax effect */
+}
+
+/* Fixed to element */
+.local {
+    background-attachment: local;
+    /* Scrolls with element's content */
+}
+
+/* Parallax hero section */
+.parallax-hero {
+    background-image: url('hero-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Performance Note:</strong> <code>background-attachment: fixed</code> can impact performance on mobile devices and some browsers. Use it sparingly and test across devices.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Shorthand</h2>
+                <p>The <code>background</code> shorthand property allows you to set multiple background properties in a single declaration, making your CSS more concise.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Background Shorthand Examples</div>
+                    <div class="code-content">
+                        <pre>/* Basic shorthand */
+.shorthand-basic {
+    background: #3498db;
+    /* Same as background-color: #3498db; */
+}
+
+/* Image with properties */
+.shorthand-image {
+    background: url('bg.jpg') no-repeat center/cover;
+    /* image, repeat, position/size */
+}
+
+/* Complete shorthand */
+.shorthand-complete {
+    background: #fff url('bg.jpg') no-repeat fixed center/cover;
+    /* color image repeat attachment position/size */
+}
+
+/* Multiple backgrounds */
+.shorthand-multiple {
+    background: 
+        url('overlay.png') repeat-x top,
+        url('main-bg.jpg') no-repeat center/cover;
+}
+
+/* Gradient shorthand */
+.shorthand-gradient {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}</pre>
+                    </div>
+                </div>
+
+                <h3>Shorthand Property Order</h3>
+                <p>When using the background shorthand, properties can be in any order, but size must come after position separated by a slash:</p>
+                <ul>
+                    <li><code>background-color</code></li>
+                    <li><code>background-image</code></li>
+                    <li><code>background-repeat</code></li>
+                    <li><code>background-attachment</code></li>
+                    <li><code>background-position / background-size</code></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Multiple Backgrounds</h2>
+                <p>CSS allows you to layer multiple backgrounds on a single element, creating complex visual effects and compositions.</p>
+
+                <div class="code-example">
+                    <div class="code-header">Multiple Backgrounds Example</div>
+                    <div class="code-content">
+                        <pre>/* Layered backgrounds */
+.layered-backgrounds {
+    background-image: 
+        url('overlay-pattern.png'),
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('main-background.jpg');
+    
+    background-position: 
+        top left,
+        center,
+        center;
+    
+    background-repeat: 
+        repeat,
+        no-repeat,
+        no-repeat;
+    
+    background-size: 
+        100px 100px,
+        cover,
+        cover;
+}
+
+/* Card with multiple background elements */
+.card-design {
+    background: 
+        radial-gradient(circle at top right, rgba(255,255,255,0.1) 20%, transparent 20%),
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Multiple Backgrounds Demo</div>
+                    <div class="live-example-content">
+                        <div style="height: 200px; background: radial-gradient(circle at top right, rgba(255,255,255,0.2) 30%, transparent 30%), linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2em; font-weight: bold;">
+                            Multiple Background Layers
+                        </div>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                            This element combines a radial gradient pattern with a linear gradient background.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Background Best Practices</h2>
+                <p>Following best practices ensures your backgrounds are performant, accessible, and maintainable:</p>
+
+                <h3>Performance Optimization</h3>
+                <ul>
+                    <li><strong>Optimize image sizes:</strong> Use appropriate file formats and compression</li>
+                    <li><strong>Consider CSS gradients:</strong> Often smaller than image files</li>
+                    <li><strong>Use appropriate image dimensions:</strong> Don't use huge images for small backgrounds</li>
+                    <li><strong>Minimize fixed backgrounds:</strong> Can cause performance issues on mobile</li>
+                </ul>
+
+                <h3>Accessibility Considerations</h3>
+                <ul>
+                    <li><strong>Ensure contrast:</strong> Text must be readable over background images</li>
+                    <li><strong>Provide fallbacks:</strong> Always include background colors for failed image loads</li>
+                    <li><strong>Avoid motion:</strong> Respect users' preference for reduced motion</li>
+                    <li><strong>Test with images disabled:</strong> Content should still be accessible</li>
+                </ul>
+
+                <h3>Design Guidelines</h3>
+                <ul>
+                    <li><strong>Use backgrounds purposefully:</strong> They should enhance, not distract from content</li>
+                    <li><strong>Maintain consistency:</strong> Use backgrounds that align with your design system</li>
+                    <li><strong>Consider responsive needs:</strong> Backgrounds should work on all screen sizes</li>
+                    <li><strong>Test across devices:</strong> Ensure backgrounds look good on different screens</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Golden Rule:</strong> Backgrounds should enhance readability and user experience, never compromise them. Always prioritize content accessibility over visual effects.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Practical Background Examples</h2>
+                <p>Here are some common, real-world background implementations:</p>
+
+                <div class="live-example">
+                    <div class="live-example-header">Hero Section with Overlay</div>
+                    <div class="live-example-content">
+                        <div style="height: 300px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), repeating-linear-gradient(45deg, #3498db, #3498db 50px, #2980b9 50px, #2980b9 100px); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; border-radius: 8px;">
+                            <h2 style="margin: 0 0 15px 0; font-size: 2.5em;">Welcome to Our Site</h2>
+                            <p style="margin: 0; font-size: 1.2em; opacity: 0.9;">Beautiful backgrounds enhance user experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-example">
+                    <div class="live-example-header">Pattern Background Cards</div>
+                    <div class="live-example-content">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                            <div style="background: repeating-linear-gradient(45deg, #f8f9fa, #f8f9fa 10px, #e9ecef 10px, #e9ecef 20px); padding: 25px; border-radius: 8px; border: 1px solid #dee2e6;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Subtle Pattern</h4>
+                                <p style="margin-bottom: 0; color: #6c757d;">Diagonal stripes create visual interest without overwhelming the content.</p>
+                            </div>
+                            <div style="background: radial-gradient(circle, #fff 2px, #f8f9fa 2px); background-size: 20px 20px; padding: 25px; border-radius: 8px; border: 1px solid #dee2e6;">
+                                <h4 style="margin-top: 0; color: #2c3e50;">Dot Pattern</h4>
+                                <p style="margin-bottom: 0; color: #6c757d;">Polka dot backgrounds add playfulness while maintaining readability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="css2-selectors.html" class="prev">← Previous: CSS Selectors</a>
+                <a href="css4-borders.html">Next: Borders →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
